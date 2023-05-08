@@ -1,8 +1,8 @@
 import Button from "@mui/material/Button";
 
-import Google from "./circleIcons/Google";
-import Facebook from "./circleIcons/Facebook";
-import LinkedIn from "./circleIcons/LinkedIn";
+import Google from "../circleIcons/Google";
+import Facebook from "../circleIcons/Facebook";
+import LinkedIn from "../circleIcons/LinkedIn";
 
 function SignUp() {
   return (

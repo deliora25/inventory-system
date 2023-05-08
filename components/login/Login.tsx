@@ -3,9 +3,9 @@ import Checkbox from "@mui/material/Checkbox";
 import { pink } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 
-import Google from "./circleIcons/Google";
-import Facebook from "./circleIcons/Facebook";
-import LinkedIn from "./circleIcons/LinkedIn";
+import Google from "../circleIcons/Google";
+import Facebook from "../circleIcons/Facebook";
+import LinkedIn from "../circleIcons/LinkedIn";
 
 function Login() {
   return (
