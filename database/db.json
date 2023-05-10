@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "firstName": "Livyathan",
+      "lastName": "Gogo",
+      "email": "test123@gmail.com",
+      "password": "terter123",
+      "id": 1
+    },
+    {
+      "firstName": "gabriel",
+      "lastName": "testtest",
+      "email": "gentle_gabriel2002@yahoo.com",
+      "password": "qwerty",
+      "id": 2
+    }
+  ]
+}

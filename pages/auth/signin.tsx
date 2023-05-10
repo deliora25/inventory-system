@@ -3,23 +3,68 @@ import Checkbox from "@mui/material/Checkbox";
 import { pink } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 
-import Google from "../circleIcons/Google";
-import Facebook from "../circleIcons/Facebook";
-import LinkedIn from "../circleIcons/LinkedIn";
+import Google from "../../components/circleIcons/Google";
+import Facebook from "../../components/circleIcons/Facebook";
+import LinkedIn from "../../components/circleIcons/LinkedIn";
 
-function Login() {
+import { signIn } from "next-auth/react";
+import Link from "next/link";
+import Router from "next/router";
+
+import { useState, FormEvent } from "react";
+
+import { UserOnLogin } from "@/types";
+
+function SignIn() {
+  const [user, setUser] = useState<UserOnLogin>({ email: "", password: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.currentTarget;
+    setUser((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    //validate userInfo
+    const res: any | undefined = await signIn("credentials", {
+      email: user.email,
+      password: user.password,
+      redirect: false,
+    });
+    if (res.ok) Router.replace("/");
+    console.log(res);
+  };
+
   return (
     <div className="relative flex h-screen w-screen flex-col md:items-center bg-[#99CCFF] md:justify-center sm:items-center">
-      <form className="absolute mt-24 space-y-8 bg-white py-10 px-10 md:mt-0 md:max-w-sm md:px-14  rounded-sm">
+      <form
+        onSubmit={handleSubmit}
+        className="absolute mt-24 space-y-8 bg-white py-10 px-10 md:mt-0 md:max-w-sm md:px-14  rounded-sm"
+      >
         <h2 className="text-2xl font-semibold">LOGIN</h2>
         <div className="space-y-4">
           <label className="inline-block w-full">
             <p>Email</p>
-            <input type="email" className="input" />
+            <input
+              type="email"
+              name="email"
+              className="input"
+              value={user.email}
+              onChange={handleChange}
+            />
           </label>
           <label className="inline-block w-full">
             <p>Password</p>
-            <input type="password" className="input " />
+            <input
+              type="password"
+              name="password"
+              className="input "
+              value={user.password}
+              onChange={handleChange}
+            />
           </label>
           <div className="mt-0">
             <FormControlLabel
@@ -36,6 +81,7 @@ function Login() {
             />
           </div>
           <Button
+            type="submit"
             variant="outlined"
             className="w-full bg-pink-600 rounded-lg text-white border-none hover:bg-pink-600/75 hover:border-none"
           >
@@ -52,9 +98,11 @@ function Login() {
           </div>
           <div className="text-center">
             <span>Need an account? </span>
-            <span className="underline cursor-pointer hover:opacity-75">
-              SIGN UP
-            </span>
+            <Link href="/auth/signup">
+              <span className="underline cursor-pointer hover:opacity-75">
+                SIGN UP
+              </span>
+            </Link>
           </div>
         </div>
       </form>
@@ -62,4 +110,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignIn;

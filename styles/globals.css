@@ -4,6 +4,6 @@
 
 @layer components {
   .input {
-    @apply w-full h-10 rounded-md bg-white px-5 py-3.5 outline-none border border-solid;
+    @apply w-full h-7 rounded-md bg-white px-5 py-3.5 outline-none border border-solid;
   }
 }
