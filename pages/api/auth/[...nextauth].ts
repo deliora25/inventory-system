@@ -1,3 +1,4 @@
+import { UserOnLogin } from "@/types";
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -11,10 +12,7 @@ const authOptions: NextAuthOptions = {
       type: "credentials",
       credentials: {},
       authorize(credentials, req) {
-        const { email, password } = credentials as {
-          email: string;
-          password: string;
-        };
+        const { email, password } = credentials as UserOnLogin;
 
         //login logic
         //find user in db
