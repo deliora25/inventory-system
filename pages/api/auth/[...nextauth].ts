@@ -2,6 +2,7 @@ import { UserOnLogin } from "@/types";
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import axios from "axios";
 
 const authOptions: NextAuthOptions = {
   session: {
@@ -11,21 +12,32 @@ const authOptions: NextAuthOptions = {
     CredentialsProvider({
       type: "credentials",
       credentials: {},
-      authorize(credentials, req) {
+      async authorize(credentials, req) {
         const { email, password } = credentials as UserOnLogin;
 
         //login logic
         //find user in db
-        if (email !== "test123@gmail.com" || password !== "password") {
-          throw new Error("Email and password does not match!");
-        }
 
-        return { id: "1", name: "sample", email: "sample@gmail.com" };
+        const response = await axios("http://localhost:4000/users");
+        const { data } = response || {};
+
+        let user = null;
+        data.forEach((x: UserOnLogin) => {
+          if (x.email === email && x.password === password) {
+            user = x;
+          }
+        });
+
+        if (!user) {
+          throw new Error("Please log in or sign up!");
+        }
+        return user;
       },
     }),
   ],
   pages: {
     signIn: "/auth/signin",
+    signOut: "/auth/signout",
   },
 };
 

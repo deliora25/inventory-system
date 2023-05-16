@@ -1,18 +1,55 @@
 {
   "users": [
     {
-      "firstName": "Livyathan",
-      "lastName": "Gogo",
+      "firstName": "test",
+      "lastName": "testtest",
       "email": "test123@gmail.com",
-      "password": "terter123",
+      "password": "test123",
       "id": 1
     },
     {
       "firstName": "gabriel",
-      "lastName": "testtest",
-      "email": "gentle_gabriel2002@yahoo.com",
-      "password": "qwerty",
+      "lastName": "Gogo",
+      "email": "test123@gmail.com",
+      "password": "test1234",
       "id": 2
+    },
+    {
+      "firstName": "Livy",
+      "lastName": "Gogo",
+      "email": "test123@gmail.com",
+      "password": "12334555",
+      "id": 3
+    }
+  ],
+  "revenue": [30000],
+  "salesReturn": [31000],
+  "purchase": [32000],
+  "income": [33000],
+  "stockalert": [
+    {
+      "orderId": "order ID 1",
+      "date": "Date 1",
+      "quantity": "Quantity 1",
+      "alertAmount": "Alert amt. 1",
+      "status": "Status 1",
+      "id": 1
+    },
+    {
+      "orderId": "order ID 2",
+      "date": "Date 2",
+      "quantity": "Quantity 2",
+      "alertAmount": "Alert amt. 2",
+      "status": "Status 2",
+      "id": 2
+    },
+    {
+      "orderId": "order ID 3",
+      "date": "Date 3",
+      "quantity": "Quantity 3",
+      "alertAmount": "Alert amt. 3",
+      "status": "Status 3",
+      "id": 3
     }
   ]
 }
