@@ -8,12 +8,12 @@ type Props = {
 function StockAlertItem({ item }: Props) {
   const { alertAmount, status, quantity, orderId, date } = item;
   return (
-    <tr>
-      <td>{orderId}</td>
-      <td>{date}</td>
-      <td>{quantity}</td>
-      <td>{alertAmount}</td>
-      <td>{status}</td>
+    <tr className="font-extralight justify-center ">
+      <td className="text-center sm:py-0  px-6 py-1">{orderId}</td>
+      <td className="text-center sm:py-0  px-6 py-1">{date}</td>
+      <td className="text-center  sm:py-0 px-6 py-1">{quantity}</td>
+      <td className="text-center sm:py-0  px-6 py-1">{alertAmount}</td>
+      <td className="text-center  sm:py-0 px-6 py-1">{status}</td>
     </tr>
   );
 }
