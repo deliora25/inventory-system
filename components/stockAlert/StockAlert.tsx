@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-import { StockAlert, Title } from "@/types";
+import { StockAlert } from "@/types";
 import TopSellingProducts from "../topSelling/TopSellingProducts";
 import StockAlertItems from "./StockAlertItems";
 
 function StockAlert() {
   const [data, setData] = useState<StockAlert[]>([]);
-  const [title, setTitle] = useState<Title[]>([]);
-
-  // console.log(id);
 
   useEffect(() => {
     fetch("http://localhost:4000/stockalert/")
@@ -17,15 +14,6 @@ function StockAlert() {
       .catch((error) => console.log(error.message));
   }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:4000/titles/")
-      .then((res) => res.json())
-      .then((data) => setTitle(data))
-      .catch((error) => console.log(error.message));
-  }, [data]);
-
-  // console.log(title);
-
   return (
     <div className="flex gap-4 mb-8">
       <div className=" col-2 w-2/3 bg-white h-auto shadow-sm rounded ">
@@ -33,9 +21,11 @@ function StockAlert() {
           Stock Alert
         </h2>
         <hr />
-        <StockAlertItems data={data} title={title} />
+        <StockAlertItems data={data} />
       </div>
-      <TopSellingProducts />
+      <div className="col-1 w-1/3 bg-white h-auto shadow-sm rounded">
+        <TopSellingProducts data={data} />
+      </div>
     </div>
   );
 }

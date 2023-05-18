@@ -1,10 +1,9 @@
-import { StockAlert, Title } from "@/types";
+import { StockAlert } from "@/types";
 import React from "react";
 import StockAlertItem from "./StockAlertItem";
 
 type Props = {
   data: StockAlert[];
-  title: Title[];
 };
 
 function StockAlertItems({ data }: Props) {
