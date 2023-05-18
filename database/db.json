@@ -51,5 +51,14 @@
       "status": "Status 3",
       "id": 3
     }
+  ],
+  "titles": [
+    {
+      "orderId": "Order ID",
+      "date": "Date",
+      "quantity": "Quantity",
+      "alertAmount": "Alert Amt.",
+      "status": "Status"
+    }
   ]
 }
