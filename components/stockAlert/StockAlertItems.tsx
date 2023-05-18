@@ -1,5 +1,6 @@
 import { StockAlert, Title } from "@/types";
 import React from "react";
+import StockAlertItem from "./StockAlertItem";
 
 type Props = {
   data: StockAlert[];
@@ -21,15 +22,7 @@ function StockAlertItems({ data, title }: Props) {
             </thead>
             <tbody>
               {data.map((item) => {
-                return (
-                  <tr key={item.id}>
-                    <td>{item.orderId}</td>
-                    <td>{item.date}</td>
-                    <td>{item.quantity}</td>
-                    <td>{item.alertAmount}</td>
-                    <td>{item.status}</td>
-                  </tr>
-                );
+                return <StockAlertItem key={item.id} item={item} />;
               })}
             </tbody>
           </table>
