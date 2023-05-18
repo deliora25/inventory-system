@@ -1,5 +1,6 @@
 import { StockAlert } from "@/types";
 import React from "react";
+
 type Props = {
   item: StockAlert;
 };
@@ -8,14 +9,11 @@ function TopSellingProductItem({ item }: Props) {
   const { orderId, quantity, alertAmount } = item;
 
   return (
-    <div
-      key={item.id}
-      className="flex gap-2 text-center font-extralight items-center"
-    >
-      <tr>{orderId}</tr>
-      <tr>{quantity}</tr>
-      <tr>{alertAmount}</tr>
-    </div>
+    <tr className="text-center font-extralight">
+      <td className="sm:py-0  px-6 py-1">{orderId}</td>
+      <td className="sm:py-0 px-6 py-1">{quantity}</td>
+      <td className="sm:py-0  px-6 py-1">{alertAmount}</td>
+    </tr>
   );
 }
 

@@ -1,26 +1,24 @@
-import { StockAlert } from "@/types";
 import React from "react";
-import StockAlertItem from "./StockAlertItem";
+import TopSellingProductItem from "./TopSellingProductItem";
+import { StockAlert } from "@/types";
 
 type Props = {
   data: StockAlert[];
 };
 
-function StockAlertItems({ data }: Props) {
+function TopSellingProductItems({ data }: Props) {
   return (
     <div className="h-auto relative flex flex-col">
       <div className=" bg-transparent m-2 p-8 md:items-center w-full sm:m-0 sm:p-0 overflow-x-auto">
         <table className=" table-auto w-full">
           <thead className=" ">
             <th className="font-semibold px-6 py-1">Order ID</th>
-            <th className="font-semibold px-6 py-1">Date</th>
             <th className="font-semibold px-6 py-1">Quantity</th>
             <th className="font-semibold px-6 py-1">Alert Amt.</th>
-            <th className="font-semibold px-6 py-1">Status</th>
           </thead>
           <tbody>
             {data.map((item) => {
-              return <StockAlertItem key={item.id} item={item} />;
+              return <TopSellingProductItem key={item.id} item={item} />;
             })}
           </tbody>
         </table>
@@ -29,4 +27,4 @@ function StockAlertItems({ data }: Props) {
   );
 }
 
-export default StockAlertItems;
+export default TopSellingProductItems;
