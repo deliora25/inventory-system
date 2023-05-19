@@ -1,4 +1,5 @@
-import BarGraph from "@/components/barGraph/BarGraph";
+import BarGraph from "@/components/graph/BarGraph";
+import PieChartOne from "@/components/graph/PieChartOne";
 import DataCard from "@/components/dataCard/DataCard";
 import DataCardList from "@/components/dataCard/DataCardList";
 import Layout from "@/components/layout/Layout";
@@ -27,7 +28,16 @@ const Home: NextPage = (): JSX.Element => {
           <div className="grid col-2 w-2/3 bg-white h-64 shadow-sm rounded">
             <BarGraph />
           </div>
-          <div className="grid col-1 w-1/3 bg-white h-64 shadow-sm rounded"></div>
+          <div className="grid col-1 w-1/3 bg-white h-64 shadow-sm rounded">
+            <div>
+              <h2 className="px-4 pt-2 pb-0 mb-0 w-auto">
+                Top Selling Products
+              </h2>
+            </div>
+            <div>
+              <PieChartOne className="items-center relative top-0 left-0" />
+            </div>
+          </div>
         </div>
         <StockAlert />
       </Layout>

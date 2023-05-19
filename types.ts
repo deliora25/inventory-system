@@ -32,3 +32,13 @@ export type DataAmount = {
   value: number;
   id: number;
 };
+
+export type PieChartInput = {
+  cx: number;
+  cy: number;
+  midAngle: number;
+  innerRadius: number;
+  outerRadius: number;
+  percent: number;
+  index: number;
+};
