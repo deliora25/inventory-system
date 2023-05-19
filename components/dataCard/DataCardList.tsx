@@ -12,7 +12,7 @@ function DataCardList() {
   }, []);
 
   return (
-    <div className="grid lg:grid-cols-4 gap-5 mb-8">
+    <div className="grid lg:grid-cols-4 md:flex-col gap-5 mb-8">
       {data.map((item: any) => {
         return (
           <div key={item.id} className="rounded bg-white h-32 shadow-sm">

@@ -13,10 +13,10 @@ function Layout({ children }: Props) {
 
   function handleResize() {
     if (innerWidth <= 640) {
-      setShowNav(false);
+      // setShowNav(false);
       setIsMobile(true);
     } else {
-      setShowNav(true);
+      // setShowNav(true);
       setIsMobile(false);
     }
   }

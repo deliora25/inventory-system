@@ -4,13 +4,13 @@ import PieChartOne from "./PieChartOne";
 
 function Graph() {
   return (
-    <div className="flex  gap-5 mb-8">
-      <div className="grid col-2 w-2/3 bg-white h-64 shadow-sm rounded">
+    <div className="grid grid-cols-3  gap-5 mb-8">
+      <div className=" col-span-3 md:col-span-2  bg-white h-64 shadow-sm rounded">
         <BarGraph />
       </div>
-      <div className="grid col-1 w-1/3 bg-white h-64 shadow-sm rounded">
+      <div className=" col-span-3 md:col-span-1 bg-white h-64 shadow-sm rounded">
         <div>
-          <h2 className="px-4 pt-2 pb-0 mb-0 w-full font-semibold">
+          <h2 className="px-4 pt-2 pb-0 mb-0 font-semibold">
             Top Selling Products
           </h2>
         </div>

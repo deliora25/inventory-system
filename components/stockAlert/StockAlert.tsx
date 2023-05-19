@@ -15,15 +15,15 @@ function StockAlert() {
   }, []);
 
   return (
-    <div className="flex flex-grid gap-4 mb-8 sm:max-w-sm md:max-w-screen-xl">
-      <div className=" col-2 w-2/3 bg-white h-auto shadow-sm rounded ">
+    <div className="grid grid-cols-3 gap-4 mb-8  ">
+      <div className=" col-span-3 md:col-span-2 bg-white shadow-sm rounded ">
         <h2 className="text-left font-semibold m-2 md:pl-1 md:ml-1  ">
           Stock Alert
         </h2>
         <hr />
         <StockAlertItems data={data} />
       </div>
-      <div className="col-1 w-1/3 bg-white h-auto shadow-sm rounded">
+      <div className="col-span-3 md:col-span-1 bg-white shadow-sm rounded">
         <TopSellingProducts data={data} />
       </div>
     </div>
