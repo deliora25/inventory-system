@@ -9,6 +9,7 @@ import { useSession } from "next-auth/react";
 import Router from "next/router";
 
 import { useEffect } from "react";
+import Graph from "@/components/graph/Graph";
 
 const Home: NextPage = (): JSX.Element => {
   const { status, data } = useSession();
@@ -23,22 +24,7 @@ const Home: NextPage = (): JSX.Element => {
     return (
       <Layout>
         <DataCardList />
-
-        <div className="flex  gap-5 mb-8">
-          <div className="grid col-2 w-2/3 bg-white h-64 shadow-sm rounded">
-            <BarGraph />
-          </div>
-          <div className="grid col-1 w-1/3 bg-white h-64 shadow-sm rounded">
-            <div>
-              <h2 className="px-4 pt-2 pb-0 mb-0 w-auto">
-                Top Selling Products
-              </h2>
-            </div>
-            <div>
-              <PieChartOne className="items-center relative top-0 left-0" />
-            </div>
-          </div>
-        </div>
+        <Graph />
         <StockAlert />
       </Layout>
     );
