@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { DataAmount } from "@/types";
 
