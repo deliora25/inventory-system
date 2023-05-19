@@ -26,21 +26,29 @@
     {
       "name": "Revenue",
       "value": 30000,
+      "pv": 2000,
+      "uv": 1500,
       "id": 1
     },
     {
       "name": "Income",
       "value": 31000,
+      "pv": 2200,
+      "uv": 2500,
       "id": 2
     },
     {
       "name": "Purchase",
       "value": 32000,
+      "pv": 2700,
+      "uv": 2300,
       "id": 3
     },
     {
       "name": "Sales Return",
       "value": 33000,
+      "pv": 3000,
+      "uv": 1200,
       "id": 4
     }
   ],

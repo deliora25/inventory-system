@@ -1,3 +1,4 @@
+import BarGraph from "@/components/barGraph/BarGraph";
 import DataCard from "@/components/dataCard/DataCard";
 import DataCardList from "@/components/dataCard/DataCardList";
 import Layout from "@/components/layout/Layout";
@@ -23,7 +24,9 @@ const Home: NextPage = (): JSX.Element => {
         <DataCardList />
 
         <div className="flex  gap-5 mb-8">
-          <div className="grid col-2 w-2/3 bg-white h-64 shadow-sm rounded"></div>
+          <div className="grid col-2 w-2/3 bg-white h-64 shadow-sm rounded">
+            <BarGraph />
+          </div>
           <div className="grid col-1 w-1/3 bg-white h-64 shadow-sm rounded"></div>
         </div>
         <StockAlert />
