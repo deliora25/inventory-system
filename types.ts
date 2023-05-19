@@ -26,3 +26,9 @@ export type StockAlert = {
 export type StockAlertList = {
   item: StockAlert[];
 };
+
+export type DataAmount = {
+  name: string;
+  value: number;
+  id: number;
+};

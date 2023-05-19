@@ -1,19 +1,25 @@
+import { useEffect, useState } from "react";
 import DataCard from "./DataCard";
+import { DataAmount } from "@/types";
+
 function DataCardList() {
+  const [data, setData] = useState<DataAmount[]>([]);
+  useEffect(() => {
+    fetch("http://localhost:4000/dataAmount")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((error) => console.log(error.message));
+  }, []);
+
   return (
     <div className="grid lg:grid-cols-4 gap-5 mb-8">
-      <div className="rounded bg-white h-32 shadow-sm">
-        <DataCard title="Sales Return" url="salesReturn" />
-      </div>
-      <div className="rounded bg-white h-32 shadow-sm">
-        <DataCard title="Purchase" url="purchase" />
-      </div>
-      <div className="rounded bg-white h-32 shadow-sm">
-        <DataCard title="Income" url="income" />
-      </div>
-      <div className="rounded bg-white h-32 shadow-sm">
-        <DataCard title="Revenue" url="revenue" />
-      </div>
+      {data.map((item: any) => {
+        return (
+          <div key={item.id} className="rounded bg-white h-32 shadow-sm">
+            <DataCard item={item} />
+          </div>
+        );
+      })}
     </div>
   );
 }

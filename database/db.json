@@ -22,10 +22,29 @@
       "id": 3
     }
   ],
-  "revenue": [30000],
-  "salesReturn": [31000],
-  "purchase": [32000],
-  "income": [33000],
+  "dataAmount": [
+    {
+      "name": "Revenue",
+      "value": 30000,
+      "id": 1
+    },
+    {
+      "name": "Income",
+      "value": 31000,
+      "id": 2
+    },
+    {
+      "name": "Purchase",
+      "value": 32000,
+      "id": 3
+    },
+    {
+      "name": "Sales Return",
+      "value": 33000,
+      "id": 4
+    }
+  ],
+
   "stockalert": [
     {
       "orderId": "order ID 1",
@@ -50,15 +69,6 @@
       "alertAmount": "Alert amt. 3",
       "status": "Status 3",
       "id": 3
-    }
-  ],
-  "titles": [
-    {
-      "orderId": "Order ID",
-      "date": "Date",
-      "quantity": "Quantity",
-      "alertAmount": "Alert Amt.",
-      "status": "Status"
     }
   ]
 }
