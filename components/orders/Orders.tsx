@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 
 function Orders() {
   return (
-    <div className="w-full h-screen bg-white p-4">
+    <div className="w-full h-screen bg-white p-">
       <div className="grid grid-cols-2">
         <h2 className="col-span-1">Orders</h2>
         <div className="col-span 1">
