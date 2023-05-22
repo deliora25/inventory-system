@@ -44,7 +44,7 @@ function PureComponent({ className }: Props) {
       .then((data) => setData(data))
       .catch((error) => console.log(error.message));
   }, []);
-  // console.log(data);
+
   return (
     <ResponsiveContainer width="100%" height="100%" className={className}>
       <PieChart width={400} height={400}>
