@@ -12,6 +12,13 @@ type Props = {
 
 const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const router = useRouter();
+  const isHomeRoute = router.pathname === "/";
+
+  const sidebarButtonClass = `sidebar-button ${
+    isHomeRoute
+      ? "bg-primary text-slate-300 hover:bg-blue-400"
+      : "bg-blue-400 hover:bg-primary hover:text-slate-300"
+  }`;
 
   return (
     <div ref={ref} className="fixed w-56 h-full bg-white shadow-sm ">
@@ -19,13 +26,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
         <h2 className="w-32 h-auto">HOME</h2>
       </div>
       <Link href="/dashboard">
-        <div
-          className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
-            router.pathname == "/"
-              ? "bg-primary text-slate-300"
-              : "bg-blue-400 hover:bg-primary hover:text-slate-300"
-          }`}
-        >
+        <div className={sidebarButtonClass}>
           <div className="mr-2">
             <DashboardIcon className="h-5 w-5" />
           </div>
@@ -34,14 +35,8 @@ const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
           </div>
         </div>
       </Link>
-      <Link href="/">
-        <div
-          className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
-            router.pathname == "/"
-              ? "bg-primary text-slate-300"
-              : "bg-blue-400 hover:bg-primary hover:text-slate-300"
-          }`}
-        >
+      <Link href="/profile">
+        <div className={sidebarButtonClass}>
           <div className="mr-2">
             <UserIcon className="h-5 w-5" />
           </div>
@@ -51,14 +46,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
         </div>
       </Link>
 
-      <div
-        className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
-          router.pathname == "/"
-            ? "bg-primary text-slate-300"
-            : "bg-blue-400 hover:bg-primary hover:text-slate-300"
-        }`}
-        onClick={() => signOut()}
-      >
+      <div className={sidebarButtonClass} onClick={() => signOut()}>
         <div className="mr-2">
           <PowerSettingsNewIcon className="h-5 w-5" />
         </div>

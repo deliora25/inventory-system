@@ -6,17 +6,8 @@
   .input {
     @apply w-full h-7 rounded-md bg-white px-5 py-3.5 outline-none border border-solid;
   }
-
-  .sideBar-closed {
-    @apply mx-2 my-4 cursor-pointer hover:border hover:border-solid hover:rounded-md text-xs font-light;
-  }
-
-  .sideBar-open {
-    @apply mx-2 my-4 cursor-pointer hover:border hover:border-solid hover:rounded-md text-lg;
-  }
-
-  .burgerMenu {
-    @apply mx-2 block visible  cursor-pointer hover:border hover:border-solid hover:border-black hover:rounded-md;
+  .sidebar-button {
+    @apply pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors;
   }
 }
 
