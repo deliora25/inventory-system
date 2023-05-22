@@ -1,6 +1,3 @@
-import BarGraph from "@/components/graph/BarGraph";
-import PieChartOne from "@/components/graph/PieChartOne";
-import DataCard from "@/components/dataCard/DataCard";
 import DataCardList from "@/components/dataCard/DataCardList";
 import Layout from "@/components/layout/Layout";
 import StockAlert from "@/components/stockAlert/StockAlert";

@@ -44,7 +44,7 @@ function PureComponent({ className }: Props) {
       .then((data) => setData(data))
       .catch((error) => console.log(error.message));
   }, []);
-
+  // console.log(data);
   return (
     <ResponsiveContainer width="100%" height="100%" className={className}>
       <PieChart width={400} height={400}>
@@ -59,7 +59,7 @@ function PureComponent({ className }: Props) {
           dataKey="value"
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            <Cell key={entry.id} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
       </PieChart>

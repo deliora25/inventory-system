@@ -42,3 +42,13 @@ export type PieChartInput = {
   percent: number;
   index: number;
 };
+
+export type OrderItem = {
+  orderId: string;
+  customer: string;
+  date: string;
+  salesChannel: string;
+  destination: string;
+  items: number;
+  status: string;
+};

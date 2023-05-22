@@ -60,7 +60,11 @@
       "quantity": "Quantity 1",
       "alertAmount": "Alert amt. 1",
       "status": "Status 1",
-      "id": 1
+      "id": 1,
+      "customer": "Customer 1",
+      "salesChannel": "Sales Channel 1",
+      "destination": "Destination 1",
+      "items": 3
     },
     {
       "orderId": "order ID 2",
@@ -68,7 +72,11 @@
       "quantity": "Quantity 2",
       "alertAmount": "Alert amt. 2",
       "status": "Status 2",
-      "id": 2
+      "id": 2,
+      "customer": "Customer 2",
+      "salesChannel": "Sales Channel 2",
+      "destination": "Destination 2",
+      "items": 3
     },
     {
       "orderId": "order ID 3",
@@ -76,7 +84,11 @@
       "quantity": "Quantity 3",
       "alertAmount": "Alert amt. 3",
       "status": "Status 3",
-      "id": 3
+      "id": 3,
+      "customer": "Customer 3",
+      "salesChannel": "Sales Channel 3",
+      "destination": "Destination 3",
+      "items": 3
     }
   ]
 }
