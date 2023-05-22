@@ -16,7 +16,7 @@ function Graph() {
             </h2>
           </div>
           <div className="flex-1">
-            <PieChartOne className="items-center relative" />
+            <PieChartOne className="items-center relative h-fulll w-full" />
           </div>
         </div>
       </div>
