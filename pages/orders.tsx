@@ -1,13 +1,14 @@
 import Layout from "@/components/layout/Layout";
 import Orders from "@/components/orders/Orders";
 import { OrderItem } from "@/types";
+import { NextPage } from "next";
 import React from "react";
 
 type Props = {
   data: OrderItem;
 };
 
-function orders({ data }: Props) {
+function OrdersPage({ data }: Props) {
   console.log(data);
 
   return (
@@ -17,7 +18,7 @@ function orders({ data }: Props) {
   );
 }
 
-export default orders;
+export default OrdersPage;
 
 export async function getStaticProps() {
   const response = await fetch("http://localhost:4000/stockalert");

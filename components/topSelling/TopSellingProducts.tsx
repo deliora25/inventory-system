@@ -17,9 +17,11 @@ function TopSellingProducts({ data }: Props) {
         <div className=" bg-transparent m-2 p-8 md:items-center w-full sm:m-0 sm:p-0 overflow-x-auto">
           <table className="table-auto w-full">
             <thead>
-              <th className="font-semibold px-6 py-1">Order ID</th>
-              <th className="font-semibold px-6 py-1">Quantity</th>
-              <th className="font-semibold px-6 py-1">Alert Amt.</th>
+              <tr>
+                <th className="font-semibold px-6 py-1">Order ID</th>
+                <th className="font-semibold px-6 py-1">Quantity</th>
+                <th className="font-semibold px-6 py-1">Alert Amt.</th>
+              </tr>
             </thead>
             <tbody>
               {data.map((item) => {

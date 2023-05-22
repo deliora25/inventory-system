@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DataCard from "./DataCard";
 import { DataAmount } from "@/types";
+import axios from "axios";
 
 function DataCardList() {
   const [data, setData] = useState<DataAmount[]>([]);
