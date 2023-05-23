@@ -25,7 +25,7 @@ const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
       <div className="flex justify-center mt-6 mb-14">
         <h2 className="w-32 h-auto">HOME</h2>
       </div>
-      <Link href="/dashboard">
+      <Link href="/">
         <div className={sidebarButtonClass}>
           <div className="mr-2">
             <DashboardIcon className="h-5 w-5" />

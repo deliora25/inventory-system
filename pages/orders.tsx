@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import Orders from "@/components/orders/Orders";
 import { OrderItemType } from "@/types";
-import { NextPage } from "next";
 import React from "react";
 
 type Props = {
