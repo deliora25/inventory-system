@@ -5,13 +5,17 @@ import axios from "axios";
 
 function DataCardList() {
   const [data, setData] = useState<DataAmount[]>([]);
+
   useEffect(() => {
-    fetch("http://localhost:4000/dataAmount")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((error) => console.log(error.message));
+    const getDataAmount = async () => {
+      const response = await axios.get("http://localhost:4000/dataAmount");
+      setData(response.data);
+    };
+
+    getDataAmount();
   }, []);
 
+  console.log(data);
   return (
     <div className="grid lg:grid-cols-4 md:flex-col gap-5 mb-8">
       {data.map((item: any) => {
