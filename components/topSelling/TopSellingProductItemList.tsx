@@ -1,12 +1,12 @@
-import React from "react";
 import TopSellingProductItem from "./TopSellingProductItem";
+
 import { StockAlert } from "@/types";
 
 type Props = {
   data: StockAlert[];
 };
 
-function TopSellingProductItems({ data }: Props) {
+function TopSellingProductItemList({ data }: Props) {
   return (
     <div className="h-auto relative flex flex-col">
       <div className=" bg-transparent m-2 p-8 md:items-center w-full sm:m-0 sm:p-0 overflow-x-auto">
@@ -29,4 +29,4 @@ function TopSellingProductItems({ data }: Props) {
   );
 }
 
-export default TopSellingProductItems;
+export default TopSellingProductItemList;
