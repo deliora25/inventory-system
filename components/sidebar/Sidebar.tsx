@@ -35,6 +35,16 @@ const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
           </div>
         </div>
       </Link>
+      <Link href="/orders">
+        <div className={sidebarButtonClass}>
+          <div className="mr-2">
+            <DashboardIcon className="h-5 w-5" />
+          </div>
+          <div>
+            <p>Orders</p>
+          </div>
+        </div>
+      </Link>
       <Link href="/profile">
         <div className={sidebarButtonClass}>
           <div className="mr-2">

@@ -43,7 +43,7 @@ export type PieChartInput = {
   index: number;
 };
 
-export type OrderItem = {
+export type OrderItemType = {
   orderId: string;
   customer: string;
   date: string;
@@ -51,4 +51,5 @@ export type OrderItem = {
   destination: string;
   items: number;
   status: string;
+  id: number;
 };
