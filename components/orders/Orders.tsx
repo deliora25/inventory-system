@@ -1,8 +1,14 @@
 import React from "react";
 
 import Button from "@mui/material/Button";
+import { OrderItem } from "@/types";
 
-function Orders() {
+type Props = {
+  data: OrderItem;
+};
+
+function Orders({ data }: Props) {
+  console.log(data);
   return (
     <div className="w-full h-screen bg-white p-">
       <div className="grid grid-cols-2 py-4 px-2 ">
@@ -43,6 +49,11 @@ function Orders() {
           />
         </div>
         <div className="cols-span-1">test</div>
+      </div>
+      <div className="grid grid-cols-7 gap-2 justify-items-center">
+        {Array.from(Array(7).keys()).map((item) => {
+          return <div key={item}>test</div>;
+        })}
       </div>
     </div>
   );

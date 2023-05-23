@@ -13,7 +13,7 @@ function OrdersPage({ data }: Props) {
 
   return (
     <Layout>
-      <Orders />
+      <Orders data={data} />
     </Layout>
   );
 }
