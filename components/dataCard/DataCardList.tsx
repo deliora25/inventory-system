@@ -66,7 +66,6 @@ function DataCardList() {
             : "Error! No data!"}
         </Alert>
       </Snackbar>
-      ;
     </div>
   );
 }
