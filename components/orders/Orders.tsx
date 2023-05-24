@@ -3,19 +3,29 @@ import OrdersButton from "./OrdersButton";
 
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Button from "@mui/material/Button";
 
 import { OrderItemType } from "@/types";
+import { useState } from "react";
 
 type Props = {
   data: OrderItemType[];
 };
 
 function Orders({ data }: Props) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked((prev) => !prev);
+  };
+  console.log(isClicked);
+
   return (
     <div className="w-full h-full bg-white p-">
-      <div className="grid grid-cols-2 py-4 px-2 ">
+      <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
         <div className="col-span-1 w-full">
-          <h2 className="grid font-semibold text-lg h-full text-center">
+          <h2 className="grid font-semibold text-lg h-full text-center items-center">
             ORDERS
           </h2>
         </div>
@@ -33,27 +43,54 @@ function Orders({ data }: Props) {
             className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light h-8 pl-2"
           />
         </div>
-        <div className="cols-span-1 flex flex-grid w-full gap-5">
-          <div className="h-fit w-fit border rounded-md ">
-            <DateRangeIcon className="items-center justify-center h-6 w-6 m-1" />
+        <div className="cols-span-1 flex w-full gap-5 justify-end md:pr-[20%] sm:flex-grid">
+          <div className="h-fit w-fit border rounded-md">
+            <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
           </div>
           <div className="h-fit w-fit border rounded-md flex items-center">
-            <h2 className="items-center justify-center h-6 w-auto m-1">
-              Sales
-            </h2>
-            <KeyboardArrowDownIcon />
+            <Button
+              className="h-7 w-auto m-1 font-semibold text-lg text-black"
+              onClick={() => handleClick()}
+            >
+              <div className="flex">
+                <p className="text-sm">Sales</p>
+                {isClicked ? (
+                  <KeyboardArrowUpIcon className="h-5" />
+                ) : (
+                  <KeyboardArrowDownIcon className="h-5" />
+                )}
+              </div>
+            </Button>
           </div>
           <div className="h-fit w-fit border rounded-md flex items-center">
-            <h2 className="items-center justify-center h-6 w-auto m-1">
-              Status
-            </h2>
-            <KeyboardArrowDownIcon />
+            <Button
+              className="h-7 w-auto m-1 font-semibold text-lg text-black"
+              onClick={() => handleClick()}
+            >
+              <div className="flex">
+                <p className="text-sm">Status</p>
+                {isClicked ? (
+                  <KeyboardArrowUpIcon className="h-5" />
+                ) : (
+                  <KeyboardArrowDownIcon className="h-5" />
+                )}
+              </div>
+            </Button>
           </div>
           <div className="h-fit w-fit border rounded-md flex items-center">
-            <h2 className="items-center justify-center h-6 w-auto m-1">
-              Filter
-            </h2>
-            <KeyboardArrowDownIcon />
+            <Button
+              className="h-7 w-auto m-1 font-semibold text-lg text-black"
+              onClick={() => handleClick()}
+            >
+              <div className="flex">
+                <p className="text-sm">Filter</p>
+                {isClicked ? (
+                  <KeyboardArrowUpIcon className="h-5" />
+                ) : (
+                  <KeyboardArrowDownIcon className="h-5" />
+                )}
+              </div>
+            </Button>
           </div>
         </div>
       </div>
