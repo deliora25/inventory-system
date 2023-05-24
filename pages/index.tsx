@@ -8,7 +8,7 @@ import Router from "next/router";
 import { useEffect } from "react";
 import Graph from "@/components/graph/Graph";
 
-const Home: NextPage = (): JSX.Element => {
+const Home: NextPage = ({ graphData }: any): JSX.Element => {
   const { status, data } = useSession();
   const session = useSession();
 
@@ -20,8 +20,8 @@ const Home: NextPage = (): JSX.Element => {
   if (status === "authenticated")
     return (
       <Layout>
-        <DataCardList />
-        <Graph />
+        <DataCardList data={graphData} />
+        <Graph data={graphData} />
         <StockAlert />
       </Layout>
     );
@@ -30,3 +30,14 @@ const Home: NextPage = (): JSX.Element => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const graphResponse = await fetch("http:localhost:4000/dataAmount");
+  const graphData = await graphResponse.json();
+
+  return {
+    props: {
+      graphData,
+    },
+  };
+}

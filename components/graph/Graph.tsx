@@ -1,12 +1,17 @@
 import React from "react";
 import BarGraph from "./BarGraph";
 import PieChartOne from "./PieChartOne";
+import { DataAmount } from "@/types";
 
-function Graph() {
+type Props = {
+  data: DataAmount[];
+};
+
+function Graph({ data }: Props) {
   return (
     <div className="grid grid-cols-3  gap-5 mb-8">
       <div className=" col-span-3 md:col-span-2  bg-white h-64 shadow-sm rounded">
-        <BarGraph />
+        <BarGraph data={data} />
       </div>
       <div className=" col-span-3 md:col-span-1 bg-white h-64 shadow-sm rounded">
         <div className="flex flex-col h-full">
@@ -16,7 +21,10 @@ function Graph() {
             </h2>
           </div>
           <div className="flex-1">
-            <PieChartOne className="items-center relative h-fulll w-full" />
+            <PieChartOne
+              className="items-center relative h-fulll w-full"
+              data={data}
+            />
           </div>
         </div>
       </div>

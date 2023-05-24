@@ -12,8 +12,11 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-function DataCardList() {
-  const [data, setData] = useState<DataAmount[]>([]);
+type Props = {
+  data: DataAmount[];
+};
+
+function DataCardList({ data }: Props) {
   const [open, setOpen] = useState(false);
 
   const handleClose = (
@@ -28,24 +31,11 @@ function DataCardList() {
   };
 
   useEffect(() => {
-    const getDataAmount = async () => {
-      try {
-        const response = await axios.get("http://localhost:4000/dataAmount");
-        if (response && response.data) {
-          setData(response.data);
-          setOpen(true);
-        } else {
-          setOpen(true);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    getDataAmount();
+    if (data) {
+      setOpen(true);
+    }
   }, []);
 
-  console.log(data);
   return (
     <div className="grid lg:grid-cols-4 md:flex-col gap-5 mb-8">
       {data.map((item: any) => {

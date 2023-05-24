@@ -14,26 +14,10 @@ import {
 } from "recharts";
 
 type Props = {
-  item: DataAmount;
+  data: DataAmount[];
 };
 
-function BarGraph() {
-  const [data, setData] = useState<DataAmount[]>([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get("http://localhost:4000/dataAmount");
-        if (response && response.data) {
-          setData(response.data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
-  });
-
+function BarGraph({ data }: Props) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart

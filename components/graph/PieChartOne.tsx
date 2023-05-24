@@ -5,6 +5,7 @@ import axios from "axios";
 
 type Props = {
   className?: string;
+  data: DataAmount[];
 };
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
@@ -36,23 +37,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-function PureComponent({ className }: Props) {
-  const [data, setData] = useState<DataAmount[]>([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get("http://localhost:4000/dataAmount");
-        if (response && response.data) {
-          setData(response.data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
-  }, []);
-
+function PureComponent({ className, data }: Props) {
   return (
     <ResponsiveContainer className={className}>
       <PieChart width={400} height={400}>
