@@ -6,20 +6,24 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Button from "@mui/material/Button";
 
-import { OrderItemType } from "@/types";
+import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
 import { useState } from "react";
 
 type Props = {
   data: OrderItemType[];
+  salesData: SalesDataType[];
+  statusData: StatusDataType[];
 };
 
-function Orders({ data }: Props) {
+function Orders({ data, salesData, statusData }: Props) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
     setIsClicked((prev) => !prev);
   };
-  console.log(isClicked);
+
+  console.log(salesData);
+  console.log(statusData);
 
   return (
     <div className="w-full h-full bg-white p-">
@@ -62,7 +66,7 @@ function Orders({ data }: Props) {
               </div>
             </Button>
           </div>
-          <div className="h-fit w-fit border rounded-md flex items-center">
+          {/* <div className="h-fit w-fit border rounded-md flex items-center">
             <Button
               className="h-7 w-auto m-1 font-semibold text-lg text-black"
               onClick={() => handleClick()}
@@ -91,7 +95,7 @@ function Orders({ data }: Props) {
                 )}
               </div>
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
       <OrderItemList data={data} />

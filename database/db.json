@@ -90,5 +90,36 @@
       "destination": "Destination 3",
       "items": 3
     }
+  ],
+  "statusList": [
+    {
+      "name": "Pending",
+      "bgColor": "#BCE784",
+      "id": 1
+    },
+    {
+      "name": "Success",
+      "bgColor": "#52B788",
+      "id": 2
+    },
+    {
+      "name": "Cancelled",
+      "bgColor": "#ff000a",
+      "id": 3
+    }
+  ],
+  "salesList": [
+    {
+      "name": "Main Branch",
+      "id": 1
+    },
+    {
+      "name": "Secondary Branch",
+      "id": 2
+    },
+    {
+      "name": "Online Sales",
+      "id": 3
+    }
   ]
 }

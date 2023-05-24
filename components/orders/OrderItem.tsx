@@ -8,7 +8,6 @@ type Props = {
 function OrderItem({ item }: Props) {
   const { orderId, date, customer, salesChannel, destination, items, status } =
     item;
-  console.log(orderId);
 
   return (
     <tr className="text-center font-light text-sm md:text-md sm:text-md">

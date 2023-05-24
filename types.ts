@@ -53,3 +53,14 @@ export type OrderItemType = {
   status: string;
   id: number;
 };
+
+export type SalesDataType = {
+  name: string;
+  id: number;
+};
+
+export type StatusDataType = {
+  name: string;
+  bgColor: string;
+  id: number;
+};
