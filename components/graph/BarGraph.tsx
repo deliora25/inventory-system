@@ -1,4 +1,5 @@
 import { DataAmount } from "@/types";
+import axios from "axios";
 import React, { PureComponent, useState, useEffect } from "react";
 import {
   BarChart,
@@ -20,10 +21,17 @@ function BarGraph() {
   const [data, setData] = useState<DataAmount[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/dataAmount")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((error) => console.log(error.message));
+    const getData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/dataAmount");
+        if (response && response.data) {
+          setData(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
   });
 
   return (

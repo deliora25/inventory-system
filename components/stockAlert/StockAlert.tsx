@@ -3,15 +3,23 @@ import React, { useEffect, useState } from "react";
 import { StockAlert } from "@/types";
 import TopSellingProducts from "../topSelling/TopSellingProducts";
 import StockAlertItems from "./StockAlertItems";
+import axios from "axios";
 
 function StockAlert() {
   const [data, setData] = useState<StockAlert[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/stockalert/")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((error) => console.log(error.message));
+    const getData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/stockalert");
+        if (response && response.data) {
+          setData(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
   }, []);
 
   return (

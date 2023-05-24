@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { DataAmount, PieChartInput } from "@/types";
+import axios from "axios";
 
 type Props = {
   className?: string;
@@ -39,10 +40,17 @@ function PureComponent({ className }: Props) {
   const [data, setData] = useState<DataAmount[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/dataAmount")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((error) => console.log(error.message));
+    const getData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/dataAmount");
+        if (response && response.data) {
+          setData(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
   }, []);
 
   return (
