@@ -1,6 +1,9 @@
 import OrderItemList from "./OrderItemList";
 import OrdersButton from "./OrdersButton";
 
+import DateRangeIcon from "@mui/icons-material/DateRange";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 import { OrderItemType } from "@/types";
 
 type Props = {
@@ -26,11 +29,33 @@ function Orders({ data }: Props) {
         <div className="cols-span-1 pl-10">
           <input
             type="text"
-            placeholder="Search order ID"
-            className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light"
+            placeholder="Search Order ID"
+            className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light h-8 pl-2"
           />
         </div>
-        <div className="cols-span-1">test</div>
+        <div className="cols-span-1 flex flex-grid w-full gap-5">
+          <div className="h-fit w-fit border rounded-md ">
+            <DateRangeIcon className="items-center justify-center h-6 w-6 m-1" />
+          </div>
+          <div className="h-fit w-fit border rounded-md flex items-center">
+            <h2 className="items-center justify-center h-6 w-auto m-1">
+              Sales
+            </h2>
+            <KeyboardArrowDownIcon />
+          </div>
+          <div className="h-fit w-fit border rounded-md flex items-center">
+            <h2 className="items-center justify-center h-6 w-auto m-1">
+              Status
+            </h2>
+            <KeyboardArrowDownIcon />
+          </div>
+          <div className="h-fit w-fit border rounded-md flex items-center">
+            <h2 className="items-center justify-center h-6 w-auto m-1">
+              Filter
+            </h2>
+            <KeyboardArrowDownIcon />
+          </div>
+        </div>
       </div>
       <OrderItemList data={data} />
     </div>
