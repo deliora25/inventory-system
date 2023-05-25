@@ -5,6 +5,7 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 
 import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
 import SalesDropdown from "./dropdowns/sales/SalesDropdown";
+import StatusDropdown from "./dropdowns/status/StatusDropdown";
 
 type Props = {
   data: OrderItemType[];
@@ -41,36 +42,7 @@ function Orders({ data, salesData, statusData }: Props) {
           </div>
           <SalesDropdown salesData={salesData} />
 
-          {/* <div className="h-fit w-fit border rounded-md flex items-center">
-            <Button
-              className="h-7 w-auto m-1 font-semibold text-lg text-black"
-              onClick={() => handleClick()}
-            >
-              <div className="flex">
-                <p className="text-sm">Status</p>
-                {isClicked ? (
-                  <KeyboardArrowUpIcon className="h-5" />
-                ) : (
-                  <KeyboardArrowDownIcon className="h-5" />
-                )}
-              </div>
-            </Button>
-          </div>
-          <div className="h-fit w-fit border rounded-md flex items-center">
-            <Button
-              className="h-7 w-auto m-1 font-semibold text-lg text-black"
-              onClick={() => handleClick()}
-            >
-              <div className="flex">
-                <p className="text-sm">Filter</p>
-                {isClicked ? (
-                  <KeyboardArrowUpIcon className="h-5" />
-                ) : (
-                  <KeyboardArrowDownIcon className="h-5" />
-                )}
-              </div>
-            </Button>
-          </div> */}
+          <StatusDropdown statusData={statusData} />
         </div>
       </div>
       <OrderItemList data={data} />

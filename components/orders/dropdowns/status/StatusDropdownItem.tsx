@@ -1,13 +1,13 @@
-import { SalesDataType } from "@/types";
+import { StatusDataType } from "@/types";
 import React from "react";
 
 type Props = {
-  salesData: SalesDataType[];
+  statusData: StatusDataType[];
 };
-function SalesDropdownItem({ salesData }: Props) {
+function StatusDropdownItem({ statusData }: Props) {
   return (
     <div className="w-full bg-slate-50 rounded-md border-slate-300 border-2 p-1">
-      {salesData.map((item) => (
+      {statusData.map((item) => (
         <div
           key={item.id}
           className="flex flex-col w-full bg-transparent rounded-md px-2 col-span-1 cursor-pointer hover:bg-primary hover:text-white  font-md "
@@ -19,4 +19,4 @@ function SalesDropdownItem({ salesData }: Props) {
   );
 }
 
-export default SalesDropdownItem;
+export default StatusDropdownItem;
