@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { SalesDataType } from "@/types";
 import SalesDropdownItem from "./SalesDropdownItem";
 
