@@ -5,9 +5,17 @@ type Props = {
   item: OrderItemType;
 };
 
-function OrderItem({ item }: Props) {
-  const { orderId, date, customer, salesChannel, destination, items, status } =
-    item;
+function StockItem({ item }: Props) {
+  const {
+    orderId,
+    date,
+    product,
+    salesChannel,
+    category,
+    instruction,
+    items,
+    status,
+  } = item;
   console.log(orderId);
 
   return (
@@ -17,9 +25,10 @@ function OrderItem({ item }: Props) {
         {orderId}
       </td>
       <td className="py-2 px-2 border-y-2 text-md ">{date}</td>
-      <td className="py-2 px-2 border-y-2 text-md ">{customer}</td>
+      <td className="py-2 px-2 border-y-2 text-md ">{product}</td>
+      <td className="py-2 px-2 border-y-2 text-md ">{category}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{salesChannel}</td>
-      <td className="py-2 px-2 border-y-2 text-md ">{destination}</td>
+      <td className="py-2 px-2 border-y-2 text-md ">{instruction}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{items}</td>
       <td className="py-2 px-2 border-y-2 text-md ">
         <div className="rounded-full border bg-green-400">{status}</div>
@@ -28,4 +37,4 @@ function OrderItem({ item }: Props) {
   );
 }
 
-export default OrderItem;
+export default StockItem;

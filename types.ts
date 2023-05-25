@@ -52,6 +52,9 @@ export type OrderItemType = {
   items: number;
   status: string;
   id: number;
+  product: string;
+  category: string;
+  instruction: string;
 };
 
 export type SalesDataType = {

@@ -64,7 +64,10 @@
       "customer": "Customer 1",
       "salesChannel": "Sales Channel 1",
       "destination": "Destination 1",
-      "items": 3
+      "items": 3,
+      "product": "Product 1",
+      "category": "Category 1",
+      "instruction": "Instruction 1"
     },
     {
       "orderId": "order ID 2",
@@ -76,7 +79,10 @@
       "customer": "Customer 2",
       "salesChannel": "Sales Channel 2",
       "destination": "Destination 2",
-      "items": 3
+      "items": 3,
+      "product": "Product 2",
+      "category": "Category 2",
+      "instruction": "Instruction 2"
     },
     {
       "orderId": "order ID 3",
@@ -88,7 +94,10 @@
       "customer": "Customer 3",
       "salesChannel": "Sales Channel 3",
       "destination": "Destination 3",
-      "items": 3
+      "items": 3,
+      "product": "Product 3",
+      "category": "Category 3",
+      "instruction": "Instruction 3"
     }
   ],
   "statusList": [
