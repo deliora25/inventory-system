@@ -1,11 +1,14 @@
-import OrderItemList from "./OrderItemList";
-import OrdersButton from "./OrdersButton";
-
+//icons
 import DateRangeIcon from "@mui/icons-material/DateRange";
 
+//types
 import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
+
+//components
 import SalesDropdown from "./dropdowns/sales/SalesDropdown";
 import StatusDropdown from "./dropdowns/status/StatusDropdown";
+import OrderItemList from "./OrderItemList";
+import OrdersButton from "./OrdersButton";
 
 type Props = {
   data: OrderItemType[];

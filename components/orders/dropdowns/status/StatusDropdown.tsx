@@ -1,7 +1,5 @@
-import { Button } from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { useState } from "react";
+import { Menu } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { StatusDataType } from "@/types";
 import StatusDropdownItem from "./StatusDropdownItem";
 
@@ -9,31 +7,20 @@ type Props = {
   statusData: StatusDataType[];
 };
 
-function StatusDropdown({ statusData }: Props) {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked((prev) => !prev);
-  };
-
+export default function StatusDropdown({ statusData }: Props) {
   return (
-    <div className="h-fit w-fit border rounded-md items-center flex flex-col">
-      <Button
-        className="h-7 w-full px-9 m-1 font-semibold text-lg text-black"
-        onClick={() => handleClick()}
-      >
-        <div className="flex">
-          <p className="text-sm">Status</p>
-          {isClicked ? (
-            <KeyboardArrowUpIcon className="h-5" />
-          ) : (
-            <KeyboardArrowDownIcon className="h-5" />
-          )}
-        </div>
-      </Button>
-      {isClicked && <StatusDropdownItem statusData={statusData} />}
-    </div>
+    <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+          Status
+          <ChevronDownIcon
+            className="-mr-1 h-5 w-5 text-gray-400"
+            aria-hidden="true"
+          />
+        </Menu.Button>
+      </div>
+
+      <StatusDropdownItem statusData={statusData} />
+    </Menu>
   );
 }
-
-export default StatusDropdown;
