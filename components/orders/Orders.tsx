@@ -2,12 +2,9 @@ import OrderItemList from "./OrderItemList";
 import OrdersButton from "./OrdersButton";
 
 import DateRangeIcon from "@mui/icons-material/DateRange";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Button from "@mui/material/Button";
 
 import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
-import { useState } from "react";
+import SalesDropdown from "./dropdowns/sales/SalesDropdown";
 
 type Props = {
   data: OrderItemType[];
@@ -16,14 +13,6 @@ type Props = {
 };
 
 function Orders({ data, salesData, statusData }: Props) {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked((prev) => !prev);
-  };
-
-  console.log(salesData);
-
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -50,33 +39,7 @@ function Orders({ data, salesData, statusData }: Props) {
           <div className="h-fit w-fit border rounded-md">
             <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
           </div>
-          <div className="h-fit w-fit border rounded-md items-center flex flex-col">
-            <Button
-              className="h-7 w-fit px-9 m-1 font-semibold text-lg text-black"
-              onClick={() => handleClick()}
-            >
-              <div className="flex">
-                <p className="text-sm">Sales</p>
-                {isClicked ? (
-                  <KeyboardArrowUpIcon className="h-5" />
-                ) : (
-                  <KeyboardArrowDownIcon className="h-5" />
-                )}
-              </div>
-            </Button>
-            {isClicked && (
-              <div className="w-auto bg-slate-50 rounded-md fixed border-slate-300 border-2 p-1">
-                {salesData.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex flex-col w-full bg-transparent rounded-md px-2 col-span-1 cursor-pointer hover:bg-primary hover:text-white hover:border-l-2 font-md "
-                  >
-                    {item.name}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+          <SalesDropdown salesData={salesData} />
 
           {/* <div className="h-fit w-fit border rounded-md flex items-center">
             <Button
