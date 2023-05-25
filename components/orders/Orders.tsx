@@ -23,7 +23,6 @@ function Orders({ data, salesData, statusData }: Props) {
   };
 
   console.log(salesData);
-  console.log(statusData);
 
   return (
     <div className="w-full h-full bg-white p-">
@@ -51,9 +50,9 @@ function Orders({ data, salesData, statusData }: Props) {
           <div className="h-fit w-fit border rounded-md">
             <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
           </div>
-          <div className="h-fit w-fit border rounded-md flex items-center">
+          <div className="h-fit w-fit border rounded-md items-center flex flex-col">
             <Button
-              className="h-7 w-auto m-1 font-semibold text-lg text-black"
+              className="h-7 w-fit px-9 m-1 font-semibold text-lg text-black"
               onClick={() => handleClick()}
             >
               <div className="flex">
@@ -65,7 +64,20 @@ function Orders({ data, salesData, statusData }: Props) {
                 )}
               </div>
             </Button>
+            {isClicked && (
+              <div className="w-auto bg-slate-50 rounded-md fixed border-slate-300 border-2 p-1">
+                {salesData.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex flex-col w-full bg-transparent rounded-md px-2 col-span-1 cursor-pointer hover:bg-primary hover:text-white hover:border-l-2 font-md "
+                  >
+                    {item.name}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
+
           {/* <div className="h-fit w-fit border rounded-md flex items-center">
             <Button
               className="h-7 w-auto m-1 font-semibold text-lg text-black"

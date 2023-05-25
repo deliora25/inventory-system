@@ -34,7 +34,7 @@ export default Home;
 export async function getStaticProps() {
   const graphResponse = await fetch("http:localhost:4000/dataAmount");
   const graphData = await graphResponse.json();
-
+  console.log(graphData);
   return {
     props: {
       graphData,
