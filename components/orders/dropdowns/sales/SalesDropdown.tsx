@@ -1,7 +1,7 @@
 import { Menu } from "@headlessui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { SalesDataType } from "@/types";
-import SalesDropdownItem from "./SalesDropdownItem";
+import SalesDropdownItem from "./SalesDropdownItems";
 
 type Props = {
   salesData: SalesDataType[];
