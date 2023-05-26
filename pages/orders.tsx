@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import Orders from "@/components/orders/Orders";
 import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
+import axios from "axios";
 import React from "react";
 
 type Props = {
@@ -20,14 +21,14 @@ function OrdersPage({ data, salesData, statusData }: Props) {
 export default OrdersPage;
 
 export async function getStaticProps() {
-  const response = await fetch("http://localhost:4000/stockalert");
-  const data = await response.json();
+  const response = await axios.get("http://localhost:4000/stockalert");
+  const data = response.data;
 
-  const salesList = await fetch("http://localhost:4000/salesList");
-  const salesData = await salesList.json();
+  const salesList = await axios.get("http://localhost:4000/salesList");
+  const salesData = salesList.data;
 
-  const statusList = await fetch("http://localhost:4000/statusList");
-  const statusData = await statusList.json();
+  const statusList = await axios.get("http://localhost:4000/statusList");
+  const statusData = statusList.data;
 
   return {
     props: {

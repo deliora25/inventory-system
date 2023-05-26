@@ -28,7 +28,6 @@ function InStock({ data, statusData }: Props) {
         </div>
       </div>
 
-      {/* to do dropdowns*/}
       <div className="grid grid-cols-2 w-full my-10">
         <div className="cols-span-1 pl-10">
           <input
