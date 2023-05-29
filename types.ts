@@ -69,7 +69,7 @@ export type StatusDataType = {
 };
 
 export type ProductType = {
-  product: string;
+  name: string;
   category: string;
   date: string;
   quantity: string;
@@ -77,6 +77,6 @@ export type ProductType = {
 };
 
 export type ProductsType = {
-  product: ProductType[];
+  name: ProductType[];
   id: number;
 };

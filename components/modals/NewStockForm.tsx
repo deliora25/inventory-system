@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ProductsType } from "@/types";
-import ProductItem from "./ProductItem";
+import { ProductType, ProductsType } from "@/types";
 import Product from "./Product";
+import CategoryItem from "./CategoryItem";
 
 export default function NewStockModal() {
-  const [category, setCategory] = useState(false);
-  const [data, setData] = useState<ProductsType[]>([]);
+  const [data, setData] = useState<ProductType[]>([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -16,7 +15,6 @@ export default function NewStockModal() {
     };
     getData();
   }, []);
-  console.log(data);
 
   return (
     <form>
@@ -31,16 +29,7 @@ export default function NewStockModal() {
                 Category
               </label>
               <div className="mt-2">
-                <select
-                  id="category"
-                  name="category"
-                  autoComplete="category-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                >
-                  <option>Category 1</option>
-                  <option>Category 2</option>
-                  <option>Category 3</option>
-                </select>
+                <CategoryItem data={data} />
               </div>
             </div>
           </div>

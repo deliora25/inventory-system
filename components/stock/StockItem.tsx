@@ -16,7 +16,6 @@ function StockItem({ item }: Props) {
     items,
     status,
   } = item;
-  console.log(orderId);
 
   return (
     <tr className="text-center font-light">

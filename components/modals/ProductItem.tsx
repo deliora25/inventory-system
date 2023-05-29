@@ -6,8 +6,9 @@ type Props = {
 };
 
 function ProductItem({ item }: Props) {
-  const { product } = item;
-  return <div>{product}</div>;
+  const { name } = item;
+
+  return <option>{name}</option>;
 }
 
 export default ProductItem;
