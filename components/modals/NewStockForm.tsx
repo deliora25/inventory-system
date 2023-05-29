@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { ProductsType } from "@/types";
+import ProductItem from "./ProductItem";
 import Product from "./Product";
-type Props = {
-  title: string;
-};
 
-export default function NewStockModal({ title }: Props) {
+export default function NewStockModal() {
   const [category, setCategory] = useState(false);
+  const [data, setData] = useState<ProductsType[]>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get("http://localhost:4000/stock");
+      const data = response.data;
+      setData(data);
+    };
+    getData();
+  }, []);
+  console.log(data);
 
   return (
     <form>
@@ -36,9 +47,13 @@ export default function NewStockModal({ title }: Props) {
         </div>
       </div>
 
-      <Product />
-      <Product />
-      <Product />
+      {data.map((item) => {
+        return (
+          <div key={item.id}>
+            <Product item={item} />
+          </div>
+        );
+      })}
     </form>
   );
 }

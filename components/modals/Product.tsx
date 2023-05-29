@@ -1,6 +1,10 @@
-import React from "react";
+import { ProductType } from "@/types";
 
-function Product() {
+type Props = {
+  item: ProductType[];
+};
+
+function Product({ item }: Props) {
   return (
     <div className="border-b border-gray-900/10 pb-2  col-span-4 ">
       <div className="mt-2 grid sm:flex gap-x-6 gap-y-8   w-full">

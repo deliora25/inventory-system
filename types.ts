@@ -67,3 +67,16 @@ export type StatusDataType = {
   bgColor: string;
   id: number;
 };
+
+export type ProductType = {
+  product: string;
+  category: string;
+  date: string;
+  quantity: string;
+  id: number;
+};
+
+export type ProductsType = {
+  product: ProductType[];
+  id: number;
+};
