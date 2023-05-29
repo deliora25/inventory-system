@@ -130,5 +130,28 @@
       "name": "Online Sales",
       "id": 3
     }
+  ],
+  "stock": [
+    {
+      "name": "Product 1",
+      "category": "Category 1",
+      "quantity": "Quantity 1",
+      "date": "Date 1",
+      "id": 1
+    },
+    {
+      "name": "Product 2",
+      "category": "Category 2",
+      "quantity": "Quantity 2",
+      "date": "Date 2",
+      "id": 2
+    },
+    {
+      "name": "Product 3",
+      "category": "Category 3",
+      "quantity": "Quantity 3",
+      "date": "Date 3",
+      "id": 3
+    }
   ]
 }
