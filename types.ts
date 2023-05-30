@@ -43,16 +43,21 @@ export type PieChartInput = {
   index: number;
 };
 
+export type ItemsType = {
+  product: string;
+  quantity: string;
+  itemsId: number;
+};
+
 export type OrderItemType = {
   orderId: string;
   customer: string;
   date: string;
   salesChannel: string;
   destination: string;
-  items: number;
+  items: ItemsType[];
   status: string;
   id: number;
-  product: string;
   category: string;
   instruction: string;
 };
