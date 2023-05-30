@@ -1,4 +1,4 @@
-import { StockAlert } from "@/types";
+import { ItemsType, StockAlert } from "@/types";
 import React from "react";
 import StockAlertItem from "./StockAlertItem";
 

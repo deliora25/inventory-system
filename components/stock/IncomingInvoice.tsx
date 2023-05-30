@@ -20,7 +20,7 @@ function InStock({ data, statusData }: Props) {
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
         <div className="col-span-1 w-full">
           <h2 className="grid font-semibold text-lg h-full text-left items-center md:ml-10 sm:ml-2">
-            IN STOCK
+            INCOMING INVOICE
           </h2>
         </div>
         <div className="col-span 1 justify-items-end grid">

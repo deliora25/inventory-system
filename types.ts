@@ -17,7 +17,8 @@ export type UserOnLogin = {
 export type StockAlert = {
   orderId: string;
   date: string;
-  quantity: string;
+  quantity: number;
+  items: ItemsType[];
   alertAmount: string;
   status: string;
   id: number;
@@ -45,7 +46,7 @@ export type PieChartInput = {
 
 export type ItemsType = {
   product: string;
-  quantity: string;
+  quantity: number;
   itemsId: number;
 };
 
@@ -77,7 +78,7 @@ export type ProductType = {
   name: string;
   category: string;
   date: string;
-  quantity: string;
+  quantity: number;
   id: number;
 };
 

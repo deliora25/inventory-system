@@ -64,9 +64,9 @@
       "salesChannel": "Sales Channel 1",
       "destination": "Destination 1",
       "items": [
-        { "product": "Product 1", "quantity": "Quantity 1", "itemsId": 1 },
-        { "product": "Product 2", "quantity": "Quantity 2", "itemsId": 2 },
-        { "product": "Product 3", "quantity": "Quantity 3", "itemsId": 3 }
+        { "product": "Product 1", "quantity": 10, "itemsId": 1 },
+        { "product": "Product 2", "quantity": 20, "itemsId": 2 },
+        { "product": "Product 3", "quantity": 30, "itemsId": 3 }
       ],
       "category": "Category 1",
       "instruction": "Instruction 1"
@@ -81,9 +81,9 @@
       "salesChannel": "Sales Channel 2",
       "destination": "Destination 2",
       "items": [
-        { "product": "Product 1", "quantity": "Quantity 1", "itemsId": 1 },
-        { "product": "Product 2", "quantity": "Quantity 2", "itemsId": 2 },
-        { "product": "Product 3", "quantity": "Quantity 3", "itemsId": 3 }
+        { "product": "Product 1", "quantity": 10, "itemsId": 1 },
+        { "product": "Product 2", "quantity": 20, "itemsId": 2 },
+        { "product": "Product 3", "quantity": 30, "itemsId": 3 }
       ],
       "category": "Category 2",
       "instruction": "Instruction 2"
@@ -98,9 +98,9 @@
       "salesChannel": "Sales Channel 3",
       "destination": "Destination 3",
       "items": [
-        { "product": "Product 1", "quantity": "Quantity 1", "itemsId": 1 },
-        { "product": "Product 2", "quantity": "Quantity 2", "itemsId": 2 },
-        { "product": "Product 3", "quantity": "Quantity 3", "itemsId": 3 }
+        { "product": "Product 1", "quantity": 10, "itemsId": 1 },
+        { "product": "Product 2", "quantity": 20, "itemsId": 2 },
+        { "product": "Product 3", "quantity": 30, "itemsId": 3 }
       ],
       "category": "Category 3",
       "instruction": "Instruction 3"

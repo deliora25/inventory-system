@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import InStock from "@/components/stock/InStock";
+import InStock from "@/components/stock/IncomingInvoice";
 import { StatusDataType, StockType } from "@/types";
 import axios from "axios";
 import React from "react";
