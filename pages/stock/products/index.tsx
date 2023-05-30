@@ -1,11 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { ProductListType } from "@/types";
 import axios from "axios";
-import type {
-  GetStaticPropsContext,
-  GetStaticPaths,
-  GetStaticProps,
-} from "next";
+import type { GetStaticPropsContext } from "next";
 
 type Props = {
   data: ProductListType[];
@@ -52,23 +48,3 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     },
   };
 }
-
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       {
-//         params: { productId: "1" },
-//       },
-//       {
-//         params: { productId: "2" },
-//       },
-//       {
-//         params: { productId: "3" },
-//       },
-//       {
-//         params: { productId: "4" },
-//       },
-//     ],
-//     fallback: false,
-//   };
-// }

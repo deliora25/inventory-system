@@ -57,45 +57,51 @@
     {
       "orderId": "order ID 1",
       "date": "Date 1",
-      "quantity": "Quantity 1",
       "alertAmount": "Alert amt. 1",
       "status": "Status 1",
       "id": 1,
       "customer": "Customer 1",
       "salesChannel": "Sales Channel 1",
       "destination": "Destination 1",
-      "items": 3,
-      "product": "Product 1",
+      "items": [
+        { "product": "Product 1", "quantity": "Quantity 1", "itemsId": 1 },
+        { "product": "Product 2", "quantity": "Quantity 2", "itemsId": 2 },
+        { "product": "Product 3", "quantity": "Quantity 3", "itemsId": 3 }
+      ],
       "category": "Category 1",
       "instruction": "Instruction 1"
     },
     {
       "orderId": "order ID 2",
       "date": "Date 2",
-      "quantity": "Quantity 2",
       "alertAmount": "Alert amt. 2",
       "status": "Status 2",
       "id": 2,
       "customer": "Customer 2",
       "salesChannel": "Sales Channel 2",
       "destination": "Destination 2",
-      "items": 3,
-      "product": "Product 2",
+      "items": [
+        { "product": "Product 1", "quantity": "Quantity 1", "itemsId": 1 },
+        { "product": "Product 2", "quantity": "Quantity 2", "itemsId": 2 },
+        { "product": "Product 3", "quantity": "Quantity 3", "itemsId": 3 }
+      ],
       "category": "Category 2",
       "instruction": "Instruction 2"
     },
     {
       "orderId": "order ID 3",
       "date": "Date 3",
-      "quantity": "Quantity 3",
       "alertAmount": "Alert amt. 3",
       "status": "Status 3",
       "id": 3,
       "customer": "Customer 3",
       "salesChannel": "Sales Channel 3",
       "destination": "Destination 3",
-      "items": 3,
-      "product": "Product 3",
+      "items": [
+        { "product": "Product 1", "quantity": "Quantity 1", "itemsId": 1 },
+        { "product": "Product 2", "quantity": "Quantity 2", "itemsId": 2 },
+        { "product": "Product 3", "quantity": "Quantity 3", "itemsId": 3 }
+      ],
       "category": "Category 3",
       "instruction": "Instruction 3"
     }

@@ -15,6 +15,7 @@ type Props = {
 };
 
 function InStock({ data, statusData }: Props) {
+  console.log(data);
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">

@@ -10,6 +10,7 @@ type Props = {
 };
 
 function Stock({ data, statusData }: Props) {
+  console.log(data);
   return (
     <Layout>
       <InStock data={data} statusData={statusData} />
