@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import ProductItem from "@/components/product/ProductItem";
 import { ProductListType } from "@/types";
 import axios from "axios";
 import type { GetStaticPropsContext } from "next";
@@ -16,19 +17,7 @@ export default function ProductList({ data }: Props) {
 
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {data.map((item) => (
-              <a key={item.id} href={item.href} className="group">
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                  <img
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    className="h-full w-full object-cover object-center group-hover:opacity-75"
-                  />
-                </div>
-                <h3 className="mt-4 text-sm text-gray-700">{item.name}</h3>
-                <p className="mt-1 text-lg font-medium text-gray-900">
-                  {item.price}
-                </p>
-              </a>
+              <ProductItem key={item.id} item={item} />
             ))}
           </div>
         </div>
