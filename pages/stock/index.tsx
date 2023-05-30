@@ -1,16 +1,15 @@
 import Layout from "@/components/layout/Layout";
 import InStock from "@/components/stock/InStock";
-import { OrderItemType, StatusDataType } from "@/types";
+import { StatusDataType, StockType } from "@/types";
 import axios from "axios";
 import React from "react";
 
 type Props = {
-  data: OrderItemType[];
+  data: StockType[];
   statusData: StatusDataType[];
 };
 
 function Stock({ data, statusData }: Props) {
-  console.log(data);
   return (
     <Layout>
       <InStock data={data} statusData={statusData} />
@@ -21,7 +20,7 @@ function Stock({ data, statusData }: Props) {
 export default Stock;
 
 export async function getStaticProps() {
-  const response = await axios.get("http://localhost:4000/stockalert");
+  const response = await axios.get("http://localhost:4000/stock");
   const data = response.data;
 
   const statusList = await axios.get("http://localhost:4000/statusList");

@@ -94,3 +94,17 @@ export type ProductListType = {
   imageSrc: string;
   imageAlt: string;
 };
+
+export type StockType = {
+  orderId: string;
+  customer: string;
+  date: string;
+  salesChannel: string;
+  destination: string;
+  items: string;
+  name: string;
+  status: string;
+  id: number;
+  category: string;
+  instruction: string;
+};

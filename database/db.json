@@ -144,7 +144,11 @@
       "quantity": "Quantity 1",
       "orderId": "Order ID 1",
       "date": "Date 1",
-      "id": 1
+      "items": "Item 1",
+      "id": 1,
+      "salesChannel": "Sales Channel 1",
+      "instruction": "Instruction 1",
+      "status": "Status 1"
     },
     {
       "name": "Product 2",
@@ -152,7 +156,11 @@
       "quantity": "Quantity 2",
       "orderId": "Order ID 2",
       "date": "Date 2",
-      "id": 2
+      "items": "Item 2",
+      "id": 2,
+      "salesChannel": "Sales Channel 2",
+      "instruction": "Instruction 2",
+      "status": "Status 2"
     },
     {
       "name": "Product 3",
@@ -160,7 +168,11 @@
       "quantity": "Quantity 3",
       "date": "Date 3",
       "orderId": "Order ID 3",
-      "id": 3
+      "items": "Item 3",
+      "id": 3,
+      "salesChannel": "Sales Channel 3",
+      "instruction": "Instruction 3",
+      "status": "Status 3"
     }
   ],
   "products": [

@@ -2,7 +2,7 @@
 import DateRangeIcon from "@mui/icons-material/DateRange";
 
 //types
-import { OrderItemType, StatusDataType } from "@/types";
+import { StatusDataType, StockType } from "@/types";
 
 //components
 import StatusDropdown from "../orders/dropdowns/status/StatusDropdown";
@@ -10,12 +10,11 @@ import StockButton from "./StockButton";
 import StockItemList from "./StockItemList";
 
 type Props = {
-  data: OrderItemType[];
+  data: StockType[];
   statusData: StatusDataType[];
 };
 
 function InStock({ data, statusData }: Props) {
-  console.log(data);
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
