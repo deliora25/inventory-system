@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import ProductList from "@/components/product/ProductList";
 import { ProductListType } from "@/types";
 import axios from "axios";
 
@@ -6,7 +7,7 @@ type Props = {
   data: ProductListType[];
 };
 
-export default function ProductList({ data }: Props) {
+export default function ProductPage({ data }: Props) {
   return (
     <Layout>
       <ProductList data={data} />
@@ -15,7 +16,7 @@ export default function ProductList({ data }: Props) {
 }
 
 export async function getStaticProps() {
-  const response = await axios.get("http://localhost:4000/products");
+  const response = await axios.get("http://localhost:4000/stock");
   const data = response.data;
 
   return {

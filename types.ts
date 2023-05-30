@@ -92,8 +92,8 @@ export type ProductListType = {
   name: string;
   href: string;
   price: string;
-  imageSrc: string;
-  imageAlt: string;
+  category: string;
+  quantity: string;
 };
 
 export type StockType = {

@@ -1,21 +1,60 @@
-//icons
-import DateRangeIcon from "@mui/icons-material/DateRange";
-
 //types
-import { ProductListType, StatusDataType } from "@/types";
+import { ProductListType } from "@/types";
 
 //components
-import StatusDropdown from "../orders/dropdowns/status/StatusDropdown";
 import { Button } from "@mui/material";
 import ProductItemList from "./ProductItemList";
+import { useState } from "react";
 
 type Props = {
   data: ProductListType[];
-  statusData: StatusDataType[];
 };
 
-function ProductList({ data, statusData }: Props) {
-  return <div className="w-full h-full bg-white p-">test</div>;
+function ProductList({ data }: Props) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+  return (
+    <div className="w-full h-full bg-white p-2">
+      <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
+        <div className="col-span-1 w-full">
+          <h2 className="grid font-semibold text-lg h-full text-left items-center md:ml-10 sm:ml-2">
+            PRODUCT LIST
+          </h2>
+        </div>
+        <div className="sm:col-span 1 justify-items-center grid ">
+          <div className=" justify-center  md:flex-col grid grid-cols-2 gap-5">
+            <Button
+              onClick={handleClick}
+              variant="outlined"
+              className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500 "
+            >
+              {!isClicked ? "Edit" : "Save"}
+            </Button>
+            <Button
+              variant="outlined"
+              className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500 "
+            >
+              + New Product
+            </Button>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 w-full my-10">
+        <div className="cols-span-1 pl-10">
+          <input
+            type="text"
+            placeholder="Search Product"
+            className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light h-8 pl-2"
+          />
+        </div>
+      </div>
+      <ProductItemList data={data} isClicked={isClicked} />
+    </div>
+  );
 }
 
 export default ProductList;
