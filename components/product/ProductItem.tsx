@@ -1,26 +1,39 @@
 import { ProductListType } from "@/types";
-import Link from "next/link";
-import React from "react";
 
 type Props = {
   item: ProductListType;
+  isClicked: boolean;
 };
 
-function ProductItem({ item }: Props) {
+function ProductItem({ item, isClicked }: Props) {
+  const { name, category, quantity } = item;
+
   return (
-    <div>
-      <Link href={item.href} className="group">
-        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-          <img
-            src={item.imageSrc}
-            alt={item.imageAlt}
-            className="h-full w-full object-cover object-center group-hover:opacity-75"
+    <tr className="text-center font-light">
+      <td className="py-2 px-2 border-y-2 text-md border-r-2">
+        {!isClicked ? (
+          `${name}`
+        ) : (
+          <input
+            type="text"
+            placeholder="Product"
+            className="font-thin items-center text-center"
           />
-        </div>
-        <h3 className="mt-4 text-sm text-gray-700">{item.name}</h3>
-        <p className="mt-1 text-lg font-medium text-gray-900">{item.price}</p>
-      </Link>
-    </div>
+        )}
+      </td>
+      <td className="py-2 px-2 border-y-2 text-md border-r-2">
+        {!isClicked ? (
+          `${category}`
+        ) : (
+          <input
+            type="text"
+            placeholder="Category"
+            className="font-thin items-center text-center"
+          />
+        )}
+      </td>
+      <td className="py-2 px-2 border-y-2 text-md">{quantity}</td>
+    </tr>
   );
 }
 
