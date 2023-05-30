@@ -107,4 +107,5 @@ export type StockType = {
   id: number;
   category: string;
   instruction: string;
+  href: string;
 };

@@ -1,5 +1,6 @@
 import { OrderItemType, StockType } from "@/types";
 import { Checkbox } from "@mui/material";
+import Link from "next/link";
 
 type Props = {
   item: StockType;
@@ -15,15 +16,19 @@ function StockItem({ item }: Props) {
     instruction,
     items,
     status,
+    href,
   } = item;
   return (
     <tr className="text-center font-light">
       <td className="py-2 px-2 border-y-2 text-md ">
         <Checkbox />
-        {orderId}
+        <Link href={href} className="hover:text-slate-400">
+          {orderId}
+        </Link>
       </td>
       <td className="py-2 px-2 border-y-2 text-md ">{date}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{name}</td>
+
       <td className="py-2 px-2 border-y-2 text-md ">{category}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{salesChannel}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{instruction}</td>
