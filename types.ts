@@ -80,3 +80,12 @@ export type ProductsType = {
   name: ProductType[];
   id: number;
 };
+
+export type ProductListType = {
+  id: number;
+  name: string;
+  href: string;
+  price: string;
+  imageSrc: string;
+  imageAlt: string;
+};
