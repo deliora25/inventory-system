@@ -1,18 +1,160 @@
 {
   "users": [
     {
-      "firstName": "Livyathan",
-      "lastName": "Gogo",
+      "firstName": "test",
+      "lastName": "testtest",
       "email": "test123@gmail.com",
-      "password": "terter123",
+      "password": "test123",
       "id": 1
     },
     {
       "firstName": "gabriel",
-      "lastName": "testtest",
-      "email": "gentle_gabriel2002@yahoo.com",
-      "password": "qwerty",
+      "lastName": "Gogo",
+      "email": "test123@gmail.com",
+      "password": "test1234",
       "id": 2
+    },
+    {
+      "firstName": "Livy",
+      "lastName": "Gogo",
+      "email": "test123@gmail.com",
+      "password": "12334555",
+      "id": 3
+    }
+  ],
+  "dataAmount": [
+    {
+      "name": "Revenue",
+      "value": 30000,
+      "pv": 2000,
+      "uv": 1500,
+      "id": 1
+    },
+    {
+      "name": "Income",
+      "value": 31000,
+      "pv": 2200,
+      "uv": 2500,
+      "id": 2
+    },
+    {
+      "name": "Purchase",
+      "value": 32000,
+      "pv": 2700,
+      "uv": 2300,
+      "id": 3
+    },
+    {
+      "name": "Sales Return",
+      "value": 33000,
+      "pv": 3000,
+      "uv": 1200,
+      "id": 4
+    }
+  ],
+
+  "stockalert": [
+    {
+      "orderId": "order ID 1",
+      "date": "Date 1",
+      "quantity": "Quantity 1",
+      "alertAmount": "Alert amt. 1",
+      "status": "Status 1",
+      "id": 1,
+      "customer": "Customer 1",
+      "salesChannel": "Sales Channel 1",
+      "destination": "Destination 1",
+      "items": 3,
+      "product": "Product 1",
+      "category": "Category 1",
+      "instruction": "Instruction 1"
+    },
+    {
+      "orderId": "order ID 2",
+      "date": "Date 2",
+      "quantity": "Quantity 2",
+      "alertAmount": "Alert amt. 2",
+      "status": "Status 2",
+      "id": 2,
+      "customer": "Customer 2",
+      "salesChannel": "Sales Channel 2",
+      "destination": "Destination 2",
+      "items": 3,
+      "product": "Product 2",
+      "category": "Category 2",
+      "instruction": "Instruction 2"
+    },
+    {
+      "orderId": "order ID 3",
+      "date": "Date 3",
+      "quantity": "Quantity 3",
+      "alertAmount": "Alert amt. 3",
+      "status": "Status 3",
+      "id": 3,
+      "customer": "Customer 3",
+      "salesChannel": "Sales Channel 3",
+      "destination": "Destination 3",
+      "items": 3,
+      "product": "Product 3",
+      "category": "Category 3",
+      "instruction": "Instruction 3"
+    }
+  ],
+  "statusList": [
+    {
+      "name": "Pending",
+      "bgColor": "#BCE784",
+      "id": 1
+    },
+    {
+      "name": "Success",
+      "bgColor": "#52B788",
+      "id": 2
+    },
+    {
+      "name": "Cancelled",
+      "bgColor": "#ff000a",
+      "id": 3
+    }
+  ],
+  "salesList": [
+    {
+      "name": "Main Branch",
+      "id": 1
+    },
+    {
+      "name": "Secondary Branch",
+      "id": 2
+    },
+    {
+      "name": "Online Sales",
+      "id": 3
+    }
+  ],
+  "stock": [
+    {
+      "name": "Product 1",
+      "category": "Category 1",
+      "quantity": "Quantity 1",
+      "orderId": "Order ID 1",
+      "date": "Date 1",
+      "id": 1
+    },
+    {
+      "name": "Product 2",
+      "category": "Category 2",
+      "quantity": "Quantity 2",
+      "orderId": "Order ID 2",
+      "date": "Date 2",
+      "id": 2
+    },
+    {
+      "name": "Product 3",
+      "category": "Category 3",
+      "quantity": "Quantity 3",
+      "date": "Date 3",
+      "orderId": "Order ID 3",
+      "id": 3
     }
   ]
 }

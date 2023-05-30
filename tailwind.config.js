@@ -6,7 +6,20 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#5f51fe",
+      },
+      height: {
+        118: "7.375rem",
+        931: "58.188rem",
+      },
+      width: {
+        307: "19.188rem",
+        1344: "84rem",
+        1294: "80rem",
+      },
+    },
   },
   plugins: [
     function ({ addVariant }) {

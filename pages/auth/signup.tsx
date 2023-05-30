@@ -14,10 +14,16 @@ import { useRouter } from "next/router";
 //react
 import { useState } from "react";
 
-//types
-import { User } from "../../types";
+// import axios from "axios";
 
-function SignUp() {
+//types
+import { User, Users } from "../../types";
+
+type Props = {
+  data: Users;
+};
+
+function SignUp({ data }: Props) {
   const [user, setUser] = useState<User>({
     firstName: "",
     lastName: "",
@@ -36,22 +42,32 @@ function SignUp() {
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch("http://localhost:4000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        firstName: `${user.firstName}`,
-        lastName: `${user.lastName}`,
-        email: `${user.email}`,
-        password: `${user.password}`,
-      }),
-    })
-      .then((res) => {
-        return res.json();
+
+    if (data) {
+      fetch("http://localhost:4000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: `${user.firstName}`,
+          lastName: `${user.lastName}`,
+          email: `${user.email}`,
+          password: `${user.password}`,
+        }),
       })
-      .then((data) => console.log(data));
+        .then((res) => {
+          return res.json();
+        })
+        .then((y) => console.log(y));
+    }
+    data.find((x: User) => {
+      if (x.email === `${user.email}`) {
+        alert("Email already exists.");
+        router.push("/auth/signup");
+      }
+    });
+    console.log(data);
 
     router.push("/auth/signin");
   };
@@ -167,3 +183,16 @@ function SignUp() {
 }
 
 export default SignUp;
+
+export async function getStaticProps() {
+  const response = await fetch("http://localhost:4000/users").then((res) =>
+    res.json()
+  );
+  const data = response || null;
+
+  return {
+    props: {
+      data,
+    },
+  };
+}

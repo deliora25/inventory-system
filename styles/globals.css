@@ -6,4 +6,13 @@
   .input {
     @apply w-full h-7 rounded-md bg-white px-5 py-3.5 outline-none border border-solid;
   }
+  .sidebar-button {
+    @apply pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100;
+  }
 }

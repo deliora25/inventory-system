@@ -1,18 +1,23 @@
+//mui
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { pink } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 
+//components
 import Google from "../../components/circleIcons/Google";
 import Facebook from "../../components/circleIcons/Facebook";
 import LinkedIn from "../../components/circleIcons/LinkedIn";
 
+//next
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import Router from "next/router";
 
+//react
 import { useState, FormEvent } from "react";
 
+//types
 import { UserOnLogin } from "@/types";
 
 function SignIn() {
@@ -35,7 +40,7 @@ function SignIn() {
       redirect: false,
     });
     if (res.ok) Router.replace("/");
-    console.log(res);
+    console.log(user);
   };
 
   return (
