@@ -87,6 +87,18 @@ export type ProductsType = {
   id: number;
 };
 
+<<<<<<< HEAD
+=======
+export type ProductListType = {
+  id: number;
+  name: string;
+  href: string;
+  price: string;
+  category: string;
+  quantity: string;
+};
+
+>>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
 export type StockType = {
   orderId: string;
   customer: string;
@@ -101,6 +113,7 @@ export type StockType = {
   instruction: string;
   href: string;
 };
+<<<<<<< HEAD
 
 export type ProductDataType = {
   name: string;
@@ -108,3 +121,5 @@ export type ProductDataType = {
   quantity?: number;
   _id: number;
 };
+=======
+>>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c

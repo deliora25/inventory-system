@@ -11,6 +11,15 @@ type Props = {
 };
 
 function ProductList({ data }: Props) {
+<<<<<<< HEAD
+=======
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+>>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
   return (
     <div className="w-full h-full bg-white p-2">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -21,13 +30,22 @@ function ProductList({ data }: Props) {
         </div>
         <div className="sm:col-span 1 justify-items-center grid ">
           <div className=" justify-center  md:flex-col grid grid-cols-2 gap-5">
+<<<<<<< HEAD
             {/* <Button
+=======
+            <Button
+>>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
               onClick={handleClick}
               variant="outlined"
               className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500 "
             >
+<<<<<<< HEAD
               {!isClicked ? "Update" : "Save"}
             </Button> */}
+=======
+              {!isClicked ? "Edit" : "Save"}
+            </Button>
+>>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
             <Button
               variant="outlined"
               className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500 "
@@ -46,7 +64,11 @@ function ProductList({ data }: Props) {
           />
         </div>
       </div>
+<<<<<<< HEAD
       <ProductItemList data={data} />
+=======
+      <ProductItemList data={data} isClicked={isClicked} />
+>>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
     </div>
   );
 }
