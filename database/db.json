@@ -215,46 +215,10 @@
   ],
   "products": [
     {
-      "name": "New Product",
-      "category": "new",
-      "quantity": "40.705621208462595",
-      "id": "1.484352013700183"
-    },
-    {
-      "name": "New Product",
-      "category": "new",
-      "quantity": "71.01723402854165",
-      "id": "0.5183165766459763"
-    },
-    {
-      "name": "test",
-      "category": "test 1",
-      "quantity": "123",
-      "id": "1.331102815133407"
-    },
-    {
-      "name": "test 2",
-      "category": "gaw check",
-      "quantity": "111",
-      "id": "1.7080290046396533"
-    },
-    {
-      "name": "test 2",
-      "category": "gaw check",
-      "quantity": "111",
-      "id": "0.7007875394822385"
-    },
-    {
-      "name": "asdasd",
-      "category": "r123aw",
-      "quantity": "211",
-      "id": "1.2285604289182448"
-    },
-    {
-      "name": "test",
-      "category": "test",
-      "quantity": "11",
-      "id": "1.2347993933566555"
+      "name": "test 6",
+      "category": "test 6",
+      "quantity": "666",
+      "id": "1.9471517407254737"
     }
   ]
 }

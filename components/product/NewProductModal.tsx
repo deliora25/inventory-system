@@ -1,15 +1,13 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import NewProduct from "./NewProduct";
-import { ProductDataListType, ProductDataType } from "@/types";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  data: ProductDataType[];
 };
 
-export default function NewProductModal({ isOpen, onClose, data }: Props) {
+export default function NewProductModal({ isOpen, onClose }: Props) {
   const cancelButtonRef = useRef(null);
 
   return (
@@ -49,15 +47,14 @@ export default function NewProductModal({ isOpen, onClose, data }: Props) {
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left  w-full">
                       <Dialog.Title
                         as="h3"
-                        className="text-base font-semibold leading-6 text-gray-900 pl-6 pb-10"
+                        className="text-base font-semibold leading-6 text-gray-900 pl-6 pb-4"
                       >
                         New Product
                       </Dialog.Title>
-                      <div className="mt-2  flex flex-grid grid-cols-2 gap-10 items-center justify-center">
+                      <div className=" flex flex-grid grid-cols-2 gap-10 items-center justify-center">
                         <NewProduct
                           onClose={onClose}
                           cancelButtonRef={cancelButtonRef}
-                          data={data}
                         />
                       </div>
                     </div>

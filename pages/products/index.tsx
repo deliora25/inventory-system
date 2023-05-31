@@ -1,10 +1,10 @@
 import Layout from "@/components/layout/Layout";
 import ProductList from "@/components/product/ProductList";
-import { ProductListType } from "@/types";
+import { ProductDataType } from "@/types";
 import axios from "axios";
 
 type Props = {
-  data: ProductListType[];
+  data: ProductDataType[];
 };
 
 export default function ProductPage({ data }: Props) {
