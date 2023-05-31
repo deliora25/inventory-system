@@ -1,8 +1,9 @@
-import { Dispatch, Fragment, SetStateAction, useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import ShippingOrderForm from "../modals/ShippingOrderForm";
-import NewProduct from "./UpdateProduct";
-import UpdateProduct from "./UpdateProduct";
+import NewProduct from "./NewProduct";
+import { Button } from "@mui/material";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 type Props = {
   isOpen: boolean;
@@ -10,7 +11,17 @@ type Props = {
 };
 
 export default function NewProductModal({ isOpen, onClose }: Props) {
+  const [productData, setProductData] = useState({});
   const cancelButtonRef = useRef(null);
+  const { id } = useParams();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (id === "new") {
+      await axios.post("http://localhost:4000/products", productData);
+      return;
+    }
+  };
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -43,38 +54,38 @@ export default function NewProductModal({ isOpen, onClose }: Props) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-6xl">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-fit sm:max-w-6xl">
                 <div className=" px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start ">
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left  w-full">
                       <Dialog.Title
                         as="h3"
-                        className="text-base font-semibold leading-6 text-gray-900 pl-6"
+                        className="text-base font-semibold leading-6 text-gray-900 pl-6 pb-10"
                       >
-                        New Order
+                        New Product
                       </Dialog.Title>
-                      <div className="mt-2  flex flex-grid grid-cols-2 gap-10">
-                        <UpdateProduct />
+                      <div className="mt-2  flex flex-grid grid-cols-2 gap-10 items-center justify-center">
+                        <NewProduct />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                  <button
+                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 items-center justify-center">
+                  <Button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-green-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"
-                    onClick={onClose}
+                    className="inline-flex w-full justify-center rounded-md bg-green-800 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"
+                    onClick={handleSubmit}
                   >
                     Confirm
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     type="button"
-                    className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                    className="mt-3 inline-flex  w-full justify-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                     onClick={onClose}
                     ref={cancelButtonRef}
                   >
                     Cancel
-                  </button>
+                  </Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

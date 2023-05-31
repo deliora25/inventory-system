@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { ProductDataType } from "@/types";
 import ProductItem from "./ProductItem";
 
@@ -7,17 +6,6 @@ type Props = {
 };
 
 function ProductItemList({ data }: Props) {
-=======
-import { ProductListType, StockType } from "@/types";
-import ProductItem from "./ProductItem";
-
-type Props = {
-  data: ProductListType[];
-  isClicked: boolean;
-};
-
-function ProductItemList({ data, isClicked }: Props) {
->>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
   return (
     <div className="h-auto pb-5 px-8">
       <div className="w-full bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
@@ -28,24 +16,14 @@ function ProductItemList({ data, isClicked }: Props) {
                 Product Name
               </th>
               <th className="font-semibold px-6 py-1 border-r-2">Category</th>
-<<<<<<< HEAD
               <th className="font-semibold px-6 py-1 border-r-2">Quantity</th>
               <th className="font-semibold px-6 py-1 border-r-2">Update</th>
               <th className="font-semibold px-6 py-1 ">Delete</th>
-=======
-              <th className="font-semibold px-6 py-1">Quantity</th>
->>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
             </tr>
           </thead>
           <tbody>
             {data.map((item) => {
-<<<<<<< HEAD
               return <ProductItem item={item} key={item._id} />;
-=======
-              return (
-                <ProductItem item={item} key={item.id} isClicked={isClicked} />
-              );
->>>>>>> 7953b0441d759d21c85f6a73fcbf3005a57c955c
             })}
           </tbody>
         </table>
