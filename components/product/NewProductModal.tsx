@@ -1,27 +1,16 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import NewProduct from "./NewProduct";
-import { Button } from "@mui/material";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { ProductDataListType, ProductDataType } from "@/types";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
+  data: ProductDataType[];
 };
 
-export default function NewProductModal({ isOpen, onClose }: Props) {
-  const [productData, setProductData] = useState({});
+export default function NewProductModal({ isOpen, onClose, data }: Props) {
   const cancelButtonRef = useRef(null);
-  const { id } = useParams();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (id === "new") {
-      await axios.post("http://localhost:4000/products", productData);
-      return;
-    }
-  };
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -65,27 +54,14 @@ export default function NewProductModal({ isOpen, onClose }: Props) {
                         New Product
                       </Dialog.Title>
                       <div className="mt-2  flex flex-grid grid-cols-2 gap-10 items-center justify-center">
-                        <NewProduct />
+                        <NewProduct
+                          onClose={onClose}
+                          cancelButtonRef={cancelButtonRef}
+                          data={data}
+                        />
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 items-center justify-center">
-                  <Button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-green-800 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"
-                    onClick={handleSubmit}
-                  >
-                    Confirm
-                  </Button>
-                  <Button
-                    type="button"
-                    className="mt-3 inline-flex  w-full justify-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={onClose}
-                    ref={cancelButtonRef}
-                  >
-                    Cancel
-                  </Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

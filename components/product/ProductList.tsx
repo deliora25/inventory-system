@@ -39,7 +39,7 @@ function ProductList({ data }: Props) {
             >
               + New Product
             </Button>
-            <NewProductModal isOpen={isClicked} onClose={onClose} />
+            <NewProductModal isOpen={isClicked} onClose={onClose} data={data} />
           </div>
         </div>
       </div>

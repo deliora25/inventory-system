@@ -23,7 +23,7 @@ function ProductItemList({ data }: Props) {
           </thead>
           <tbody>
             {data.map((item) => {
-              return <ProductItem item={item} key={item._id} />;
+              return <ProductItem item={item} key={item.id} />;
             })}
           </tbody>
         </table>

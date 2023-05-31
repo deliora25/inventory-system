@@ -16,7 +16,7 @@ export default function ProductPage({ data }: Props) {
 }
 
 export async function getStaticProps() {
-  const response = await axios.get("http://localhost:4000/stock");
+  const response = await axios.get("http://localhost:4000/products");
   const data = response.data;
 
   return {

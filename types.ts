@@ -106,5 +106,10 @@ export type ProductDataType = {
   name: string;
   category: string;
   quantity?: number;
-  _id?: number;
+  id?: number;
+};
+
+export type ProductDataListType = {
+  item: ProductDataType[];
+  id: number;
 };
