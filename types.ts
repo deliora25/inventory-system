@@ -103,8 +103,8 @@ export type StockType = {
 };
 
 export type ProductDataType = {
-  name: string;
-  category: string;
-  quantity?: number | string;
+  productName: string;
+  categoryName: string;
+  quantity: number;
   id: number;
 };

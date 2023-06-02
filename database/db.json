@@ -215,34 +215,34 @@
   ],
   "products": [
     {
-      "name": "test 4",
-      "category": "test 4",
+      "productName": "test 3",
+      "categoryName": "test 3",
+      "quantity": "33",
+      "id": 3
+    },
+    {
+      "productName": "test 4",
+      "categoryName": "test 4",
       "quantity": "4",
-      "id": "1111"
+      "id": 4
     },
     {
-      "name": "test 5",
-      "category": "test 5",
+      "productName": "product 5",
+      "categoryName": "category 5",
+      "quantity": "55",
+      "id": 5
+    },
+    {
+      "productName": "test 6",
+      "categoryName": "test 6",
+      "quantity": "66",
+      "id": 6
+    },
+    {
+      "productName": "test 7",
+      "categoryName": "test 6",
       "quantity": "5",
-      "id": "5"
-    },
-    {
-      "name": "test 6",
-      "category": "test 6",
-      "quantity": "6",
-      "id": "6"
-    },
-    {
-      "name": "test 7",
-      "category": "test 7",
-      "quantity": "7",
-      "id": "7"
-    },
-    {
-      "name": "test 8",
-      "category": "test 8",
-      "quantity": "8",
-      "id": "8"
+      "id": 7
     }
   ]
 }

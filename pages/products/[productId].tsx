@@ -8,11 +8,26 @@ import { useState } from "react";
 
 type Props = {
   product: ProductDataType;
+  productsList: ProductDataType[];
 };
 
-function ProductDetail({ product }: Props) {
+function ProductDetail({ product, productsList }: Props) {
+  const [productList, setProductList] = useState(productsList);
+
   const router = useRouter();
   const productId = router.query.productId;
+
+  const handleDelete = async (id: any) => {
+    try {
+      await axios.delete(`http://localhost:4000/products/${id}`);
+      const products = productList.filter((product) => product.id !== id);
+      setProductList(products);
+      router.push("/products");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Layout>
       <h2>test for {productId}</h2>
@@ -26,15 +41,15 @@ function ProductDetail({ product }: Props) {
         </thead>
         <tbody>
           <tr>
-            <td>{product.name}</td>
-            <td>{product.category}</td>
+            <td>{product.productName}</td>
+            <td>{product.categoryName}</td>
             <td>{product.quantity}</td>
           </tr>
         </tbody>
       </table>
 
       <Button>Update</Button>
-      <Button>Delete</Button>
+      <Button onClick={() => handleDelete(product.id)}>Delete</Button>
     </Layout>
   );
 }
@@ -55,11 +70,15 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.productId;
-  const response = await axios.get("http://localhost:4000/products/" + id);
-  const data = await response.data;
+  const product = await axios.get("http://localhost:4000/products/" + id);
+  const data = await product.data;
+
+  const products = await axios.get("http://localhost:4000/products");
+  const productsData = await products.data;
   return {
     props: {
       product: data,
+      productsList: productsData,
     },
   };
 };
