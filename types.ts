@@ -105,11 +105,6 @@ export type StockType = {
 export type ProductDataType = {
   name: string;
   category: string;
-  quantity?: number;
-  id?: number;
-};
-
-export type ProductDataListType = {
-  item: ProductDataType[];
+  quantity?: number | string;
   id: number;
 };

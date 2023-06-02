@@ -215,10 +215,34 @@
   ],
   "products": [
     {
+      "name": "test 4",
+      "category": "test 4",
+      "quantity": "4",
+      "id": "1111"
+    },
+    {
+      "name": "test 5",
+      "category": "test 5",
+      "quantity": "5",
+      "id": "5"
+    },
+    {
       "name": "test 6",
       "category": "test 6",
-      "quantity": "666",
-      "id": "1.9471517407254737"
+      "quantity": "6",
+      "id": "6"
+    },
+    {
+      "name": "test 7",
+      "category": "test 7",
+      "quantity": "7",
+      "id": "7"
+    },
+    {
+      "name": "test 8",
+      "category": "test 8",
+      "quantity": "8",
+      "id": "8"
     }
   ]
 }
