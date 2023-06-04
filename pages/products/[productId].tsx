@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import EditProductModal from "@/components/product/EditProductModal";
 
 import { ProductDataType, ProductType } from "@/types";
 import { Button } from "@mui/material";
@@ -8,26 +9,31 @@ import { useState } from "react";
 
 type Props = {
   product: ProductDataType;
-  productsList: ProductDataType[];
+  productId: number | string;
 };
 
-function ProductDetail({ product, productsList }: Props) {
-  const [productList, setProductList] = useState(productsList);
-
+function ProductDetail({ product, productId }: Props) {
+  console.log("Product detail");
+  const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
-  const productId = router.query.productId;
 
   const handleDelete = async (id: any) => {
     try {
       await axios.delete(`http://localhost:4000/products/${id}`);
-      const products = productList.filter((product) => product.id !== id);
-      setProductList(products);
+
       router.push("/products");
     } catch (error) {
       console.log(error);
     }
   };
 
+  const onClose = () => {
+    setIsClicked(false);
+  };
+
+  const onOpen = () => {
+    setIsClicked(true);
+  };
   return (
     <Layout>
       <h2>test for {productId}</h2>
@@ -48,7 +54,15 @@ function ProductDetail({ product, productsList }: Props) {
         </tbody>
       </table>
 
-      <Button>Update</Button>
+      <Button onClick={onOpen}>Update</Button>
+      {productId && (
+        <EditProductModal
+          onOpen={isClicked}
+          onClose={onClose}
+          product={product}
+        />
+      )}
+
       <Button onClick={() => handleDelete(product.id)}>Delete</Button>
     </Layout>
   );
@@ -58,27 +72,25 @@ export default ProductDetail;
 
 export const getStaticPaths = async () => {
   const response = await axios.get("http://localhost:4000/products");
-  const data = await response.data;
-  //map data to an array of path obhects with params(id)
+  const data = response.data;
+
   const paths = data.map((product: ProductType) => {
     return {
       params: { productId: product.id.toString() },
     };
   });
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.productId;
   const product = await axios.get("http://localhost:4000/products/" + id);
-  const data = await product.data;
+  const data = product.data;
 
-  const products = await axios.get("http://localhost:4000/products");
-  const productsData = await products.data;
   return {
     props: {
       product: data,
-      productsList: productsData,
+      productId: id,
     },
   };
 };
