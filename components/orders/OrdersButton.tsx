@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
-import { useState } from "react";
-import NewOrderModal from "../modals/NewOrderModal";
+import { Button } from '@mui/material';
+import { useState } from 'react';
+import NewOrderModal from '../modals/NewOrderModal';
 
 function OrdersButton() {
   const [openModal, setOpenModal] = useState(false);

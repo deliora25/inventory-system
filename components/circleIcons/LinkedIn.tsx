@@ -1,4 +1,4 @@
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn } from 'react-icons/fa';
 
 type Props = {
   className?: string;

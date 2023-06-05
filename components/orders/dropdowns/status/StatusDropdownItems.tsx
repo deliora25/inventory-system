@@ -1,7 +1,7 @@
-import { StatusDataType } from "@/types";
-import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import StatusDropdownItem from "./StatusDropdownItem";
+import { StatusDataType } from '@/types';
+import { Menu, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
+import StatusDropdownItem from './StatusDropdownItem';
 
 type Props = {
   statusData: StatusDataType[];
@@ -20,9 +20,9 @@ function StatusDropdownItems({ statusData }: Props) {
     >
       <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div className="py-1">
-          {statusData.map((item) => {
-            return <StatusDropdownItem item={item} key={item.id} />;
-          })}
+          {statusData.map((item) => (
+            <StatusDropdownItem item={item} key={item.id} />
+          ))}
         </div>
       </Menu.Items>
     </Transition>

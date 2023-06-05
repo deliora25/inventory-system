@@ -1,10 +1,10 @@
-import Layout from "@/components/layout/Layout";
-import NewProductModal from "@/components/product/NewProductModal";
-import { ProductDataType } from "@/types";
-import { Button } from "@mui/material";
-import axios from "axios";
-import Link from "next/link";
-import { useState } from "react";
+import Layout from '@/components/layout/Layout';
+import NewProductModal from '@/components/product/NewProductModal';
+import { ProductDataType } from '@/types';
+import { Button } from '@mui/material';
+import axios from 'axios';
+import Link from 'next/link';
+import { useState } from 'react';
 
 type Props = {
   products: ProductDataType[];
@@ -12,7 +12,7 @@ type Props = {
 
 export default function ProductPage({ products }: Props) {
   const [isClicked, setIsClicked] = useState(false);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const handleOpen = () => {
     setIsClicked(true);
@@ -49,30 +49,30 @@ export default function ProductPage({ products }: Props) {
           <tbody>
             {products
               .filter((item) => {
-                if (search === "") {
+                if (search === '') {
                   return item;
-                } else if (
+                }
+                if (
                   item.productName
                     .toLocaleLowerCase()
                     .includes(search.toLocaleLowerCase())
                 ) {
                   return item;
                 }
+                return null;
               })
-              .map((item) => {
-                return (
-                  <tr key={item.id}>
-                    <td>
-                      <Link href={"/products/" + item.id}>
-                        {item.productName}
-                      </Link>
-                    </td>
+              .map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <Link href={`/products/${item.id}`}>
+                      {item.productName}
+                    </Link>
+                  </td>
 
-                    <td>{item.categoryName}</td>
-                    <td>{item.quantity}</td>
-                  </tr>
-                );
-              })}
+                  <td>{item.categoryName}</td>
+                  <td>{item.quantity}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
@@ -81,9 +81,9 @@ export default function ProductPage({ products }: Props) {
 }
 
 export async function getStaticProps() {
-  const apiEndPoint = "http://localhost:4000/products";
+  const apiEndPoint = 'http://localhost:4000/products';
   const response = await axios.get(apiEndPoint);
-  const data = response.data;
+  const { data } = response;
 
   return {
     props: {

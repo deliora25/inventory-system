@@ -1,7 +1,6 @@
-import { Fragment, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import NewProductForm from "./NewProductForm";
+import { Fragment, useRef } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import NewProductForm from './NewProductForm';
 
 type Props = {
   onOpen: boolean;

@@ -1,7 +1,7 @@
-import { Menu } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { StatusDataType } from "@/types";
-import StatusDropdownItem from "./StatusDropdownItems";
+import { Menu } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { StatusDataType } from '@/types';
+import StatusDropdownItem from './StatusDropdownItems';
 
 type Props = {
   statusData: StatusDataType[];

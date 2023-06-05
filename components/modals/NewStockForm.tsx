@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { ProductType, ProductsType } from "@/types";
-import Product from "./Product";
-import CategoryItem from "./CategoryItem";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { ProductType } from '@/types';
+import Product from './Product';
+import CategoryItem from './CategoryItem';
 
 export default function NewStockModal() {
   const [data, setData] = useState<ProductType[]>([]);
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://localhost:4000/stock");
-      const data = response.data;
-      setData(data);
+      const response = await axios.get('http://localhost:4000/stock');
+      setData(response.data);
     };
     getData();
   }, []);
@@ -36,13 +35,11 @@ export default function NewStockModal() {
         </div>
       </div>
 
-      {data.map((item) => {
-        return (
-          <div key={item.id}>
-            <Product item={item} />
-          </div>
-        );
-      })}
+      {data.map((item) => (
+        <div key={item.id}>
+          <Product item={item} />
+        </div>
+      ))}
     </form>
   );
 }

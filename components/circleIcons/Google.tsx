@@ -1,4 +1,4 @@
-import GoogleIcon from "@mui/icons-material/Google";
+import GoogleIcon from '@mui/icons-material/Google';
 
 type Props = {
   className?: string;

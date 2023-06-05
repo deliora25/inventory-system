@@ -1,14 +1,14 @@
-//icons
-import DateRangeIcon from "@mui/icons-material/DateRange";
+// icons
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
-//types
-import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
+// types
+import { OrderItemType, SalesDataType, StatusDataType } from '@/types';
 
-//components
-import SalesDropdown from "./dropdowns/sales/SalesDropdown";
-import StatusDropdown from "./dropdowns/status/StatusDropdown";
-import OrderItemList from "./OrderItemList";
-import OrdersButton from "./OrdersButton";
+// components
+import SalesDropdown from './dropdowns/sales/SalesDropdown';
+import StatusDropdown from './dropdowns/status/StatusDropdown';
+import OrderItemList from './OrderItemList';
+import OrdersButton from './OrdersButton';
 
 type Props = {
   data: OrderItemType[];
@@ -29,7 +29,7 @@ function Orders({ data, salesData, statusData }: Props) {
           <OrdersButton />
         </div>
       </div>
-      {/* to do dropdowns*/}
+      {/* to do dropdowns */}
       <div className="grid grid-cols-2 w-full my-10">
         <div className="cols-span-1 pl-10">
           <input

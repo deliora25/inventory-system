@@ -1,8 +1,8 @@
-import { Checkbox } from "@mui/material";
+import { Checkbox } from '@mui/material';
 
-import { StockType } from "@/types";
+import { StockType } from '@/types';
 
-import StockItem from "./StockItem";
+import StockItem from './StockItem';
 
 type Props = {
   data: StockType[];
@@ -29,9 +29,9 @@ function StockItemList({ data }: Props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => {
-              return <StockItem item={item} key={item.id} />;
-            })}
+            {data.map((item) => (
+              <StockItem item={item} key={item.id} />
+            ))}
           </tbody>
         </table>
       </div>

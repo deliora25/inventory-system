@@ -1,7 +1,7 @@
-import { ProductDataType } from "@/types";
-import axios from "axios";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
+import { ProductDataType } from '@/types';
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 
 type Props = {
   onClose: () => void;
@@ -10,8 +10,8 @@ type Props = {
 function NewProductForm({ onClose }: Props) {
   const [productList, setProductList] = useState<ProductDataType[]>([]);
   const [newProduct, setNewProduct] = useState<ProductDataType>({
-    productName: "",
-    categoryName: "",
+    productName: '',
+    categoryName: '',
     quantity: 0,
     id: 0,
   });
@@ -22,11 +22,11 @@ function NewProductForm({ onClose }: Props) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/products");
+        const response = await axios.get('http://localhost:4000/products');
         const data = await response.data;
         setProductList(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     getData();
@@ -34,9 +34,10 @@ function NewProductForm({ onClose }: Props) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setNewProduct((prev) => {
-      return { ...prev, [name]: value };
-    });
+    setNewProduct((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e: React.UIEvent<HTMLFormElement>) => {
@@ -52,15 +53,20 @@ function NewProductForm({ onClose }: Props) {
     };
     try {
       const response = await axios.post(
-        "http://localhost:4000/products",
+        'http://localhost:4000/products',
         newProductItem
       );
       const allProducts = [...productList, response.data];
       setProductList(allProducts);
-      setNewProduct({ productName: "", categoryName: "", quantity: 0, id: 0 });
-      router.push("/products");
+      setNewProduct({
+        productName: '',
+        categoryName: '',
+        quantity: 0,
+        id: 0,
+      });
+      router.push('/products');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

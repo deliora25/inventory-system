@@ -1,9 +1,8 @@
-import TopSellingProductItem from "./TopSellingProductItem";
-
-import { StockAlert } from "@/types";
+import { StockAlertType } from '@/types';
+import TopSellingProductItem from './TopSellingProductItem';
 
 type Props = {
-  data: StockAlert[];
+  data: StockAlertType[];
 };
 
 function TopSellingProductItemList({ data }: Props) {
@@ -19,9 +18,9 @@ function TopSellingProductItemList({ data }: Props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => {
-              return <TopSellingProductItem key={item.id} item={item} />;
-            })}
+            {data.map((item) => (
+              <TopSellingProductItem key={item.id} item={item} />
+            ))}
           </tbody>
         </table>
       </div>

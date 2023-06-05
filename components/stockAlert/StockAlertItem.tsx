@@ -1,8 +1,8 @@
-import { ItemsType, StockAlert } from "@/types";
-import React from "react";
+import { StockAlertType } from '@/types';
+import React from 'react';
 
 type Props = {
-  item: StockAlert;
+  item: StockAlertType;
 };
 
 function StockAlertItem({ item }: Props) {
@@ -12,7 +12,9 @@ function StockAlertItem({ item }: Props) {
     <tr className="font-extralight  text-center">
       <td className="text-center sm:py-0  px-6 py-1">{orderId}</td>
       <td className="text-center sm:py-0  px-6 py-1">{date}</td>
-      <td className="text-center  sm:py-0 px-6 py-1">test</td>
+      <td className="text-center  sm:py-0 px-6 py-1">
+        {items.map((x) => x.product)}
+      </td>
       <td className="text-center sm:py-0  px-6 py-1">{alertAmount}</td>
       <td className="text-center  sm:py-0 px-6 py-1">{status}</td>
     </tr>

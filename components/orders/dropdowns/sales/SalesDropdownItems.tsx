@@ -1,7 +1,7 @@
-import { SalesDataType } from "@/types";
-import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import SalesDropdownItem from "./SalesDropdownItem";
+import { SalesDataType } from '@/types';
+import { Menu, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
+import SalesDropdownItem from './SalesDropdownItem';
 
 type Props = {
   salesData: SalesDataType[];
@@ -20,9 +20,9 @@ function SalesDropdownItems({ salesData }: Props) {
     >
       <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div className="py-1">
-          {salesData.map((item) => {
-            return <SalesDropdownItem item={item} key={item.id} />;
-          })}
+          {salesData.map((item) => (
+            <SalesDropdownItem item={item} key={item.id} />
+          ))}
         </div>
       </Menu.Items>
     </Transition>
