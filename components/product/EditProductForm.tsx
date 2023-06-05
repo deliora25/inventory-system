@@ -1,8 +1,7 @@
 import { ProductDataType } from "@/types";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useRef, useState } from "react";
 
 type Props = {
   onClose: () => void;

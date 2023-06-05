@@ -12,6 +12,7 @@ type Props = {
 
 export default function ProductPage({ products }: Props) {
   const [isClicked, setIsClicked] = useState(false);
+  const [search, setSearch] = useState("");
 
   const handleOpen = () => {
     setIsClicked(true);
@@ -28,6 +29,13 @@ export default function ProductPage({ products }: Props) {
           <Button onClick={handleOpen}>+ New Product</Button>
           <NewProductModal onOpen={isClicked} onClose={onClose} />
         </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Search Product"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
       </div>
       <div>
         <table>
@@ -39,20 +47,32 @@ export default function ProductPage({ products }: Props) {
             </tr>
           </thead>
           <tbody>
-            {products.map((item) => {
-              return (
-                <tr key={item.id}>
-                  <td>
-                    <Link href={"/products/" + item.id}>
-                      {item.productName}
-                    </Link>
-                  </td>
+            {products
+              .filter((item) => {
+                if (search === "") {
+                  return item;
+                } else if (
+                  item.productName
+                    .toLocaleLowerCase()
+                    .includes(search.toLocaleLowerCase())
+                ) {
+                  return item;
+                }
+              })
+              .map((item) => {
+                return (
+                  <tr key={item.id}>
+                    <td>
+                      <Link href={"/products/" + item.id}>
+                        {item.productName}
+                      </Link>
+                    </td>
 
-                  <td>{item.categoryName}</td>
-                  <td>{item.quantity}</td>
-                </tr>
-              );
-            })}
+                    <td>{item.categoryName}</td>
+                    <td>{item.quantity}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>

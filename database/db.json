@@ -215,106 +215,34 @@
   ],
   "products": [
     {
-      "productName": "test 17",
-      "categoryName": "test 17",
-      "id": 17,
-      "quantity": "17"
-    },
-    {
-      "productName": "test 18.5",
-      "categoryName": "test 18.5",
-      "id": 18,
-      "quantity": "18"
-    },
-    {
-      "productName": "test 19.5",
-      "categoryName": "19.5",
-      "id": 19,
-      "quantity": "19"
-    },
-    {
-      "productName": "test 20.5",
-      "categoryName": "category 2020",
-      "id": 20,
-      "quantity": "20"
-    },
-    {
-      "productName": "test 21.5",
-      "categoryName": "category 21.5",
-      "id": 21,
-      "quantity": "021"
-    },
-    {
-      "productName": "test 22",
-      "categoryName": "test 22 ",
-      "quantity": "22",
-      "id": 22
-    },
-    {
-      "productName": "test 23",
-      "categoryName": "test 23",
-      "quantity": "23",
-      "id": 23
-    },
-    {
-      "productName": "test 24",
-      "categoryName": "test24",
-      "quantity": "024",
-      "id": 24
-    },
-    {
-      "productName": "test 25",
-      "categoryName": "test 25",
-      "quantity": "25",
-      "id": 25
-    },
-    {
-      "productName": "test 26",
-      "categoryName": "test 26",
-      "quantity": "26",
-      "id": 26
-    },
-    {
-      "productName": "test 27",
-      "categoryName": "twst 27",
-      "quantity": 0,
-      "id": 27
-    },
-    {
-      "productName": "test 29",
-      "categoryName": "test 29",
-      "quantity": "29",
-      "id": 28
-    },
-    {
-      "productName": "test 30",
-      "categoryName": "test 30",
-      "quantity": "30",
-      "id": 29
-    },
-    {
-      "productName": "test 31",
-      "categoryName": "test 31",
-      "quantity": "31",
+      "productName": "product 2",
+      "categoryName": "category 2",
+      "quantity": "2",
       "id": 30
     },
     {
-      "productName": "test 32",
-      "categoryName": "test 32",
-      "quantity": "32",
+      "productName": "product 3",
+      "categoryName": "category 3",
+      "quantity": "33",
       "id": 31
     },
     {
-      "productName": "test 33",
-      "categoryName": "test 33",
-      "quantity": "33",
+      "productName": "product 4",
+      "categoryName": "category 4",
+      "quantity": "4",
       "id": 32
     },
     {
-      "productName": "test 34.4",
-      "categoryName": "test 34.4",
-      "id": 33,
-      "quantity": 0
+      "productName": "test 123",
+      "categoryName": "category 2",
+      "quantity": "2131",
+      "id": 33
+    },
+    {
+      "productName": "aluminum",
+      "categoryName": "alloy",
+      "quantity": "123",
+      "id": 34
     }
   ]
 }
