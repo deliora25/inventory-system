@@ -23,10 +23,14 @@ export default function ProductPage({ products }: Props) {
   };
   return (
     <Layout>
-      <div>
-        <div className="flex">
-          <h2>PRODUCT LIST</h2>
-          <Button onClick={handleOpen}>+ New Product</Button>
+      <div className="bg-green-300">
+        <div className="flex flex-grid bg-blue-200 col-span-1 sm:col-span-2">
+          <h2 className="sm:col-span-1 w-full h-full text-center ">
+            PRODUCT LIST
+          </h2>
+          <Button className="w-full" onClick={handleOpen}>
+            + New Product
+          </Button>
           <NewProductModal onOpen={isClicked} onClose={onClose} />
         </div>
         <div>

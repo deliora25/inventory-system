@@ -215,10 +215,10 @@
   ],
   "products": [
     {
-      "productName": "product 2",
+      "productName": "product 2.1",
       "categoryName": "category 2",
-      "quantity": "2",
-      "id": 30
+      "id": 30,
+      "quantity": "2"
     },
     {
       "productName": "product 3",
@@ -237,12 +237,6 @@
       "categoryName": "category 2",
       "quantity": "2131",
       "id": 33
-    },
-    {
-      "productName": "aluminum",
-      "categoryName": "alloy",
-      "quantity": "123",
-      "id": 34
     }
   ]
 }
