@@ -1,6 +1,6 @@
-import { OrderItemType, StockType } from "@/types";
-import { Checkbox } from "@mui/material";
-import Link from "next/link";
+import { StockType } from '@/types';
+import { Checkbox } from '@mui/material';
+import Link from 'next/link';
 
 type Props = {
   item: StockType;

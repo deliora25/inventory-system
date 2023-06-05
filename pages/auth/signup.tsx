@@ -1,23 +1,14 @@
-//mui
-import Button from "@mui/material/Button";
+// mui
+import Button from '@mui/material/Button';
 
-//components
-import Google from "../../components/circleIcons/Google";
-import Facebook from "../../components/circleIcons/Facebook";
-import LinkedIn from "../../components/circleIcons/LinkedIn";
-// import Input from "../input/input";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import Google from '../../components/circleIcons/Google';
+import Facebook from '../../components/circleIcons/Facebook';
+import LinkedIn from '../../components/circleIcons/LinkedIn';
 
-//next
-import Link from "next/link";
-import { useRouter } from "next/router";
-
-//react
-import { useState } from "react";
-
-// import axios from "axios";
-
-//types
-import { User, Users } from "../../types";
+import { User, Users } from '../../types';
 
 type Props = {
   data: Users;
@@ -25,29 +16,27 @@ type Props = {
 
 function SignUp({ data }: Props) {
   const [user, setUser] = useState<User>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
   });
 
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    setUser((prevState) => {
-      return { ...prevState, [name]: value };
-    });
+    setUser((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (data) {
-      fetch("http://localhost:4000/users", {
-        method: "POST",
+      fetch('http://localhost:4000/users', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           firstName: `${user.firstName}`,
@@ -55,21 +44,16 @@ function SignUp({ data }: Props) {
           email: `${user.email}`,
           password: `${user.password}`,
         }),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((y) => console.log(y));
+      }).then((res) => res.json());
     }
     data.find((x: User) => {
       if (x.email === `${user.email}`) {
-        alert("Email already exists.");
-        router.push("/auth/signup");
+        alert('Email already exists.');
+        router.push('/auth/signup');
       }
     });
-    console.log(data);
 
-    router.push("/auth/signin");
+    router.push('/auth/signin');
   };
 
   return (
@@ -80,38 +64,6 @@ function SignUp({ data }: Props) {
       >
         <h2 className="text-2xl font-semibold">SIGN UP</h2>
         <div className="space-y-4">
-          {/* <Input
-            title="First Name"
-            value={user.firstName}
-            type="text"
-            className="input"
-            name="firstName"
-            onChange={handleChange}
-          />
-          <Input
-            title="Last Name"
-            value={user.lastName}
-            type="text"
-            className="input"
-            name="lastName"
-            onChange={handleChange}
-          />
-          <Input
-            title="Email"
-            value={user.email}
-            type="email"
-            className="input"
-            name="email"
-            onChange={handleChange}
-          />
-          <Input
-            title="Password"
-            value={user.password}
-            type="password"
-            className="input"
-            name="password"
-            onChange={handleChange}
-          /> */}
           <label className="inline-block w-full">
             <p>First Name</p>
             <input
@@ -185,7 +137,7 @@ function SignUp({ data }: Props) {
 export default SignUp;
 
 export async function getStaticProps() {
-  const response = await fetch("http://localhost:4000/users").then((res) =>
+  const response = await fetch('http://localhost:4000/users').then((res) =>
     res.json()
   );
   const data = response || null;

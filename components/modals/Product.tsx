@@ -1,7 +1,7 @@
-import { ProductType } from "@/types";
-import ProductItem from "./ProductItem";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { ProductType } from '@/types';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import ProductItem from './ProductItem';
 
 type Props = {
   item: ProductType;
@@ -12,9 +12,8 @@ function Product({ item }: Props) {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://localhost:4000/stock");
-      const data = response.data;
-      setData(data);
+      const response = await axios.get('http://localhost:4000/stock');
+      setData(response.data);
     };
     getData();
   }, []);
@@ -37,9 +36,9 @@ function Product({ item }: Props) {
               placeholder="Select Product"
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 pr-10"
             >
-              {data.map((item) => {
-                return <ProductItem key={item.id} item={item} />;
-              })}
+              {data.map((product) => (
+                <ProductItem key={product.id} item={item} />
+              ))}
             </select>
           </div>
         </div>

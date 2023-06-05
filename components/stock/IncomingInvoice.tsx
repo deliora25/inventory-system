@@ -1,13 +1,13 @@
-//icons
-import DateRangeIcon from "@mui/icons-material/DateRange";
+// icons
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
-//types
-import { StatusDataType, StockType } from "@/types";
+// types
+import { StatusDataType, StockType } from '@/types';
 
-//components
-import StatusDropdown from "../orders/dropdowns/status/StatusDropdown";
-import StockButton from "./StockButton";
-import StockItemList from "./StockItemList";
+// components
+import StatusDropdown from '../orders/dropdowns/status/StatusDropdown';
+import StockButton from './StockButton';
+import StockItemList from './StockItemList';
 
 type Props = {
   data: StockType[];

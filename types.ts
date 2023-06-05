@@ -14,7 +14,13 @@ export type UserOnLogin = {
   password: string;
 };
 
-export type StockAlert = {
+export type ItemsType = {
+  product: string;
+  quantity: number;
+  itemsId: number;
+};
+
+export type StockAlertType = {
   orderId: string;
   date: string;
   quantity: number;
@@ -25,7 +31,7 @@ export type StockAlert = {
 };
 
 export type StockAlertList = {
-  item: StockAlert[];
+  item: StockAlertType[];
 };
 
 export type DataAmount = {
@@ -42,12 +48,6 @@ export type PieChartInput = {
   outerRadius: number;
   percent: number;
   index: number;
-};
-
-export type ItemsType = {
-  product: string;
-  quantity: number;
-  itemsId: number;
 };
 
 export type OrderItemType = {

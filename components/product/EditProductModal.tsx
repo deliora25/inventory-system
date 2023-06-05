@@ -1,7 +1,7 @@
-import { Fragment, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import EditProductForm from "./EditProductForm";
-import { ProductDataType } from "@/types";
+import { Fragment, useRef } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { ProductDataType } from '@/types';
+import EditProductForm from './EditProductForm';
 
 type Props = {
   onOpen: boolean;

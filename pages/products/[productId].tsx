@@ -1,11 +1,11 @@
-import Layout from "@/components/layout/Layout";
-import EditProductModal from "@/components/product/EditProductModal";
+import Layout from '@/components/layout/Layout';
+import EditProductModal from '@/components/product/EditProductModal';
 
-import { ProductDataType, ProductType } from "@/types";
-import { Button } from "@mui/material";
-import axios from "axios";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { ProductDataType, ProductType } from '@/types';
+import { Button } from '@mui/material';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 type Props = {
   product: ProductDataType;
@@ -13,7 +13,6 @@ type Props = {
 };
 
 function ProductDetail({ product, productId }: Props) {
-  console.log("Product detail");
   const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
 
@@ -21,9 +20,9 @@ function ProductDetail({ product, productId }: Props) {
     try {
       await axios.delete(`http://localhost:4000/products/${id}`);
 
-      router.push("/products");
+      router.push('/products');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -71,21 +70,24 @@ function ProductDetail({ product, productId }: Props) {
 export default ProductDetail;
 
 export const getStaticPaths = async () => {
-  const response = await axios.get("http://localhost:4000/products");
-  const data = response.data;
+  const response = await axios.get('http://localhost:4000/products');
+  const { data } = response;
 
-  const paths = data.map((product: ProductType) => {
-    return {
-      params: { productId: product.id.toString() },
-    };
-  });
-  return { paths, fallback: "blocking" };
+  const paths = data.map((product: ProductType) => ({
+    params: {
+      productId: product.id.toString(),
+    },
+  }));
+  return {
+    paths,
+    fallback: 'blocking',
+  };
 };
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.productId;
-  const product = await axios.get("http://localhost:4000/products/" + id);
-  const data = product.data;
+  const product = await axios.get(`http://localhost:4000/products/${id}`);
+  const { data } = product;
 
   return {
     props: {

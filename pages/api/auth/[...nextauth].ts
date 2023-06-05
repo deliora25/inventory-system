@@ -1,24 +1,24 @@
-import { UserOnLogin } from "@/types";
-import { NextAuthOptions } from "next-auth";
-import NextAuth from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import axios from "axios";
+import { UserOnLogin } from '@/types';
+import NextAuth, { NextAuthOptions } from 'next-auth';
+
+import CredentialsProvider from 'next-auth/providers/credentials';
+import axios from 'axios';
 
 const authOptions: NextAuthOptions = {
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
   },
   providers: [
     CredentialsProvider({
-      type: "credentials",
+      type: 'credentials',
       credentials: {},
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         const { email, password } = credentials as UserOnLogin;
 
-        //login logic
-        //find user in db
+        // login logic
+        // find user in db
 
-        const response = await axios("http://localhost:4000/users");
+        const response = await axios('http://localhost:4000/users');
         const { data } = response || {};
 
         let user = null;
@@ -29,15 +29,15 @@ const authOptions: NextAuthOptions = {
         });
 
         if (!user) {
-          throw new Error("Please log in or sign up!");
+          throw new Error('Please log in or sign up!');
         }
         return user;
       },
     }),
   ],
   pages: {
-    signIn: "/auth/signin",
-    signOut: "/auth/signout",
+    signIn: '/auth/signin',
+    signOut: '/auth/signout',
   },
 };
 

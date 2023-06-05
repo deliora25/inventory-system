@@ -1,14 +1,12 @@
-import { OrderItemType } from "@/types";
-import { Checkbox } from "@mui/material";
+import { OrderItemType } from '@/types';
+import { Checkbox } from '@mui/material';
 
 type Props = {
   item: OrderItemType;
 };
 
 function OrderItem({ item }: Props) {
-  const { orderId, date, customer, salesChannel, destination, items, status } =
-    item;
-  console.log(items);
+  const { orderId, date, customer, salesChannel, destination, status } = item;
 
   return (
     <tr className="text-center font-light">

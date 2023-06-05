@@ -1,7 +1,7 @@
-import { ProductDataType } from "@/types";
-import axios from "axios";
-import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { ProductDataType } from '@/types';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import React, { useRef, useState } from 'react';
 
 type Props = {
   onClose: () => void;
@@ -20,9 +20,10 @@ function EditProductForm({ onClose, product }: Props) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditProduct((prev) => {
-      return { ...prev, [name]: value };
-    });
+    setEditProduct((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleUpdate = async (id: number | string) => {
@@ -34,20 +35,17 @@ function EditProductForm({ onClose, product }: Props) {
     };
 
     try {
-      const response = await axios.put(
-        `http://localhost:4000/products/${id}`,
-        updateProduct
-      );
+      await axios.put(`http://localhost:4000/products/${id}`, updateProduct);
 
       setEditProduct({
         ...editProduct,
-        productName: "",
-        categoryName: "",
+        productName: '',
+        categoryName: '',
         quantity: updateProduct.quantity,
       });
-      router.push("/products");
+      router.push('/products');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

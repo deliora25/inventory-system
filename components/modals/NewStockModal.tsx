@@ -1,6 +1,7 @@
-import { Dispatch, Fragment, SetStateAction, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import NewStockForm from "./NewStockForm";
+import { Fragment, useRef } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import NewStockForm from './NewStockForm';
+
 type Props = {
   isOpen: boolean;
   onClose: () => void;

@@ -1,8 +1,7 @@
-import { Checkbox } from "@mui/material";
+import { Checkbox } from '@mui/material';
 
-import OrderItem from "./OrderItem";
-
-import { OrderItemType } from "@/types";
+import { OrderItemType } from '@/types';
+import OrderItem from './OrderItem';
 
 type Props = {
   data: OrderItemType[];
@@ -28,9 +27,9 @@ function OrderItemList({ data }: Props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => {
-              return <OrderItem item={item} key={item.id} />;
-            })}
+            {data.map((item) => (
+              <OrderItem item={item} key={item.id} />
+            ))}
           </tbody>
         </table>
       </div>

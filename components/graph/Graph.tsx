@@ -1,7 +1,7 @@
-import React from "react";
-import BarGraph from "./BarGraph";
-import PieChartOne from "./PieChartOne";
-import { DataAmount } from "@/types";
+import React from 'react';
+import { DataAmount } from '@/types';
+import BarGraph from './BarGraph';
+import PieChartOne from './PieChartOne';
 
 type Props = {
   data: DataAmount[];
