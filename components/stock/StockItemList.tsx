@@ -1,11 +1,11 @@
 import { Checkbox } from "@mui/material";
 
-import { OrderItemType } from "@/types";
+import { StockType } from "@/types";
 
 import StockItem from "./StockItem";
 
 type Props = {
-  data: OrderItemType[];
+  data: StockType[];
 };
 
 function StockItemList({ data }: Props) {

@@ -52,50 +52,91 @@
       "id": 4
     }
   ],
-
   "stockalert": [
     {
       "orderId": "order ID 1",
       "date": "Date 1",
-      "quantity": "Quantity 1",
       "alertAmount": "Alert amt. 1",
       "status": "Status 1",
       "id": 1,
       "customer": "Customer 1",
       "salesChannel": "Sales Channel 1",
       "destination": "Destination 1",
-      "items": 3,
-      "product": "Product 1",
+      "items": [
+        {
+          "product": "Product 1",
+          "quantity": 10,
+          "itemsId": 1
+        },
+        {
+          "product": "Product 2",
+          "quantity": 20,
+          "itemsId": 2
+        },
+        {
+          "product": "Product 3",
+          "quantity": 30,
+          "itemsId": 3
+        }
+      ],
       "category": "Category 1",
       "instruction": "Instruction 1"
     },
     {
       "orderId": "order ID 2",
       "date": "Date 2",
-      "quantity": "Quantity 2",
       "alertAmount": "Alert amt. 2",
       "status": "Status 2",
       "id": 2,
       "customer": "Customer 2",
       "salesChannel": "Sales Channel 2",
       "destination": "Destination 2",
-      "items": 3,
-      "product": "Product 2",
+      "items": [
+        {
+          "product": "Product 1",
+          "quantity": 10,
+          "itemsId": 1
+        },
+        {
+          "product": "Product 2",
+          "quantity": 20,
+          "itemsId": 2
+        },
+        {
+          "product": "Product 3",
+          "quantity": 30,
+          "itemsId": 3
+        }
+      ],
       "category": "Category 2",
       "instruction": "Instruction 2"
     },
     {
       "orderId": "order ID 3",
       "date": "Date 3",
-      "quantity": "Quantity 3",
       "alertAmount": "Alert amt. 3",
       "status": "Status 3",
       "id": 3,
       "customer": "Customer 3",
       "salesChannel": "Sales Channel 3",
       "destination": "Destination 3",
-      "items": 3,
-      "product": "Product 3",
+      "items": [
+        {
+          "product": "Product 1",
+          "quantity": 10,
+          "itemsId": 1
+        },
+        {
+          "product": "Product 2",
+          "quantity": 20,
+          "itemsId": 2
+        },
+        {
+          "product": "Product 3",
+          "quantity": 30,
+          "itemsId": 3
+        }
+      ],
       "category": "Category 3",
       "instruction": "Instruction 3"
     }
@@ -134,27 +175,74 @@
   "stock": [
     {
       "name": "Product 1",
+      "href": "/stock/products/1",
       "category": "Category 1",
       "quantity": "Quantity 1",
       "orderId": "Order ID 1",
       "date": "Date 1",
-      "id": 1
+      "items": "Item 1",
+      "id": 1,
+      "salesChannel": "Sales Channel 1",
+      "instruction": "Instruction 1",
+      "status": "Status 1"
     },
     {
       "name": "Product 2",
+      "href": "/stock/products/2",
       "category": "Category 2",
       "quantity": "Quantity 2",
       "orderId": "Order ID 2",
       "date": "Date 2",
-      "id": 2
+      "items": "Item 2",
+      "id": 2,
+      "salesChannel": "Sales Channel 2",
+      "instruction": "Instruction 2",
+      "status": "Status 2"
     },
     {
       "name": "Product 3",
+      "href": "/stock/products/3",
       "category": "Category 3",
       "quantity": "Quantity 3",
       "date": "Date 3",
       "orderId": "Order ID 3",
-      "id": 3
+      "items": "Item 3",
+      "id": 3,
+      "salesChannel": "Sales Channel 3",
+      "instruction": "Instruction 3",
+      "status": "Status 3"
+    }
+  ],
+  "products": [
+    {
+      "productName": "product 2",
+      "categoryName": "category 2",
+      "quantity": "2",
+      "id": 30
+    },
+    {
+      "productName": "product 3",
+      "categoryName": "category 3",
+      "quantity": "33",
+      "id": 31
+    },
+    {
+      "productName": "product 4",
+      "categoryName": "category 4",
+      "quantity": "4",
+      "id": 32
+    },
+    {
+      "productName": "test 123",
+      "categoryName": "category 2",
+      "quantity": "2131",
+      "id": 33
+    },
+    {
+      "productName": "aluminum",
+      "categoryName": "alloy",
+      "quantity": "123",
+      "id": 34
     }
   ],
   "products": [
