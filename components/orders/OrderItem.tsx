@@ -1,5 +1,5 @@
 import { OrderItemType } from '@/types';
-import { Checkbox } from '@mui/material';
+import Checkbox from '@mui/material/Checkbox';
 import Link from 'next/link';
 
 type Props = {
@@ -13,10 +13,16 @@ function OrderItem({ item }: Props) {
   return (
     <tr className="text-center font-light" key={item.id}>
       <td className="py-2 px-2 border-y-2 text-md ">
-        <Checkbox aria-label="checkBox" />
-        <Link href="/orders/"> {orderId}</Link>
+        <Checkbox />
+
+        <Link
+          href={`/orders/${item.id}`}
+          className="text-slate-500 font-semibold rounded-md hover:bg-slate-200 p-1 py-2  "
+        >
+          {orderId}
+        </Link>
       </td>
-      <td className="py-2 px-2 border-y-2 text-md ">{date}</td>
+      <td className="py-2 px-2  border-y-2 text-md ">{date}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{customer}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{salesChannel}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{destination}</td>

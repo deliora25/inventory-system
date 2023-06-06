@@ -52,95 +52,7 @@
       "id": 4
     }
   ],
-  "orders": [
-    {
-      "orderId": "order ID 1",
-      "date": "Date 1",
-      "alertAmount": "Alert amt. 1",
-      "status": "Status 1",
-      "id": 1,
-      "customer": "Customer 1",
-      "salesChannel": "Sales Channel 1",
-      "destination": "Destination 1",
-      "items": [
-        {
-          "product": "Product 1",
-          "quantity": 10,
-          "itemsId": 1
-        },
-        {
-          "product": "Product 2",
-          "quantity": 20,
-          "itemsId": 2
-        },
-        {
-          "product": "Product 3",
-          "quantity": 30,
-          "itemsId": 3
-        }
-      ],
-      "category": "Category 1",
-      "instruction": "Instruction 1"
-    },
-    {
-      "orderId": "order ID 2",
-      "date": "Date 2",
-      "alertAmount": "Alert amt. 2",
-      "status": "Status 2",
-      "id": 2,
-      "customer": "Customer 2",
-      "salesChannel": "Sales Channel 2",
-      "destination": "Destination 2",
-      "items": [
-        {
-          "product": "Product 1",
-          "quantity": 10,
-          "itemsId": 1
-        },
-        {
-          "product": "Product 2",
-          "quantity": 20,
-          "itemsId": 2
-        },
-        {
-          "product": "Product 3",
-          "quantity": 30,
-          "itemsId": 3
-        }
-      ],
-      "category": "Category 2",
-      "instruction": "Instruction 2"
-    },
-    {
-      "orderId": "order ID 3",
-      "date": "Date 3",
-      "alertAmount": "Alert amt. 3",
-      "status": "Status 3",
-      "id": 3,
-      "customer": "Customer 3",
-      "salesChannel": "Sales Channel 3",
-      "destination": "Destination 3",
-      "items": [
-        {
-          "product": "Product 1",
-          "quantity": 10,
-          "itemsId": 1
-        },
-        {
-          "product": "Product 2",
-          "quantity": 20,
-          "itemsId": 2
-        },
-        {
-          "product": "Product 3",
-          "quantity": 30,
-          "itemsId": 3
-        }
-      ],
-      "category": "Category 3",
-      "instruction": "Instruction 3"
-    }
-  ],
+  "orders": [],
   "statusList": [
     {
       "name": "Pending",
@@ -172,44 +84,7 @@
       "id": 3
     }
   ],
-  "stock": [
-    {
-      "productName": "Product 1",
-      "category": "Category 1",
-      "quantity": "Quantity 1",
-      "orderId": "Order ID 1",
-      "date": "Date 1",
-      "items": "Item 1",
-      "id": 1,
-      "salesChannel": "Sales Channel 1",
-      "instruction": "Instruction 1",
-      "status": "Status 1"
-    },
-    {
-      "productName": "Product 2",
-      "category": "Category 2",
-      "quantity": "Quantity 2",
-      "orderId": "Order ID 2",
-      "date": "Date 2",
-      "items": "Item 2",
-      "id": 2,
-      "salesChannel": "Sales Channel 2",
-      "instruction": "Instruction 2",
-      "status": "Status 2"
-    },
-    {
-      "productName": "Product 3",
-      "category": "Category 3",
-      "quantity": "Quantity 3",
-      "date": "Date 3",
-      "orderId": "Order ID 3",
-      "items": "Item 3",
-      "id": 3,
-      "salesChannel": "Sales Channel 3",
-      "instruction": "Instruction 3",
-      "status": "Status 3"
-    }
-  ],
+  "stock": [],
   "products": [
     {
       "productName": "test 101",
