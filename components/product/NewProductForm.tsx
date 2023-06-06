@@ -74,8 +74,8 @@ function NewProductForm({ onClose }: Props) {
     <form onSubmit={handleSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 bg-red-400">
-            <div className="sm:col-span-4 bg-violet-500">
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="sm:col-span-4 ">
               <label
                 htmlFor="productName"
                 className="block text-sm font-medium leading-6 text-gray-900"
