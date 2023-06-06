@@ -2,6 +2,7 @@ import { ProductDataType } from '@/types';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
+import Button from '../common/Button';
 
 type Props = {
   onClose: () => void;
@@ -53,8 +54,8 @@ function EditProductForm({ onClose, product }: Props) {
     <form onSubmit={(e) => e.preventDefault()}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 bg-red-400">
-            <div className="sm:col-span-4 bg-violet-500">
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
+            <div className="sm:col-span-4 ">
               <label
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -88,21 +89,18 @@ function EditProductForm({ onClose, product }: Props) {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button
+        <Button
           onClick={onClose}
           ref={cancelButtonRef}
           type="button"
-          className="text-sm font-semibold leading-6 text-gray-900"
+          className="bg-slate-100 text-black hover:bg-slate-200"
         >
           Cancel
-        </button>
-        <button
-          onClick={() => handleUpdate(product.id)}
-          type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
+        </Button>
+
+        <Button onClick={() => handleUpdate(product.id)} type="submit">
           Save
-        </button>
+        </Button>
       </div>
     </form>
   );
