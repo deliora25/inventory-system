@@ -2,8 +2,8 @@ import { ProductDataType } from '@/types';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
-import Button from '../common/Button';
-import Input from '../common/Input';
+import Button from '../../common/Button';
+import Input from '../../common/Input';
 
 type Props = {
   onClose: () => void;

@@ -55,7 +55,7 @@ function Product({ item }: Props) {
         </div>
         <div className="sm:grid-cols-1 col-span-1 grid-cols-1sm:col-span-2 sm:w-20 w-full">
           <label
-            htmlFor="quantity"
+            htmlFor="date"
             className="block text-sm font-medium leading-6 text-gray-900"
           >
             Date
@@ -66,7 +66,7 @@ function Product({ item }: Props) {
         </div>
         <div className="sm:grid-cols-1 col-span-1 grid-cols-1 sm:w-20 w-full">
           <label
-            htmlFor="quantity"
+            htmlFor="orderId"
             className="block text-sm font-medium leading-6 text-gray-900"
           >
             OrderId

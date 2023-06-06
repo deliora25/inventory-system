@@ -8,7 +8,7 @@ type Props = {
   placeholder?: string;
   variant?: string;
   className?: string;
-  title: string;
+  title?: string;
 };
 
 function Input({
@@ -23,7 +23,10 @@ function Input({
 }: Props) {
   return (
     <div className="mb-2">
-      <label className="block text-sm font-medium leading-6 text-gray-900">
+      <label
+        className="block text-sm font-medium leading-6 text-gray-900"
+        aria-label="close"
+      >
         {title}
       </label>
       <input

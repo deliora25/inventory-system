@@ -5,9 +5,17 @@ type Props = {
   onOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  title: string;
+  className?: string;
 };
 
-export default function Modal({ onOpen, onClose, children }: Props) {
+export default function Modal({
+  onOpen,
+  onClose,
+  children,
+  title,
+  className,
+}: Props) {
   const cancelButtonRef = useRef(null);
 
   return (
@@ -41,17 +49,17 @@ export default function Modal({ onOpen, onClose, children }: Props) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-fit sm:max-w-lg">
-                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-fit">
+                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 sm:w-fit">
                   <div className="sm:flex sm:items-start ">
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left ">
                       <Dialog.Title
                         as="h3"
-                        className="text-base align-text-bottom font-semibold leading-6 text-gray-900"
+                        className="text-base align-text-bottom font-semibold leading-6 text-gray-900 "
                       >
-                        New Product
+                        {title}
                       </Dialog.Title>
-                      <div className="mt-4">{children} </div>
+                      <div className={`mt-4 ${className}`}>{children}</div>
                     </div>
                   </div>
                 </div>

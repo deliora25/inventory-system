@@ -5,10 +5,13 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import { OrderItemType, SalesDataType, StatusDataType } from '@/types';
 
 // components
+import { useState } from 'react';
+
 import SalesDropdown from './dropdowns/sales/SalesDropdown';
 import StatusDropdown from './dropdowns/status/StatusDropdown';
-import OrderItemList from './OrderItemList';
 import OrdersButton from './OrdersButton';
+import Input from '../common/Input';
+import OrderItemList from './OrderItemList';
 
 type Props = {
   data: OrderItemType[];
@@ -17,6 +20,7 @@ type Props = {
 };
 
 function Orders({ data, salesData, statusData }: Props) {
+  const [search, setSearch] = useState('');
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -32,10 +36,13 @@ function Orders({ data, salesData, statusData }: Props) {
       {/* to do dropdowns */}
       <div className="grid grid-cols-2 w-full my-10">
         <div className="cols-span-1 pl-10">
-          <input
+          <Input
             type="text"
+            name="search"
+            onChange={(e) => setSearch(e.target.value)}
             placeholder="Search Order ID"
-            className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light h-8 pl-2"
+            value={search}
+            className="!w-auto"
           />
         </div>
         <div className="cols-span-1 flex w-full gap-5 justify-end md:pr-[20%] sm:flex-grid">
@@ -47,7 +54,9 @@ function Orders({ data, salesData, statusData }: Props) {
           <StatusDropdown statusData={statusData} />
         </div>
       </div>
-      <OrderItemList data={data} />
+      <div className="h-auto">
+        <OrderItemList data={data} search={search} />
+      </div>
     </div>
   );
 }

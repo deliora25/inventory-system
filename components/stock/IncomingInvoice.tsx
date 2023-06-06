@@ -14,7 +14,7 @@ type Props = {
   statusData: StatusDataType[];
 };
 
-function InStock({ data, statusData }: Props) {
+function IncomingInvoice({ data, statusData }: Props) {
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -49,4 +49,4 @@ function InStock({ data, statusData }: Props) {
   );
 }
 
-export default InStock;
+export default IncomingInvoice;

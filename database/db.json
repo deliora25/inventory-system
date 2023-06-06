@@ -52,7 +52,7 @@
       "id": 4
     }
   ],
-  "stockalert": [
+  "orders": [
     {
       "orderId": "order ID 1",
       "date": "Date 1",
@@ -174,8 +174,7 @@
   ],
   "stock": [
     {
-      "name": "Product 1",
-      "href": "/stock/products/1",
+      "productName": "Product 1",
       "category": "Category 1",
       "quantity": "Quantity 1",
       "orderId": "Order ID 1",
@@ -187,8 +186,7 @@
       "status": "Status 1"
     },
     {
-      "name": "Product 2",
-      "href": "/stock/products/2",
+      "productName": "Product 2",
       "category": "Category 2",
       "quantity": "Quantity 2",
       "orderId": "Order ID 2",
@@ -200,8 +198,7 @@
       "status": "Status 2"
     },
     {
-      "name": "Product 3",
-      "href": "/stock/products/3",
+      "productName": "Product 3",
       "category": "Category 3",
       "quantity": "Quantity 3",
       "date": "Date 3",
@@ -215,14 +212,14 @@
   ],
   "products": [
     {
-      "productName": "test 1",
-      "categoryName": "test 1",
+      "productName": "test 101",
+      "categoryName": "test 101",
       "id": 11,
       "quantity": "1"
     },
     {
-      "productName": "test 222",
-      "categoryName": "category 2.2222",
+      "productName": "test 23",
+      "categoryName": "category 23",
       "id": 12,
       "quantity": "122"
     },

@@ -15,9 +15,9 @@ export type UserOnLogin = {
 };
 
 export type ItemsType = {
-  product: string;
-  quantity: number;
-  itemsId: number;
+  product?: string;
+  quantity?: number;
+  itemsId?: number;
 };
 
 export type StockAlertType = {
@@ -94,7 +94,7 @@ export type StockType = {
   salesChannel: string;
   destination: string;
   items: string;
-  name: string;
+  productName: string;
   status: string;
   id: number;
   category: string;

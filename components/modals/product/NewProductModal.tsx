@@ -1,5 +1,5 @@
 import NewProductForm from './NewProductForm';
-import Modal from '../common/Modal';
+import Modal from '../../common/Modal';
 
 type Props = {
   onOpen: boolean;

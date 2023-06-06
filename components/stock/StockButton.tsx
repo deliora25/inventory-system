@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { useState } from 'react';
-import NewStockModal from '../modals/NewStockModal';
+import NewStockModal from '../modals/stock/NewStockModal';
 
 function StockButton() {
   const [isOpen, setIsOpen] = useState(false);
