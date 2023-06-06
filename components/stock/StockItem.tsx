@@ -1,6 +1,5 @@
 import { StockItemType } from '@/types';
 import { Checkbox } from '@mui/material';
-import Link from 'next/link';
 
 type Props = {
   item: StockItemType;

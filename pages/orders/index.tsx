@@ -21,7 +21,7 @@ function OrdersPage({ data, salesData, statusData }: Props) {
 export default OrdersPage;
 
 export async function getStaticProps() {
-  const response = await axios.get('http://localhost:4000/stockalert');
+  const response = await axios.get('http://localhost:4000/orders');
   const { data } = response;
 
   const salesList = await axios.get('http://localhost:4000/salesList');

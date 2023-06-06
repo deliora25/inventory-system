@@ -7,6 +7,7 @@ type Props = {
   className?: string;
   variant?: string;
   children: React.ReactNode;
+  ariaLabel?: string;
 };
 
 const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => (

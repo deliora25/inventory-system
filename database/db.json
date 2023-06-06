@@ -296,27 +296,15 @@
   "stockItems": [
     {
       "name": "Category 1",
-      "products": [
-        "Product 1",
-        "Product 2",
-        "Product 3"
-      ]
+      "products": ["Product 1", "Product 2", "Product 3"]
     },
     {
       "name": "Category 2",
-      "products": [
-        "Product 10",
-        "Product 20",
-        "Product 30"
-      ]
+      "products": ["Product 10", "Product 20", "Product 30"]
     },
     {
       "name": "Category 3",
-      "products": [
-        "Product 15",
-        "Product 16",
-        "Product 17"
-      ]
+      "products": ["Product 15", "Product 16", "Product 17"]
     }
   ],
   "products": [
