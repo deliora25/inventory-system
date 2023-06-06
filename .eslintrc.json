@@ -4,6 +4,11 @@
     "no-unused-vars": "warn",
     "implicit-arrow-linebreak": "off",
     "linebreak-style": "off",
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
     "import/extensions": "off",
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "array-callback-return": "off",

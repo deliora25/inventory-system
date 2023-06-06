@@ -11,7 +11,7 @@ function StockAlert() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/stockalert');
+        const response = await axios.get('http://localhost:4000/orders');
         if (response && response.data) {
           setData(response.data);
         }

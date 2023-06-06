@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import EditProductModal from '@/components/product/EditProductModal';
+import EditProductModal from '@/components/modals/product/EditProductModal';
 
 import { ProductDataType, ProductType } from '@/types';
 import { Button } from '@mui/material';
