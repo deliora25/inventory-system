@@ -14,7 +14,7 @@ function OrderItemList({ data, search }: Props) {
         <thead>
           <tr className="text-md md:text-lg sm:text-md">
             <th className="font-semibold px-6 py-1">
-              <Checkbox aria-label="checkBox" />
+              <Checkbox className="place-items-end " />
               Order Id
             </th>
             <th className="font-semibold px-6 py-1">Date</th>
