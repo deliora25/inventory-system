@@ -225,6 +225,12 @@
       "categoryName": "category 2.2222",
       "id": 12,
       "quantity": "122"
+    },
+    {
+      "productName": "test 34",
+      "categoryName": "test 34",
+      "id": 13,
+      "quantity": 0
     }
   ]
 }
