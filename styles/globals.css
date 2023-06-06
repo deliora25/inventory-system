@@ -9,8 +9,15 @@
   .sidebar-button {
     @apply pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors;
   }
+
+  .cancelButton {
+    @apply rounded-md  px-3 py-2 text-sm font-semibold  shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 bg-slate-100 text-black hover:bg-slate-200;
+  }
 }
 
+.submitButton {
+  @apply rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
 @layer base {
   body {
     @apply bg-gray-100;
