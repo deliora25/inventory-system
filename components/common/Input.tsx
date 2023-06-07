@@ -1,27 +1,23 @@
 import React from 'react';
-import { ChangeHandler } from 'react-hook-form/dist/types';
+import { UseFormRegister, FieldValues } from 'react-hook-form';
 
 type Props = {
-  name: string;
-  variant?: string;
+  label: string;
+  register: UseFormRegister<FieldValues>;
+  required?: string;
   className?: string;
-  title: string;
-  onChange: ChangeHandler;
-  onBlur: ChangeHandler;
 };
 
-const Input = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-  <div>
-    <label htmlFor={props.name}>{props.title}</label>
+const Input = ({ label, register, required, className }: Props) => (
+  <>
+    <label>{label}</label>
     <input
-      {...props}
-      ref={ref}
-      className={`${props.className} ${props.variant}`}
+      {...register(label, {
+        required,
+      })}
+      className={className}
     />
-    ;
-  </div>;
-});
-
-Input.displayName = 'CustomInput';
+  </>
+);
 
 export default Input;

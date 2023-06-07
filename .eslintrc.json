@@ -36,6 +36,7 @@
     ],
     "no-restricted-globals": "off",
     "valid-typeof": ["error", { "requireStringLiterals": true }],
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off"
   }
 }
