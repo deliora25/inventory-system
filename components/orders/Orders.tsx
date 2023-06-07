@@ -30,7 +30,7 @@ function Orders({ data, salesData, statusData }: Props) {
           </h2>
         </div>
         <div className="col-span 1">
-          <OrdersButton />
+          <OrdersButton data={data} />
         </div>
       </div>
       {/* to do dropdowns */}

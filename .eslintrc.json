@@ -10,7 +10,8 @@
       { "overrides": { "?": "before", ":": "before" } }
     ],
     "import/extensions": "off",
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    // "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": "off",
     "array-callback-return": "off",
     "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
     "comma-dangle": [
