@@ -50,16 +50,21 @@ export type PieChartInput = {
   index: number;
 };
 
+export type CustomerType = {
+  firstName: string;
+  lastName: string;
+  email: string | number;
+  contact: number;
+};
+
 export type OrderItemType = {
   orderId: string;
-  customer: string;
+  customer: CustomerType;
   date: string;
   salesChannel: string;
   destination: string;
   items: ItemsType[];
   status: string;
-  id: number;
-  category: string;
   instruction: string;
 };
 

@@ -37,7 +37,7 @@ function OrderItemList({ data, search }: Props) {
               return null;
             })
             .map((item) => (
-              <OrderItem item={item} key={item.id} />
+              <OrderItem item={item} key={item.orderId} />
             ))}
         </tbody>
       </table>

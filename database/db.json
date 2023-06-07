@@ -52,7 +52,66 @@
       "id": 4
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "orderId": 1,
+      "date": "Date 1",
+      "alertAmount": "alert amount 1",
+      "customer": {
+        "firstName": "Gabriel",
+        "lastName": "Gonzales",
+        "email": "testemail123@gmail.com",
+        "contact": 12345678911
+      },
+      "salesChannel": "sales channel 1",
+      "destination": "address 1",
+      "items": [
+        {
+          "category": "test category 1",
+          "product": "product 1",
+          "quantity": 100,
+          "itemsId": 1
+        },
+        {
+          "category": "test category 2",
+          "product": "product 2",
+          "quantity": 60,
+          "itemsId": 2
+        }
+      ],
+      "instruction": "instuction 1",
+      "status": "Pending"
+    },
+    {
+      "orderId": 2,
+      "date": "Date 2",
+      "alertAmount": "alert amount 2",
+      "customer": {
+        "firstName": "Lucille",
+        "lastName": "Carvajal",
+        "email": "email223@gmail.com",
+        "contact": 22345678922
+      },
+      "salesChannel": "sales channel 2",
+      "destination": "address 2",
+      "items": [
+        {
+          "category": "test category 2",
+          "product": "product 1",
+          "quantity": 100,
+          "itemsId": 1
+        },
+        {
+          "category": "test category 3",
+          "product": "product 2",
+          "quantity": 200,
+          "itemsId": 2
+        }
+      ],
+      "instruction": "instuction 2",
+      "status": "Success"
+    }
+  ],
   "statusList": [
     {
       "name": "Pending",

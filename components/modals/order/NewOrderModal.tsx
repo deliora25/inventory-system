@@ -1,40 +1,24 @@
-import Button from '@/components/common/Button';
-import ShippingOrderForm from './ShippingOrderForm';
+import { OrderItemType } from '@/types';
 import Modal from '../../common/Modal';
+import NewOrderForm from './NewOrderForm';
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
+  data: OrderItemType[];
 };
 
-export default function NewOrderModal({ isOpen, onClose }: Props) {
+export default function NewOrderModal({ data, isOpen, onClose }: Props) {
   return (
     <Modal
       onOpen={isOpen}
       onClose={onClose}
       title="New Order"
-      className="flex gap-5 w-full mb-10"
+      className="flex gap-5 w-full"
     >
-      <ShippingOrderForm title="Ship From" />
-      <ShippingOrderForm title="Ship To" />
-      <div className="absolute bottom-0 right-[40%] mb-3 space-x-5 flex flex-grid sm:col-span-3 col-span-1">
-        <Button
-          variant="cancelButton"
-          ariaLabel="cancel"
-          type="button"
-          onClick={() => onClose()}
-        >
-          Cancel
-        </Button>
-        <Button
-          variant="submitButton"
-          ariaLabel="submit"
-          type="submit"
-          onClick={() => onClose()}
-        >
-          Submit
-        </Button>
-      </div>
+      {/* <ShippingOrderForm title="Ship From" /> */}
+      {/* <ShippingOrderForm title="Ship To" onClose={onClose} /> */}
+      <NewOrderForm data={data} />
     </Modal>
   );
 }
