@@ -40,7 +40,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
         </thead>
         <tbody>
           <tr>
-            <td>{order.orderId}</td>
+            <td>{order.id}</td>
             <td>{order.date}</td>
             <td>{order.customer.firstName}</td>
             <td>{order.salesChannel}</td>
@@ -53,7 +53,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
         </tbody>
       </table>
 
-      <Button onClick={() => handleDelete(order.orderId)}>Delete</Button>
+      <Button onClick={() => handleDelete(order.id)}>Delete</Button>
     </Layout>
   );
 }
@@ -66,7 +66,7 @@ export const getStaticPaths = async () => {
 
   const paths = data.map((order: OrderItemType) => ({
     params: {
-      orderId: order.orderId.toString(),
+      orderId: order.id.toString(),
     },
   }));
   return {

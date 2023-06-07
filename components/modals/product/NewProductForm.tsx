@@ -97,7 +97,7 @@ function NewProductForm({ onClose }: Props) {
               <Input
                 value={newProduct.quantity}
                 onChange={handleChange}
-                name="quality"
+                name="quantity"
                 type="number"
                 placeholder="Quantity"
                 title="Quantity"

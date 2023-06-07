@@ -7,18 +7,18 @@ type Props = {
 };
 
 function OrderItem({ item }: Props) {
-  const { orderId, date, items, salesChannel, destination, status } = item;
+  const { id, date, items, salesChannel, destination, status } = item;
 
   return (
-    <tr className="text-center font-light" key={item.orderId}>
+    <tr className="text-center font-light" key={item.id}>
       <td className="py-2 px-2 border-y-2 text-md ">
         <Checkbox />
 
         <Link
-          href={`/orders/${item.orderId}`}
+          href={`/orders/${item.id}`}
           className="text-slate-500 font-semibold rounded-md hover:bg-slate-200 p-1 py-2  "
         >
-          {orderId}
+          {id}
         </Link>
       </td>
       <td className="py-2 px-2  border-y-2 text-md ">{date}</td>
