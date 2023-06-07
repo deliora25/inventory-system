@@ -54,7 +54,7 @@
   ],
   "orders": [
     {
-      "orderId": 1,
+      "id": 1,
       "date": "Date 1",
       "alertAmount": "alert amount 1",
       "customer": {
@@ -83,7 +83,7 @@
       "status": "Pending"
     },
     {
-      "orderId": 2,
+      "id": 2,
       "date": "Date 2",
       "alertAmount": "alert amount 2",
       "customer": {
@@ -108,8 +108,56 @@
           "itemsId": 2
         }
       ],
-      "instruction": "instuction 2",
+      "instruction": "instruction 2",
       "status": "Success"
+    },
+    {
+      "customer": {
+        "firstName": "gabriel",
+        "lastName": "gonzales",
+        "email": "test@email.com",
+        "contact": "1234567899"
+      },
+      "items": [
+        {
+          "category": "category 1",
+          "product": "product 1",
+          "quantity": "211"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "customer": {
+        "firstName": "test ",
+        "lastName": "testets",
+        "email": "test1232@gmail.com",
+        "contact": "12341231412"
+      },
+      "items": [
+        {
+          "category": "test 1",
+          "product": "test 2",
+          "quantity": "212"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "customer": {
+        "firstName": "test ",
+        "lastName": "testets",
+        "email": "test1232@gmail.com",
+        "contact": "12341231412"
+      },
+      "items": [
+        {
+          "category": "test 1",
+          "product": "test 2",
+          "quantity": "212"
+        }
+      ],
+      "id": 5
     }
   ],
   "statusList": [
@@ -162,6 +210,12 @@
       "categoryName": "test 34",
       "id": 13,
       "quantity": 0
+    },
+    {
+      "productName": "test 19",
+      "categoryName": "test 19",
+      "quantity": "19",
+      "id": 14
     }
   ]
 }

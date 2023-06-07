@@ -15,6 +15,7 @@ export type UserOnLogin = {
 };
 
 export type ItemsType = {
+  category?: string | number;
   product?: string;
   quantity?: number;
   itemsId?: number;
@@ -54,18 +55,18 @@ export type CustomerType = {
   firstName: string;
   lastName: string;
   email: string | number;
-  contact: number;
+  contact: number | string;
 };
 
 export type OrderItemType = {
-  orderId: string;
+  id: number;
   customer: CustomerType;
   date: string;
-  salesChannel: string;
-  destination: string;
-  items: ItemsType[];
-  status: string;
-  instruction: string;
+  salesChannel?: string;
+  destination?: string;
+  items: ItemsType;
+  status?: string;
+  instruction?: string;
 };
 
 export type SalesDataType = {

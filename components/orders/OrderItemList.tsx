@@ -31,13 +31,13 @@ function OrderItemList({ data, search }: Props) {
               if (search === '') {
                 return item;
               }
-              if (item.orderId.includes(search)) {
+              if (item.id.toString().includes(search)) {
                 return item;
               }
               return null;
             })
             .map((item) => (
-              <OrderItem item={item} key={item.orderId} />
+              <OrderItem item={item} key={item.id} />
             ))}
         </tbody>
       </table>

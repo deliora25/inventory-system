@@ -14,11 +14,12 @@ export default function NewOrderModal({ data, isOpen, onClose }: Props) {
       onOpen={isOpen}
       onClose={onClose}
       title="New Order"
-      className="flex gap-5 w-full"
+      className="flex gap-5 w-screen h-screen"
     >
       {/* <ShippingOrderForm title="Ship From" /> */}
       {/* <ShippingOrderForm title="Ship To" onClose={onClose} /> */}
       <NewOrderForm data={data} />
+      {/* <Formik /> */}
     </Modal>
   );
 }
