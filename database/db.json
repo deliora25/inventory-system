@@ -54,29 +54,6 @@
   ],
   "orders": [
     {
-      "date": "07 Jun 2023",
-      "alertAmount": "Alert Amount 9",
-      "customer": {
-        "firstName": "tester",
-        "lastName": "teste",
-        "contact": "1231231231",
-        "email": "test1233123@gmail.com"
-      },
-      "salesChannel": "Sales channel 9",
-      "destination": "Sample Destination 2",
-      "items": [
-        {
-          "category": "Category 2",
-          "product": "name name",
-          "quantity": "23",
-          "id": 1
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 5
-    },
-    {
       "date": "08 Jun 2023",
       "alertAmount": "Alert Amount 1",
       "customer": {
@@ -91,7 +68,7 @@
         {
           "category": "Category 2",
           "product": "product 2",
-          "quantity": "20",
+          "quantity": 20,
           "id": 1
         }
       ],
@@ -114,7 +91,7 @@
         {
           "category": "Category 3",
           "product": "Butane",
-          "quantity": "3",
+          "quantity": 3,
           "id": 1
         }
       ],
@@ -124,35 +101,72 @@
     },
     {
       "date": "08 Jun 2023",
-      "alertAmount": "Alert Amount 1",
+      "alertAmount": "Alert Amount 5",
       "customer": {
-        "firstName": "test",
-        "lastName": "testtt",
-        "contact": "1231231123",
-        "email": "test@gmail.com"
+        "firstName": "gabriel",
+        "lastName": "gonzales",
+        "contact": "090909090909",
+        "email": "gabrielgnzls94@gmail.com"
       },
-      "salesChannel": "Sales channel 5",
-      "destination": "Sample Destination 1",
+      "salesChannel": "Sales channel 9",
+      "destination": "Sample Destination 2",
       "items": [
         {
           "category": "Category 2",
-          "product": "test",
-          "quantity": "12"
-        },
-        {
-          "category": "Category 1",
-          "product": "test 2",
-          "quantity": "22"
+          "product": "",
+          "quantity": "20"
         },
         {
           "category": "Category 3",
-          "product": "test 3",
-          "quantity": "233"
+          "product": "",
+          "quantity": "50"
+        },
+        {
+          "category": "Category 1",
+          "product": "",
+          "quantity": "10"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
       "id": 8
+    },
+    {
+      "date": "08 Jun 2023",
+      "alertAmount": "Alert Amount 6",
+      "customer": {
+        "firstName": "ellen",
+        "lastName": "gonzales",
+        "contact": "090909090999",
+        "email": "ellengnzls@gmail.com"
+      },
+      "salesChannel": "Sales channel 4",
+      "destination": "Sample Destination 4",
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "",
+          "quantity": "12"
+        },
+        {
+          "category": "Category 2",
+          "product": "",
+          "quantity": "33"
+        },
+        {
+          "category": "Category 3",
+          "product": "",
+          "quantity": "19"
+        },
+        {
+          "category": "Category 1",
+          "product": "",
+          "quantity": "7"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Pending",
+      "id": 9
     }
   ],
   "statusList": [
@@ -189,8 +203,8 @@
   "stock": [],
   "products": [
     {
-      "productName": "test 101",
-      "categoryName": "test 101",
+      "productName": "product",
+      "categoryName": "category",
       "id": 11,
       "quantity": "1"
     },

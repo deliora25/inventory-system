@@ -1,6 +1,6 @@
 import Button from '@/components/common/Button';
 
-import { CustomerType, OrderItemType } from '@/types';
+import { OrderItemType } from '@/types';
 import React from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
@@ -12,40 +12,24 @@ type Props = {
   onClose: () => void;
 };
 
-type OrderData = {
-  date: string;
-  alertAmount: string;
-  customer: CustomerType;
-  salesChannel: string;
-  destination: string;
-  items: {
-    category: string;
-    product: string;
-    quantity: number | string;
-    id?: number;
-  }[];
-  instruction: string;
-  status: string;
-};
-
-function NewOrderForm({ data, onClose }: Props) {
-  const form = useForm<OrderData>({
+function NewOrderForm({ onClose }: Props) {
+  const form = useForm<OrderItemType>({
     defaultValues: {
       date: new Date().toUTCString().slice(5, 16),
       alertAmount: `Alert Amount ${Math.floor(Math.random() * 10)}`,
       customer: {
         firstName: '',
         lastName: '',
-        contact: '',
+        contact: null,
         email: '',
       },
-      salesChannel: `Sales channel ${Math.floor(Math.random() * 10)}`,
+      salesChannel: `Sales channel ${Math.floor(Math.random() * 10) + 1}`,
       destination: `Sample Destination ${Math.floor(Math.random() * 10) + 1}`,
       items: [
         {
           category: '',
           product: '',
-          quantity: '',
+          quantity: null,
         },
       ],
       instruction: 'Insert Instruction',
@@ -59,7 +43,7 @@ function NewOrderForm({ data, onClose }: Props) {
   });
   const router = useRouter();
 
-  const onSubmit = async (value: OrderData) => {
+  const onSubmit = async (value: OrderItemType) => {
     try {
       await axios.post('http://localhost:4000/orders', value);
     } catch (error) {
@@ -67,7 +51,7 @@ function NewOrderForm({ data, onClose }: Props) {
     }
     router.push('/orders');
   };
-  console.log(data);
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -133,12 +117,16 @@ function NewOrderForm({ data, onClose }: Props) {
             </div>
             <div className="grid grid-col grid-cols-2 items-center gap-4">
               <div className="flex flex-col gap-y-1 col-span-2 sm:col-span-1">
-                <label htmlFor="productName">Product Name</label>
-                <input
-                  {...register(`items.${index}.product` as const)}
-                  className="rounded-sm border-2 p-1"
-                  type="text"
-                />
+                <label htmlFor="productName">Product</label>
+                <select
+                  {...register(`items.${index}.category` as const)}
+                  className="p-1 text-md font-extralight"
+                >
+                  <option value="">Select Product...</option>
+                  <option value="Category 1">Product 1</option>
+                  <option value="Category 2">Product 2</option>
+                  <option value="Category 3">Product 3</option>
+                </select>
               </div>
               <div>
                 <div className="flex flex-col gap-y-1 col-span-2 sm:col-span-1">
@@ -152,17 +140,19 @@ function NewOrderForm({ data, onClose }: Props) {
                     {index >= 0 && (
                       <div className="space-x-1">
                         <button
+                          type="button"
                           onClick={() => remove(index)}
                           className="border-2 rounded px-2 hover:border-slate-400 hover:bg-slate-200 hover:border-2"
                         >
                           -
                         </button>
                         <button
+                          type="button"
                           onClick={() =>
                             append({
                               category: '',
                               product: '',
-                              quantity: 0,
+                              quantity: null,
                             })
                           }
                           className="border-2 rounded px-2 hover:border-slate-400 hover:bg-slate-200 hover:border-2"

@@ -49,7 +49,7 @@ function Layout({ children }: Props) {
           showNav && !isMobile ? 'pl-56' : ''
         }`}
       >
-        <div className="px-4 md:px-16">{children}</div>
+        <div className="px-4 md:px-16  ">{children}</div>
       </main>
     </>
   );

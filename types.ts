@@ -15,9 +15,9 @@ export type UserOnLogin = {
 };
 
 export type ItemsType = {
-  category?: string | string[];
-  product?: string | string[];
-  quantity?: number | number[];
+  product: string;
+  category: string;
+  quantity: number | null;
   id?: number;
 };
 
@@ -54,18 +54,19 @@ export type PieChartInput = {
 export type CustomerType = {
   firstName: string;
   lastName: string;
-  email: string | number;
-  contact: number | string;
+  email: string;
+  contact: number | null;
 };
 
 export type OrderItemType = {
   id: number;
-  customer: CustomerType;
   date: string;
+  customer: CustomerType;
+  items: ItemsType[];
   salesChannel?: string;
   destination?: string;
-  items: ItemsType;
-  status?: string;
+  status: string;
+  alertAmount?: string;
   instruction?: string;
 };
 
