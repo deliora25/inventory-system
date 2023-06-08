@@ -15,17 +15,17 @@ export type UserOnLogin = {
 };
 
 export type ItemsType = {
-  category?: string | number;
-  product?: string;
-  quantity?: number;
-  itemsId?: number;
+  category?: string | string[];
+  product?: string | string[];
+  quantity?: number | number[];
+  id?: number;
 };
 
 export type StockAlertType = {
   orderId: string;
   date: string;
   quantity: number;
-  items: ItemsType[];
+  order: ItemsType[];
   alertAmount: string;
   status: string;
   id: number;
