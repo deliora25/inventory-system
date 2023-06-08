@@ -1,8 +1,8 @@
 import Button from '@/components/common/Button';
 
-import { CustomerType, ItemsType, OrderItemType } from '@/types';
+import { CustomerType, OrderItemType } from '@/types';
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -18,7 +18,12 @@ type OrderData = {
   customer: CustomerType;
   salesChannel: string;
   destination: string;
-  items: ItemsType[];
+  items: {
+    category: string;
+    product: string;
+    quantity: number;
+    id?: number;
+  }[];
   instruction: string;
   status: string;
 };
@@ -35,7 +40,7 @@ function NewOrderForm({ data, onClose }: Props) {
         email: '',
       },
       salesChannel: `Sales channel ${Math.floor(Math.random() * 10)}`,
-      destination: `Sample Destination ${Math.floor(Math.random() * 10)}`,
+      destination: `Sample Destination ${Math.floor(Math.random() * 10) + 1}`,
       items: [
         {
           category: '',
@@ -48,7 +53,10 @@ function NewOrderForm({ data, onClose }: Props) {
     },
   });
   const { register, control, handleSubmit } = form;
-
+  const { fields, append, remove } = useFieldArray({
+    name: 'items',
+    control,
+  });
   const router = useRouter();
 
   const onSubmit = async (value: OrderData) => {
@@ -59,7 +67,7 @@ function NewOrderForm({ data, onClose }: Props) {
     }
     router.push('/orders');
   };
-
+  console.log(data);
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -101,33 +109,64 @@ function NewOrderForm({ data, onClose }: Props) {
             />
           </div>
         </div>
-        <div className="flex gap-4 items-center justify-center">
-          <div className="flex flex-col">
-            <label htmlFor="category">Category</label>
-            <select {...register('items.0.category')} className="h-fit">
-              <option value="">Select...</option>
-              <option value="Category 1">Category 1</option>
-              <option value="Category 2">Category 2</option>
-              <option value="Category 3">Category 3</option>
-            </select>
+        {fields.map((field, index) => (
+          <div
+            className="flex gap-4 items-center justify-center"
+            key={field.id}
+          >
+            <div className="flex flex-col">
+              <label htmlFor="category">Category</label>
+              <select
+                {...register(`items.${index}.category` as const)}
+                className="h-fit"
+              >
+                <option value="">Select...</option>
+                <option value="Category 1">Category 1</option>
+                <option value="Category 2">Category 2</option>
+                <option value="Category 3">Category 3</option>
+              </select>
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="productName">Product Name</label>
+              <input
+                {...register(`items.${index}.product` as const)}
+                className="rounded-sm border-2"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="quantity">Quantity</label>
+              <input
+                {...register(`items.${index}.quantity` as const)}
+                className="rounded-sm border-2"
+                type="number"
+              />
+            </div>
+            {index > 0 && (
+              <Button
+                variant="submitButton"
+                type="button"
+                onClick={() => remove(index)}
+              >
+                Remove
+              </Button>
+            )}
           </div>
-          <div className="flex flex-col">
-            <label htmlFor="productName">Product Name</label>
-            <input
-              {...register('items.0.product')}
-              className="rounded-sm border-2"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="quantity">Quantity</label>
-            <input
-              {...register('items.0.quantity')}
-              className="rounded-sm border-2"
-              type="number"
-            />
-          </div>
-        </div>
-        <div className="text-center mt-4">
+        ))}
+
+        <div className="text-center mt-4 ">
+          <Button
+            variant="submitButton"
+            type="button"
+            onClick={() =>
+              append({
+                category: '',
+                product: '',
+                quantity: 0,
+              })
+            }
+          >
+            Add Item
+          </Button>
           <Button variant="submitButton" type="submit" onClick={onClose}>
             Next
           </Button>

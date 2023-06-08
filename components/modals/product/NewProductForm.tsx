@@ -78,7 +78,7 @@ function NewProductForm({ onClose }: Props) {
         <div className="border-b border-gray-900/10 pb-12">
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4 ">
-              <Input
+              <input
                 title="Product Name"
                 value={newProduct.productName}
                 onChange={handleChange}
@@ -86,7 +86,7 @@ function NewProductForm({ onClose }: Props) {
                 type="text"
                 placeholder="Product Name"
               />
-              <Input
+              <input
                 value={newProduct.categoryName}
                 onChange={handleChange}
                 name="categoryName"
@@ -94,7 +94,7 @@ function NewProductForm({ onClose }: Props) {
                 placeholder="Category Name"
                 title="Category"
               />
-              <Input
+              <input
                 value={newProduct.quantity}
                 onChange={handleChange}
                 name="quantity"

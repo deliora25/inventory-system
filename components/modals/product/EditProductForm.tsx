@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
 import Button from '../../common/Button';
-import Input from '../../common/Input';
 
 type Props = {
   onClose: () => void;
@@ -57,7 +56,7 @@ function EditProductForm({ onClose, product }: Props) {
         <div className="border-b border-gray-900/10 pb-12">
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
             <div className="sm:col-span-4  ">
-              <Input
+              <input
                 value={editProduct.productName}
                 name="productName"
                 onChange={handleChange}
@@ -66,7 +65,7 @@ function EditProductForm({ onClose, product }: Props) {
                 title="Product Name"
               />
 
-              <Input
+              <input
                 value={editProduct.categoryName}
                 onChange={handleChange}
                 name="categoryName"
