@@ -23,18 +23,24 @@ function Products({ products }: Props) {
   return (
     <div>
       <div>
-        <div className="flex">
-          <h2>PRODUCT LIST</h2>
-          <Button type="button" onClick={handleOpen}>
-            + New Product
+        <div className="flex m-2 items-center">
+          <h2>PRODUCTS LIST</h2>
+          <Button
+            type="button"
+            variant="submitButton"
+            className="ml-3  !px-5"
+            onClick={handleOpen}
+          >
+            NEW
           </Button>
           <NewProductModal onOpen={isClicked} onClose={onClose} />
         </div>
-        <div>
+        <div className="mb-4">
           <input
             type="text"
             placeholder="Search Product"
             onChange={(e) => setSearch(e.target.value)}
+            className="w-fit"
           />
         </div>
       </div>

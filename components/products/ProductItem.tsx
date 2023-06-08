@@ -9,13 +9,20 @@ type Props = {
 function ProductItem({ item }: Props) {
   const { id, productName, categoryName, quantity } = item;
   return (
-    <tr>
-      <td>
-        <Link href={`/products/${id}`}>{productName}</Link>
+    <tr className="text-center font-light">
+      <td className="py-2 px-2 border-y-2 text-md border-r-2 ">
+        <Link
+          href={`/products/${id}`}
+          className="text-slate-500 font-semibold rounded-md hover:bg-slate-200 p-1 py-2  "
+        >
+          {productName}
+        </Link>
       </td>
 
-      <td>{categoryName}</td>
-      <td>{quantity}</td>
+      <td className="py-2 px-2 border-y-2 text-md border-r-2 ">
+        {categoryName}
+      </td>
+      <td className="py-2 px-2 border-y-2 text-md border-r-2 ">{quantity}</td>
     </tr>
   );
 }

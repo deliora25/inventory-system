@@ -29,8 +29,8 @@ function OrderItem({ item }: Props) {
       <td className="py-2 px-2 border-y-2 text-md ">{destination}</td>
       <td className="py-2 px-2 border-y-2 text-md ">
         {items
-          .map((x) => x.quantity)
-          .reduce((a: number | undefined, b: number | undefined) => a + b, 0)}
+          .map((x) => Number(x.quantity))
+          .reduce((a: number | null, b: number | null) => a + b, 0)}
       </td>
       <td className="py-2 px-2 border-y-2 text-md ">
         <div className="rounded-full border bg-green-400">{status}</div>

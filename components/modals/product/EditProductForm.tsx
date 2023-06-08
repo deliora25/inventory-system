@@ -56,23 +56,27 @@ function EditProductForm({ onClose, product }: Props) {
         <div className="border-b border-gray-900/10 pb-12">
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
             <div className="sm:col-span-4  ">
-              <input
-                value={editProduct.productName}
-                name="productName"
-                onChange={handleChange}
-                type="text"
-                placeholder="Product Name"
-                title="Product Name"
-              />
+              <div className="flex flex-col gap-1 pb-2">
+                <label>Product Name</label>
+                <input
+                  value={editProduct.productName}
+                  name="productName"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Product Name"
+                />
+              </div>
 
-              <input
-                value={editProduct.categoryName}
-                onChange={handleChange}
-                name="categoryName"
-                type="text"
-                placeholder="Category Name"
-                title="Category Name"
-              />
+              <div className="flex flex-col gap-1 pt-2">
+                <label>Category</label>
+                <input
+                  value={editProduct.categoryName}
+                  onChange={handleChange}
+                  name="categoryName"
+                  type="text"
+                  placeholder="Category Name"
+                />
+              </div>
             </div>
           </div>
         </div>

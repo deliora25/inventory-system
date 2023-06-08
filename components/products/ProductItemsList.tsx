@@ -9,13 +9,13 @@ type Props = {
 
 function ProductItemsList({ search, products }: Props) {
   return (
-    <div>
-      <table>
+    <div className="w-fit bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
+      <table className="border rounded-xl w-full table-auto">
         <thead>
-          <tr>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
+          <tr className="text-md md:text-lg sm:text-md">
+            <th className="font-semibold px-6 py-1 border-r-2">Product Name</th>
+            <th className="font-semibold px-6 py-1 border-r-2">Category</th>
+            <th className="font-semibold px-6 py-1 border-r-2">Quantity</th>
           </tr>
         </thead>
         <tbody>
