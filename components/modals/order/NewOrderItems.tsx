@@ -1,5 +1,7 @@
+import Select from '@/components/common/Select';
 import { OrderItemType } from '@/types';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import {
   FieldArrayWithId,
   UseFieldArrayAppend,
@@ -15,38 +17,42 @@ type Props = {
 };
 
 function NewOrderItems({ fields, append, register, remove }: Props) {
+  const [categoryOptions, setCategoryOptions] = useState([]);
+
+  useEffect(() => {
+    const getCategoryOptions = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/stockItems');
+        setCategoryOptions(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getCategoryOptions();
+  }, []);
+  const category = categoryOptions.map((item) => item.name);
+  const products = categoryOptions.map((item) => item.products);
+  console.log(products);
   return (
     <div>
       {fields.map((field, index) => (
         <div key={field.id}>
           <div className="grid grid-cols-2 gap-4 items-center my-2 ">
-            <div className="flex flex-col gap-y-1 col-span-2 sm:col-span-1 text-center sm:text-left">
-              <label htmlFor="category">Category</label>
-
-              <select
-                {...register(`items.${index}.category` as const)}
-                className="p-1 text-md font-extralight"
-              >
-                <option value="">Select Category...</option>
-                <option value="Category 1">Category 1</option>
-                <option value="Category 2">Category 2</option>
-                <option value="Category 3">Category 3</option>
-              </select>
-            </div>
+            <Select
+              title="Category"
+              register={register}
+              name={`items.${index}.category`}
+              options={category}
+            />
           </div>
           <div className="grid grid-col grid-cols-2 items-center gap-4">
-            <div className="flex flex-col gap-y-1 col-span-2 sm:col-span-1">
-              <label htmlFor="productName">Product</label>
-              <select
-                {...register(`items.${index}.category` as const)}
-                className="p-1 text-md font-extralight"
-              >
-                <option value="">Select Product...</option>
-                <option value="Category 1">Product 1</option>
-                <option value="Category 2">Product 2</option>
-                <option value="Category 3">Product 3</option>
-              </select>
-            </div>
+            <Select
+              title="Product"
+              register={register}
+              name={`items.${index}.product`}
+              options={products}
+            />
+
             <div>
               <div className="flex flex-col gap-y-1 col-span-2 sm:col-span-1">
                 <label htmlFor="quantity">Quantity</label>

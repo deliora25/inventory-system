@@ -20,18 +20,13 @@ function OrdersButton({ data }: Props) {
 
   return (
     <div className="grid grid-cols-3 gap-2 justify-center pr-4  md:flex-col">
-      <Button type="button" variant="submitButton" ariaLabel="exportExcel">
+      <Button type="button" variant="submitButton">
         Export to Excel
       </Button>
-      <Button type="button" variant="submitButton" ariaLabel="importOrders">
+      <Button type="button" variant="submitButton">
         Import Orders
       </Button>
-      <Button
-        type="button"
-        onClick={handleClick}
-        variant="submitButton"
-        ariaLabel="newOrder"
-      >
+      <Button type="button" onClick={handleClick} variant="submitButton">
         + New Orders
       </Button>
       <NewOrderModal isOpen={openModal} onClose={handleClose} data={data} />
