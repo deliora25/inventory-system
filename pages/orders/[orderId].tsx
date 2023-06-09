@@ -48,7 +48,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
                 {order.date}
               </td>
               <td className="py-2 px-2  border-r-2 border-y-2 text-md">
-                {order.customer.firstName}
+                {order.customer.firstName} {order.customer.lastName}
               </td>
               <td className="py-2 px-2  border-r-2 border-y-2 text-md">
                 {order.salesChannel}

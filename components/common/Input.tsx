@@ -1,21 +1,21 @@
 import React from 'react';
-import { UseFormRegister, FieldValues } from 'react-hook-form';
+import { UseFormRegister } from 'react-hook-form';
 
 type Props = {
-  label: string;
-  register: UseFormRegister<FieldValues>;
-  required?: string;
   className?: string;
+  type: string;
+  label: any;
+  register: UseFormRegister<any>;
+  title: string;
 };
 
-const Input = ({ label, register, required, className }: Props) => (
+const Input = ({ className, type, register, title, label }: Props) => (
   <>
-    <label>{label}</label>
+    <label>{title}</label>
     <input
-      {...register(label, {
-        required,
-      })}
-      className={className}
+      {...register(label)}
+      className={`rounded-sm border-2 p-1 ${className}`}
+      type={type}
     />
   </>
 );

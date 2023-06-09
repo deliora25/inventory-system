@@ -55,52 +55,6 @@
   "orders": [
     {
       "date": "08 Jun 2023",
-      "alertAmount": "Alert Amount 1",
-      "customer": {
-        "firstName": "test 123",
-        "lastName": "ttest",
-        "contact": "1123123",
-        "email": "test@gmail.com"
-      },
-      "salesChannel": "Sales channel 5",
-      "destination": "Sample Destination 2",
-      "items": [
-        {
-          "category": "Category 2",
-          "product": "product 2",
-          "quantity": 20,
-          "id": 1
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 6
-    },
-    {
-      "date": "08 Jun 2023",
-      "alertAmount": "Alert Amount 6",
-      "customer": {
-        "firstName": "lucille",
-        "lastName": "carvajal",
-        "contact": "09155505284",
-        "email": "lucillcarvajal@gmail.com"
-      },
-      "salesChannel": "Sales channel 0",
-      "destination": "Sample Destination 4",
-      "items": [
-        {
-          "category": "Category 3",
-          "product": "Butane",
-          "quantity": 3,
-          "id": 1
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 7
-    },
-    {
-      "date": "08 Jun 2023",
       "alertAmount": "Alert Amount 5",
       "customer": {
         "firstName": "gabriel",
@@ -249,7 +203,32 @@
       "id": 3
     }
   ],
-  "stock": [],
+  "stockItems": [
+    {
+      "name": "Category 1",
+      "products": [
+        "Product 1",
+        "Product 2",
+        "Product 3"
+      ]
+    },
+    {
+      "name": "Category 2",
+      "products": [
+        "Product 10",
+        "Product 20",
+        "Product 30"
+      ]
+    },
+    {
+      "name": "Category 3",
+      "products": [
+        "Product 15",
+        "Product 16",
+        "Product 17"
+      ]
+    }
+  ],
   "products": [
     {
       "productName": "product",
