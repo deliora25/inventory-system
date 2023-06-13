@@ -15,7 +15,7 @@ type Props = {
 };
 
 function NewOrderForm({ onClose }: Props) {
-  const form = useForm<OrderItemType>({
+  const { register, control, handleSubmit, watch } = useForm<OrderItemType>({
     defaultValues: {
       date: new Date().toUTCString().slice(5, 16),
       alertAmount: `Alert Amount ${Math.floor(Math.random() * 10)}`,
@@ -38,12 +38,13 @@ function NewOrderForm({ onClose }: Props) {
       status: 'Pending',
     },
   });
-  const { register, control, handleSubmit } = form;
   const { fields, append, remove } = useFieldArray({
     name: 'items',
     control,
   });
   const router = useRouter();
+
+  const items = watch('items');
 
   const onSubmit = async (value: OrderItemType) => {
     try {
@@ -63,6 +64,7 @@ function NewOrderForm({ onClose }: Props) {
           append={append}
           register={register}
           remove={remove}
+          items={items}
         />
         <div className="text-center mt-4 space-x-3 ">
           <Button variant="cancelButton" type="button" onClick={onClose}>
