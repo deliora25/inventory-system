@@ -115,3 +115,8 @@ export type ProductDataType = {
   quantity: number;
   id: number;
 };
+
+export type CategoryType = {
+  name: string;
+  products: string | string[];
+};
