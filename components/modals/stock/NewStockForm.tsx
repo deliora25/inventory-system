@@ -9,7 +9,7 @@ export default function NewStockModal() {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get('http://localhost:4000/stock');
+      const response = await axios.get('http://localhost:4000/stockitems');
       setData(response.data);
     };
     getData();

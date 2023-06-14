@@ -8,7 +8,7 @@ type Props = {
 
 export default function NewProductModal({ onOpen, onClose }: Props) {
   return (
-    <Modal onOpen={onOpen} onClose={onClose}>
+    <Modal onOpen={onOpen} onClose={onClose} title="New Product">
       <NewProductForm onClose={onClose} />
     </Modal>
   );

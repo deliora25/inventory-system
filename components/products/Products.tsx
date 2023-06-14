@@ -21,14 +21,14 @@ function Products({ products }: Props) {
   };
 
   return (
-    <div>
+    <div className="items-center ">
       <div>
-        <div className="flex m-2 items-center">
-          <h2>PRODUCTS LIST</h2>
+        <div className=" sm:grid sm:grid-cols-2 m-2 items-center">
+          <h2 className="col-span-1">PRODUCTS LIST</h2>
           <Button
             type="button"
             variant="submitButton"
-            className="ml-3  !px-5"
+            className="ml-3  !px-5 w-fit  sm:w-fit col-span-2 sm:col-span-1"
             onClick={handleOpen}
           >
             NEW

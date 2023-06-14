@@ -20,7 +20,7 @@ function Stock({ data, statusData }: Props) {
 export default Stock;
 
 export async function getStaticProps() {
-  const response = await axios.get('http://localhost:4000/stock');
+  const response = await axios.get('http://localhost:4000/stockitems');
   const { data } = response;
 
   const statusList = await axios.get('http://localhost:4000/statusList');
