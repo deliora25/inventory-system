@@ -1,14 +1,15 @@
 import { Checkbox } from '@mui/material';
 
-import { StockType } from '@/types';
+import { StockItemType } from '@/types';
 
 import StockItem from './StockItem';
 
 type Props = {
-  data: StockType[];
+  data: StockItemType[];
+  search: string;
 };
 
-function StockItemList({ data }: Props) {
+function StockItemList({ data, search }: Props) {
   return (
     <div className="h-auto">
       <div className="w-full bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
@@ -20,8 +21,6 @@ function StockItemList({ data }: Props) {
                 Order Id
               </th>
               <th className="font-semibold px-6 py-1">Date</th>
-              <th className="font-semibold px-6 py-1">Product</th>
-              <th className="font-semibold px-6 py-1">Category</th>
               <th className="font-semibold px-6 py-1">Sales Channel</th>
               <th className="font-semibold px-6 py-1">Instruction</th>
               <th className="font-semibold px-6 py-1">Items</th>
@@ -29,9 +28,19 @@ function StockItemList({ data }: Props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <StockItem item={item} key={item.id} />
-            ))}
+            {data
+              .filter((item) => {
+                if (search === '') {
+                  return item;
+                }
+                if (item.id.toString().includes(search)) {
+                  return item;
+                }
+                return null;
+              })
+              .map((item) => (
+                <StockItem item={item} key={item.id} />
+              ))}
           </tbody>
         </table>
       </div>

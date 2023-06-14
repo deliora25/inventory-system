@@ -2,19 +2,21 @@
 import DateRangeIcon from '@mui/icons-material/DateRange';
 
 // types
-import { StatusDataType, StockType } from '@/types';
+import { StatusDataType, StockItemType } from '@/types';
 
 // components
+import { useState } from 'react';
 import StatusDropdown from '../orders/dropdowns/status/StatusDropdown';
 import StockButton from './StockButton';
 import StockItemList from './StockItemList';
 
 type Props = {
-  data: StockType[];
+  data: StockItemType[];
   statusData: StatusDataType[];
 };
 
 function IncomingInvoice({ data, statusData }: Props) {
+  const [search, setSearch] = useState('');
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -34,6 +36,8 @@ function IncomingInvoice({ data, statusData }: Props) {
             type="text"
             placeholder="Search Order ID"
             className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light h-8 pl-2"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
         <div className="cols-span-1 flex w-full gap-5 justify-end md:pr-[20%] sm:flex-grid">
@@ -44,7 +48,7 @@ function IncomingInvoice({ data, statusData }: Props) {
           <StatusDropdown statusData={statusData} />
         </div>
       </div>
-      <StockItemList data={data} />
+      <StockItemList data={data} search={search} />
     </div>
   );
 }

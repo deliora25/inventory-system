@@ -10,7 +10,6 @@ import { useState } from 'react';
 import SalesDropdown from './dropdowns/sales/SalesDropdown';
 import StatusDropdown from './dropdowns/status/StatusDropdown';
 import OrdersButton from './OrdersButton';
-import Input from '../common/Input';
 import OrderItemList from './OrderItemList';
 
 type Props = {

@@ -1,6 +1,6 @@
 import { ProductDataType } from '@/types';
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import Button from '../../common/Button';

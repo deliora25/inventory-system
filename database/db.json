@@ -446,5 +446,83 @@
       "quantity": "1",
       "id": 18
     }
+  ],
+  "incomingInvoice": [
+    {
+      "date": "14 Jun 2023",
+      "salesChannel": "Sales channel 2",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 3",
+          "quantity": "69"
+        },
+        {
+          "category": "Category 2",
+          "product": "Product 10",
+          "quantity": "10"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Pending",
+      "id": 4
+    },
+    {
+      "date": "14 Jun 2023",
+      "salesChannel": "Sales channel 3",
+      "items": [
+        {
+          "category": "Category 3",
+          "product": "Product 16",
+          "quantity": "13"
+        },
+        {
+          "category": "Category 3",
+          "product": "Product 15",
+          "quantity": "21"
+        },
+        {
+          "category": "Category 2",
+          "product": "Product 10",
+          "quantity": "8"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Pending",
+      "id": 5
+    },
+    {
+      "date": "14 Jun 2023",
+      "salesChannel": "Sales channel 3",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 2",
+          "quantity": "11"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Pending",
+      "id": 6
+    },
+    {
+      "date": "14 Jun 2023",
+      "salesChannel": "Sales channel 2",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 2",
+          "quantity": "25"
+        },
+        {
+          "category": "Category 1",
+          "product": "Product 3",
+          "quantity": "33"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Pending",
+      "id": 7
+    }
   ]
 }
