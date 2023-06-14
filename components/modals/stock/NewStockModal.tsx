@@ -9,7 +9,7 @@ type Props = {
 export default function NewStockModal({ isOpen, onClose }: Props) {
   return (
     <Modal onOpen={isOpen} onClose={onClose} title="New Stock">
-      <NewStockForm />
+      <NewStockForm onClose={onClose} />
     </Modal>
   );
 }

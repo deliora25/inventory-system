@@ -1,45 +1,73 @@
-import { useEffect, useState } from 'react';
+import Button from '@/components/common/Button';
+
+import { StockItemType } from '@/types';
+import React from 'react';
+import { useForm, useFieldArray } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
 import axios from 'axios';
-import { ProductType } from '@/types';
-import Product from './Product';
-import CategoryItem from './CategoryItem';
+import { useRouter } from 'next/router';
+import NewStockItem from './NewStockItem';
 
-export default function NewStockModal() {
-  const [data, setData] = useState<ProductType[]>([]);
+type Props = {
+  onClose: () => void;
+};
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get('http://localhost:4000/stockitems');
-      setData(response.data);
-    };
-    getData();
-  }, []);
+function NewOrderForm({ onClose }: Props) {
+  const { register, control, handleSubmit, watch } = useForm<StockItemType>({
+    defaultValues: {
+      date: new Date().toUTCString().slice(5, 16),
+      salesChannel: `Sales channel ${Math.floor(Math.random() * 3) + 1}`,
+      items: [
+        {
+          category: '',
+          product: '',
+          quantity: null,
+        },
+      ],
+      instruction: 'Insert Instruction',
+      status: 'Pending',
+    },
+  });
+  const { fields, append, remove } = useFieldArray({
+    name: 'items',
+    control,
+  });
+  const router = useRouter();
+
+  const items = watch('items');
+
+  const onSubmit = async (value: StockItemType) => {
+    try {
+      await axios.post('http://localhost:4000/incomingInvoice', value);
+    } catch (error) {
+      console.log(error);
+    }
+    router.push('/stock');
+  };
 
   return (
-    <form>
-      <div className="space-y-12">
-        <div className="border-b border-gray-900/10 pb-2 ">
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
-            <div className="sm:col-span-3 ">
-              <label
-                htmlFor="category"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Category
-              </label>
-              <div className="mt-2">
-                <CategoryItem data={data} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <NewStockItem
+          fields={fields}
+          append={append}
+          register={register}
+          remove={remove}
+          items={items}
+        />
+        <div className="text-center mt-4 space-x-3 ">
+          <Button variant="cancelButton" type="button" onClick={onClose}>
+            Cancel
+          </Button>
 
-      {data.map((item) => (
-        <div key={item.id}>
-          <Product item={item} />
+          <Button variant="submitButton" type="submit" onClick={onClose}>
+            Next
+          </Button>
         </div>
-      ))}
-    </form>
+      </form>
+      <DevTool control={control} />
+    </div>
   );
 }
+
+export default NewOrderForm;

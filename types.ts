@@ -94,19 +94,13 @@ export type ProductsType = {
   id: number;
 };
 
-export type StockType = {
-  orderId: string;
-  customer: string;
+export type StockItemType = {
+  id: number;
   date: string;
   salesChannel: string;
-  destination: string;
-  items: string;
-  productName: string;
-  status: string;
-  id: number;
-  category: string;
   instruction: string;
-  href: string;
+  items: ItemsType[];
+  status: string;
 };
 
 export type ProductDataType = {

@@ -16,8 +16,6 @@ export default function NewOrderModal({ data, isOpen, onClose }: Props) {
       title="New Order"
       className="flex gap-5 w-fit h-full"
     >
-      {/* <ShippingOrderForm title="Ship From" /> */}
-      {/* <ShippingOrderForm title="Ship To" onClose={onClose} /> */}
       <NewOrderForm data={data} onClose={onClose} />
     </Modal>
   );

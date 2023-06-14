@@ -25,7 +25,7 @@ function NewOrderForm({ onClose }: Props) {
         contact: null,
         email: '',
       },
-      salesChannel: `Sales channel ${Math.floor(Math.random() * 10) + 1}`,
+      salesChannel: `Sales channel ${Math.floor(Math.random() * 3) + 1}`,
       destination: `Sample Destination ${Math.floor(Math.random() * 10) + 1}`,
       items: [
         {
