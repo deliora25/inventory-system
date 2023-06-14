@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 type Props = {
   defaultValues: any;
   children: React.ReactNode;
-  onSubmit: () => void;
+  onSubmit: (e: React.UIEvent<HTMLFormElement>) => Promise<void>;
 };
 
 function Form({ defaultValues, children, onSubmit }: Props) {

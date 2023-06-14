@@ -322,6 +322,28 @@
       "instruction": "Insert Instruction",
       "status": "Pending",
       "id": 18
+    },
+    {
+      "date": "14 Jun 2023",
+      "alertAmount": "Alert Amount 0",
+      "customer": {
+        "firstName": "gabriel",
+        "lastName": "gonzales",
+        "contact": "123",
+        "email": "123@gmail.com"
+      },
+      "salesChannel": "Sales channel 2",
+      "destination": "Sample Destination 10",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 2",
+          "quantity": "20"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Pending",
+      "id": 19
     }
   ],
   "statusList": [
@@ -383,12 +405,6 @@
   ],
   "products": [
     {
-      "productName": "product",
-      "categoryName": "category",
-      "id": 11,
-      "quantity": "1"
-    },
-    {
       "productName": "test 23",
       "categoryName": "category 23",
       "id": 12,
@@ -405,6 +421,30 @@
       "categoryName": "test 19",
       "quantity": "19",
       "id": 14
+    },
+    {
+      "productName": "test",
+      "categoryName": "test",
+      "quantity": "123",
+      "id": 15
+    },
+    {
+      "productName": "product 123",
+      "categoryName": "category 123",
+      "quantity": "121",
+      "id": 16
+    },
+    {
+      "productName": "aasd",
+      "categoryName": "rwqeda",
+      "quantity": "12",
+      "id": 17
+    },
+    {
+      "productName": "product 1",
+      "categoryName": "category 1",
+      "quantity": "1",
+      "id": 18
     }
   ]
 }

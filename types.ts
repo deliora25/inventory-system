@@ -112,8 +112,8 @@ export type StockType = {
 export type ProductDataType = {
   productName: string;
   categoryName: string;
-  quantity: number;
-  id: number;
+  quantity: number | null;
+  id: number | null;
 };
 
 export type CategoryType = {
