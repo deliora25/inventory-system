@@ -63,7 +63,7 @@ export type OrderItemType = {
   date: string;
   customer: CustomerType;
   items: ItemsType[];
-  salesChannel?: string;
+  salesChannel?: string | number;
   destination?: string;
   status: string;
   alertAmount?: string;
@@ -113,4 +113,9 @@ export type ProductDataType = {
 export type CategoryType = {
   name: string;
   products: string | string[];
+};
+
+export type SalesListType = {
+  name: string;
+  id: number;
 };

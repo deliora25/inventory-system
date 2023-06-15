@@ -54,296 +54,185 @@
   ],
   "orders": [
     {
-      "date": "08 Jun 2023",
-      "alertAmount": "Alert Amount 6",
+      "date": "15 Jun 2023",
+      "alertAmount": "Alert Amount 8",
       "customer": {
-        "firstName": "ellen",
-        "lastName": "gonzales",
-        "contact": "090909090999",
-        "email": "ellengnzls@gmail.com"
+        "firstName": "gabriel",
+        "lastName": "test",
+        "contact": "1123123",
+        "email": "test@gmail.com"
       },
-      "salesChannel": "Sales channel 4",
-      "destination": "Sample Destination 4",
+      "salesChannel": 1,
+      "destination": "Sample Destination 8",
       "items": [
-        {
-          "category": "Category 2",
-          "product": "",
-          "quantity": "12"
-        },
-        {
-          "category": "Category 2",
-          "product": "",
-          "quantity": "33"
-        },
-        {
-          "category": "Category 3",
-          "product": "",
-          "quantity": "19"
-        },
         {
           "category": "Category 1",
-          "product": "",
-          "quantity": "7"
+          "product": "Product 1",
+          "quantity": "211"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
-      "id": 9
+      "id": 22
     },
     {
-      "date": "09 Jun 2023",
-      "alertAmount": "Alert Amount 2",
+      "date": "15 Jun 2023",
+      "alertAmount": "Alert Amount 7",
       "customer": {
-        "firstName": "Genevieve",
-        "lastName": "Gonzales",
+        "firstName": "test",
+        "lastName": "test",
         "contact": "090909090999",
-        "email": "gengnzls@gmail.com"
+        "email": "test@gmail.com"
       },
-      "salesChannel": "Sales channel 2",
-      "destination": "Sample Destination 4",
-      "items": [
-        {
-          "category": "Category 2",
-          "product": "",
-          "quantity": "23"
-        },
-        {
-          "category": "Category 1",
-          "product": "",
-          "quantity": "45"
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 10
-    },
-    {
-      "date": "09 Jun 2023",
-      "alertAmount": "Alert Amount 0",
-      "customer": {
-        "firstName": "gayle",
-        "lastName": "jasmine",
-        "contact": "12312312311",
-        "email": "gayle@gmail.com"
-      },
-      "salesChannel": "Sales channel 7",
-      "destination": "Sample Destination 2",
-      "items": [
-        {
-          "category": "Category 3",
-          "product": "",
-          "quantity": "10"
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 11
-    },
-    {
-      "date": "09 Jun 2023",
-      "alertAmount": "Alert Amount 5",
-      "customer": {
-        "firstName": "",
-        "lastName": "",
-        "contact": null,
-        "email": ""
-      },
-      "salesChannel": "Sales channel 5",
+      "salesChannel": 2,
       "destination": "Sample Destination 5",
       "items": [
         {
-          "category": "Category 3",
-          "product": "",
-          "quantity": null
+          "category": "Category 1",
+          "product": "Product 1",
+          "quantity": "211"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
-      "id": 12
+      "id": 23
     },
     {
-      "date": "09 Jun 2023",
-      "alertAmount": "Alert Amount 1",
+      "date": "15 Jun 2023",
+      "alertAmount": "Alert Amount 6",
       "customer": {
-        "firstName": "test 1",
-        "lastName": "test 1",
-        "contact": "321314122",
-        "email": "test1@mailinator.com"
+        "firstName": "gabriel",
+        "lastName": "gonzales",
+        "contact": "1123123",
+        "email": "test"
       },
-      "salesChannel": "Sales channel 6",
+      "salesChannel": 1,
       "destination": "Sample Destination 8",
       "items": [
         {
           "category": "Category 2",
-          "product": "Product 20",
-          "quantity": "123"
-        },
-        {
-          "category": "Category 3",
-          "product": "",
-          "quantity": "123"
+          "product": "Product 10",
+          "quantity": "212"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
-      "id": 13
+      "id": 27
     },
     {
-      "date": "09 Jun 2023",
-      "alertAmount": "Alert Amount 7",
-      "customer": {
-        "firstName": "test2",
-        "lastName": "test2",
-        "contact": "3213141212",
-        "email": "test2@mailinator.com"
-      },
-      "salesChannel": "Sales channel 4",
-      "destination": "Sample Destination 9",
-      "items": [
-        {
-          "category": "Category 1",
-          "product": "Product 3",
-          "quantity": "1"
-        },
-        {
-          "category": "Category 2",
-          "product": "Product 30",
-          "quantity": "2"
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 14
-    },
-    {
-      "date": "09 Jun 2023",
+      "date": "15 Jun 2023",
       "alertAmount": "Alert Amount 1",
       "customer": {
-        "firstName": "test3",
-        "lastName": "test3",
-        "contact": "321314122",
-        "email": "test3@mailinator.com"
+        "firstName": "test",
+        "lastName": "test",
+        "contact": "123",
+        "email": "test@gmail.com"
       },
-      "salesChannel": "Sales channel 10",
-      "destination": "Sample Destination 10",
-      "items": [
-        {
-          "category": "Category 2",
-          "product": "",
-          "quantity": "5"
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 15
-    },
-    {
-      "date": "09 Jun 2023",
-      "alertAmount": "Alert Amount 5",
-      "customer": {
-        "firstName": "test4",
-        "lastName": "test4",
-        "contact": "3213141212",
-        "email": "test4@mail.com"
-      },
-      "salesChannel": "Sales channel 4",
+      "salesChannel": 1,
       "destination": "Sample Destination 7",
       "items": [
         {
-          "category": "Category 2",
-          "product": "Product 20",
-          "quantity": "211"
-        },
-        {
           "category": "Category 1",
-          "product": "",
-          "quantity": "1"
+          "product": "Product 1",
+          "quantity": "211"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
-      "id": 16
+      "id": 28
     },
     {
-      "date": "13 Jun 2023",
-      "alertAmount": "Alert Amount 6",
+      "date": "15 Jun 2023",
+      "alertAmount": "Alert Amount 2",
       "customer": {
         "firstName": "test",
-        "lastName": "test1",
-        "contact": "123444551",
+        "lastName": "test",
+        "contact": "123",
         "email": "test@gmail.com"
       },
-      "salesChannel": "Sales channel 4",
-      "destination": "Sample Destination 5",
-      "items": [
-        {
-          "category": "Category 2",
-          "product": "Product 20",
-          "quantity": "13"
-        },
-        {
-          "category": "Category 3",
-          "product": "Product 15",
-          "quantity": "31"
-        },
-        {
-          "category": "Category 1",
-          "product": "Product 2",
-          "quantity": "29"
-        }
-      ],
-      "instruction": "Insert Instruction",
-      "status": "Pending",
-      "id": 17
-    },
-    {
-      "date": "13 Jun 2023",
-      "alertAmount": "Alert Amount 4",
-      "customer": {
-        "firstName": "tester",
-        "lastName": "tester12",
-        "contact": "1234",
-        "email": "test@gmail.com"
-      },
-      "salesChannel": "Sales channel 7",
+      "salesChannel": 1,
       "destination": "Sample Destination 4",
       "items": [
         {
           "category": "Category 1",
-          "product": "Product 2",
-          "quantity": "123"
-        },
-        {
-          "category": "Category 2",
-          "product": "Product 20",
-          "quantity": "4"
+          "product": "Product 1",
+          "quantity": "211"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
-      "id": 18
+      "id": 29
     },
     {
-      "date": "14 Jun 2023",
+      "date": "15 Jun 2023",
       "alertAmount": "Alert Amount 0",
       "customer": {
-        "firstName": "gabriel",
-        "lastName": "gonzales",
+        "firstName": "test",
+        "lastName": "test",
         "contact": "123",
-        "email": "123@gmail.com"
+        "email": "test@gmail.com"
       },
-      "salesChannel": "Sales channel 2",
-      "destination": "Sample Destination 10",
+      "salesChannel": 3,
+      "destination": "Sample Destination 7",
       "items": [
         {
           "category": "Category 1",
-          "product": "Product 2",
-          "quantity": "20"
+          "product": "Product 1",
+          "quantity": "211"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Cancelled",
+      "id": 30
+    },
+    {
+      "date": "15 Jun 2023",
+      "alertAmount": "Alert Amount 9",
+      "customer": {
+        "firstName": "test",
+        "lastName": "test",
+        "contact": "123",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 2,
+      "destination": "Sample Destination 8",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 1",
+          "quantity": "211"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": "Success",
+      "id": 31
+    },
+    {
+      "date": "15 Jun 2023",
+      "alertAmount": "Alert Amount 7",
+      "customer": {
+        "firstName": "tester",
+        "lastName": "test",
+        "contact": "3213141212",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 2,
+      "destination": "Sample Destination 7",
+      "items": [
+        {
+          "category": "Category 3",
+          "product": "Product 16",
+          "quantity": "13"
+        },
+        {
+          "category": "Category 1",
+          "product": "Product 3",
+          "quantity": "8"
         }
       ],
       "instruction": "Insert Instruction",
       "status": "Pending",
-      "id": 19
+      "id": 32
     }
   ],
   "statusList": [
@@ -380,27 +269,15 @@
   "stockItems": [
     {
       "name": "Category 1",
-      "products": [
-        "Product 1",
-        "Product 2",
-        "Product 3"
-      ]
+      "products": ["Product 1", "Product 2", "Product 3"]
     },
     {
       "name": "Category 2",
-      "products": [
-        "Product 10",
-        "Product 20",
-        "Product 30"
-      ]
+      "products": ["Product 10", "Product 20", "Product 30"]
     },
     {
       "name": "Category 3",
-      "products": [
-        "Product 15",
-        "Product 16",
-        "Product 17"
-      ]
+      "products": ["Product 15", "Product 16", "Product 17"]
     }
   ],
   "products": [
@@ -409,12 +286,6 @@
       "categoryName": "category 23",
       "id": 12,
       "quantity": "122"
-    },
-    {
-      "productName": "test 34",
-      "categoryName": "test 34",
-      "id": 13,
-      "quantity": 0
     },
     {
       "productName": "test 19",
@@ -439,12 +310,6 @@
       "categoryName": "rwqeda",
       "quantity": "12",
       "id": 17
-    },
-    {
-      "productName": "product 1",
-      "categoryName": "category 1",
-      "quantity": "1",
-      "id": 18
     }
   ],
   "incomingInvoice": [
@@ -488,7 +353,7 @@
         }
       ],
       "instruction": "Insert Instruction",
-      "status": "Pending",
+      "status": "Cancelled",
       "id": 5
     },
     {
@@ -521,7 +386,7 @@
         }
       ],
       "instruction": "Insert Instruction",
-      "status": "Pending",
+      "status": "Success",
       "id": 7
     }
   ]

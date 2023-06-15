@@ -9,6 +9,15 @@ type Props = {
 function OrderItem({ item }: Props) {
   const { id, date, items, salesChannel, destination, status } = item;
 
+  let salesChannelBranch = '';
+  if (salesChannel === 1) {
+    salesChannelBranch = 'Main Branch';
+  } else if (salesChannel === 2) {
+    salesChannelBranch = 'Secondary Branch';
+  } else if (salesChannel === 3) {
+    salesChannelBranch = 'Online Sales';
+  }
+
   return (
     <tr className="text-center font-light" key={item.id}>
       <td className="py-2 px-2 border-y-2 text-md ">
@@ -25,7 +34,7 @@ function OrderItem({ item }: Props) {
       <td className="py-2 px-2 border-y-2 text-md ">
         {item.customer.firstName}
       </td>
-      <td className="py-2 px-2 border-y-2 text-md ">{salesChannel}</td>
+      <td className="py-2 px-2 border-y-2 text-md ">{salesChannelBranch}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{destination}</td>
       <td className="py-2 px-2 border-y-2 text-md ">
         {items

@@ -1,14 +1,11 @@
-// icons
-import DateRangeIcon from '@mui/icons-material/DateRange';
-
 // types
 import { OrderItemType, SalesDataType, StatusDataType } from '@/types';
 
 // components
 import { useState } from 'react';
 
-import SalesDropdown from './dropdowns/sales/SalesDropdown';
-import StatusDropdown from './dropdowns/status/StatusDropdown';
+import { useForm } from 'react-hook-form';
+import Dropdowns from './dropdowns/sales/Dropdowns';
 import OrdersButton from './OrdersButton';
 import OrderItemList from './OrderItemList';
 
@@ -20,6 +17,21 @@ type Props = {
 
 function Orders({ data, salesData, statusData }: Props) {
   const [search, setSearch] = useState('');
+
+  const { register, watch } = useForm({
+    defaultValues: {
+      salesOption: '',
+      statusOption: '',
+    },
+  });
+
+  const salesOption = watch('salesOption');
+  const statusOption = watch('statusOption');
+
+  const salesOptions = salesData.map((item) => item.name);
+
+  const statusOptions = statusData.map((item) => item.name);
+
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -45,16 +57,25 @@ function Orders({ data, salesData, statusData }: Props) {
           />
         </div>
         <div className="cols-span-1 flex w-full gap-5 justify-end md:pr-[20%] sm:flex-grid">
-          <div className="h-fit w-fit border rounded-md">
-            <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
-          </div>
-          <SalesDropdown salesData={salesData} />
-
-          <StatusDropdown statusData={statusData} />
+          <Dropdowns
+            salesData={salesData}
+            statusData={statusData}
+            search={search}
+            register={register}
+            salesOptions={salesOptions}
+            statusOptions={statusOptions}
+            salesOption={salesOption}
+            statusOption={statusOption}
+          />
         </div>
       </div>
       <div className="h-auto">
-        <OrderItemList data={data} search={search} />
+        <OrderItemList
+          data={data}
+          search={search}
+          salesOption={salesOption}
+          statusOption={statusOption}
+        />
       </div>
     </div>
   );

@@ -34,7 +34,6 @@ function NewOrderItems({ items, fields, append, register, remove }: Props) {
   }, []);
 
   const categoryNameOptions = categoryOptions.map((item) => item.name);
-
   return (
     <div>
       {fields.map((field, index) => {
@@ -51,6 +50,7 @@ function NewOrderItems({ items, fields, append, register, remove }: Props) {
           <div key={field.id}>
             <div className="grid grid-cols-2 gap-4 items-center my-2 ">
               <Select
+                placeholder="Select Category"
                 title="Category"
                 register={register}
                 name={`items.${index}.category`}
@@ -59,6 +59,7 @@ function NewOrderItems({ items, fields, append, register, remove }: Props) {
             </div>
             <div className="grid grid-col grid-cols-2 items-center gap-4">
               <Select
+                placeholder="Select Product"
                 title="Product"
                 register={register}
                 name={`items.${index}.product`}
