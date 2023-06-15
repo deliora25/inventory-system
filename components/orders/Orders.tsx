@@ -5,7 +5,7 @@ import { OrderItemType, SalesDataType, StatusDataType } from '@/types';
 import { useState } from 'react';
 
 import { useForm } from 'react-hook-form';
-import Dropdowns from './dropdowns/sales/Dropdowns';
+import Dropdowns from './dropdowns/orders/Dropdowns';
 import OrdersButton from './OrdersButton';
 import OrderItemList from './OrderItemList';
 

@@ -1,25 +1,36 @@
-import { Menu } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { StatusDataType } from '@/types';
-import StatusDropdownItem from './StatusDropdownItems';
+import { SalesDataType, StatusDataType } from '@/types';
+import Select from '@/components/common/Select';
+import { UseFormRegister } from 'react-hook-form';
+import DateRangeIcon from '@mui/icons-material/DateRange';
 
 type Props = {
   statusData: StatusDataType[];
+  search: string;
+  register: UseFormRegister<any>;
+  statusOptions: string[];
+  statusOption: string;
 };
 
-export default function StatusDropdown({ statusData }: Props) {
+export default function Dropdown({
+  register,
+  statusOptions,
+  statusOption,
+}: Props) {
+  console.log(statusOption);
   return (
-    <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          Status
-          <ChevronDownIcon
-            className="-mr-1 h-5 w-5 text-gray-400"
-            aria-hidden="true"
-          />
-        </Menu.Button>
+    <div className="flex gap-5">
+      <div className="h-fit w-fit border rounded-md mt-1">
+        <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
       </div>
-      <StatusDropdownItem statusData={statusData} />
-    </Menu>
+
+      <Select
+        className="rounded-md w-40 font-semibold text-sm"
+        title=""
+        options={statusOptions}
+        register={register}
+        name="statusOption"
+        placeholder="Status"
+      />
+    </div>
   );
 }
