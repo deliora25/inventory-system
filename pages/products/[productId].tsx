@@ -62,6 +62,14 @@ function ProductDetail({ product, productId }: Props) {
           </tbody>
         </table>
         <div className="text-center space-x-4 my-3">
+          <Button
+            type="button"
+            variant="cancelButton"
+            className="border-2 border-slate-200 hover:border-2 hover:bg-slate-400 hover:text-slate-100 hover:border-slate-700"
+            onClick={() => router.back()}
+          >
+            Back
+          </Button>
           <Button variant="submitButton" type="button" onClick={onOpen}>
             Update
           </Button>

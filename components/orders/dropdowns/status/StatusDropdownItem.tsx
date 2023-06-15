@@ -11,7 +11,6 @@ function classNames(...classes: any[]) {
 
 function StatusDropdownItem({ item }: Props) {
   const { name } = item;
-
   return (
     <Menu.Item key={item.id}>
       {({ active }) => (

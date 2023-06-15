@@ -1,7 +1,7 @@
 import Layout from '@/components/layout/Layout';
 import { OrderItemType } from '@/types';
 
-import { Button } from '@mui/material';
+import Button from '@/components/common/Button';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 
@@ -25,7 +25,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
 
   return (
     <Layout>
-      <h2>test for {orderId}</h2>
+      <h2>Order details for {orderId}</h2>
       <div className="w-full bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
         <table className="border rounded-xl w-full table-auto">
           <thead className=" text-md ">
@@ -70,8 +70,22 @@ function SingleOrderDetail({ order, orderId }: Props) {
           </tbody>
         </table>
       </div>
-
-      <Button onClick={() => handleDelete(order.id)}>Delete</Button>
+      <Button
+        type="button"
+        variant="cancelButton"
+        className="border-2 border-slate-200 hover:border-2 hover:bg-slate-400 hover:text-slate-100 hover:border-slate-700"
+        onClick={() => router.back()}
+      >
+        Back
+      </Button>
+      <Button
+        type="button"
+        variant="submitButton"
+        className="border-2 border-slate-200 hover:border-2 hover:bg-red-600 hover:text-slate-100 hover:border-slate-700"
+        onClick={() => handleDelete(order.id)}
+      >
+        Delete
+      </Button>
     </Layout>
   );
 }

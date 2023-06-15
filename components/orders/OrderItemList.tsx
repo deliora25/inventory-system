@@ -5,9 +5,11 @@ import OrderItem from './OrderItem';
 type Props = {
   data: OrderItemType[];
   search: string;
+  salesOption: string;
+  statusOption: string;
 };
 
-function OrderItemList({ data, search }: Props) {
+function OrderItemList({ data, search, salesOption, statusOption }: Props) {
   return (
     <div className="w-full bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
       <table className="border rounded-xl w-full table-auto">
@@ -28,12 +30,34 @@ function OrderItemList({ data, search }: Props) {
         <tbody>
           {data
             .filter((item) => {
-              if (search === '') {
+              const { salesChannel } = item;
+              let salesChannelBranch = '';
+              if (salesChannel === 1) {
+                salesChannelBranch = 'Main Branch';
+              } else if (salesChannel === 2) {
+                salesChannelBranch = 'Secondary Branch';
+              } else if (salesChannel === 3) {
+                salesChannelBranch = 'Online Sales';
+              }
+
+              if (salesOption === '') {
                 return item;
               }
-              if (item.id.toString().includes(search)) {
+              if (
+                salesChannelBranch.includes(salesOption) &&
+                item.id.toString().includes(search) &&
+                item.status.includes(statusOption)
+              ) {
                 return item;
               }
+              if (
+                search === '' &&
+                salesChannelBranch.includes(salesOption) &&
+                item.status.includes(statusOption)
+              ) {
+                return item;
+              }
+
               return null;
             })
             .map((item) => (
