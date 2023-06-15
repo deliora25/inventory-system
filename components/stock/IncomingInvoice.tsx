@@ -1,11 +1,9 @@
-// icons
-import DateRangeIcon from '@mui/icons-material/DateRange';
-
 // types
 import { StatusDataType, StockItemType } from '@/types';
 
 // components
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import StatusDropdown from '../orders/dropdowns/status/StatusDropdown';
 import StockButton from './StockButton';
 import StockItemList from './StockItemList';
@@ -17,6 +15,17 @@ type Props = {
 
 function IncomingInvoice({ data, statusData }: Props) {
   const [search, setSearch] = useState('');
+
+  const { register, watch } = useForm({
+    defaultValues: {
+      statusOption: '',
+    },
+  });
+
+  const statusOption = watch('statusOption');
+
+  const statusOptions = statusData.map((item) => item.name);
+
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -41,14 +50,16 @@ function IncomingInvoice({ data, statusData }: Props) {
           />
         </div>
         <div className="cols-span-1 flex w-full gap-5 justify-end md:pr-[20%] sm:flex-grid">
-          <div className="h-fit w-fit border rounded-md">
-            <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
-          </div>
-
-          <StatusDropdown statusData={statusData} />
+          <StatusDropdown
+            statusData={statusData}
+            register={register}
+            statusOption={statusOption}
+            statusOptions={statusOptions}
+            search={search}
+          />
         </div>
       </div>
-      <StockItemList data={data} search={search} />
+      <StockItemList data={data} search={search} statusOption={statusOption} />
     </div>
   );
 }

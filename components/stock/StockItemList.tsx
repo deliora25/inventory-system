@@ -7,9 +7,10 @@ import StockItem from './StockItem';
 type Props = {
   data: StockItemType[];
   search: string;
+  statusOption: string;
 };
 
-function StockItemList({ data, search }: Props) {
+function StockItemList({ data, search, statusOption }: Props) {
   return (
     <div className="h-auto">
       <div className="w-full bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
@@ -30,10 +31,13 @@ function StockItemList({ data, search }: Props) {
           <tbody>
             {data
               .filter((item) => {
-                if (search === '') {
+                if (statusOption === '' && search === '') {
                   return item;
                 }
-                if (item.id.toString().includes(search)) {
+                if (
+                  item.id.toString().includes(search) &&
+                  item.status.includes(statusOption)
+                ) {
                   return item;
                 }
                 return null;
