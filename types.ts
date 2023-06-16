@@ -65,7 +65,7 @@ export type OrderItemType = {
   items: ItemsType[];
   salesChannel?: string | number;
   destination?: string;
-  status: string;
+  status: string | number;
   alertAmount?: string;
   instruction?: string;
 };

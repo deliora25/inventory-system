@@ -30,7 +30,7 @@ function OrderItemList({ data, search, salesOption, statusOption }: Props) {
         <tbody>
           {data
             .filter((item) => {
-              const { salesChannel } = item;
+              const { salesChannel, status } = item;
               let salesChannelBranch = '';
               if (salesChannel === 1) {
                 salesChannelBranch = 'Main Branch';
@@ -40,20 +40,31 @@ function OrderItemList({ data, search, salesOption, statusOption }: Props) {
                 salesChannelBranch = 'Online Sales';
               }
 
-              if (salesOption === '') {
+              let orderStatus = '';
+
+              if (status === 1) {
+                orderStatus = 'Pending';
+              }
+              if (status === 2) {
+                orderStatus = 'Success';
+              }
+              if (status === 3) {
+                orderStatus = 'Cancelled';
+              }
+              if (salesOption === '' && search === '' && statusOption === '') {
                 return item;
               }
               if (
                 salesChannelBranch.includes(salesOption) &&
                 item.id.toString().includes(search) &&
-                item.status.includes(statusOption)
+                orderStatus.toString().includes(statusOption)
               ) {
                 return item;
               }
               if (
                 search === '' &&
                 salesChannelBranch.includes(salesOption) &&
-                item.status.includes(statusOption)
+                orderStatus.includes(statusOption)
               ) {
                 return item;
               }
