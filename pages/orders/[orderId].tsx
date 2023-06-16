@@ -33,11 +33,19 @@ function SingleOrderDetail({ order, orderId }: Props) {
   }
 
   let bgClr = '';
-  if (order.status === 'Pending') {
+
+  let stockStatus = '';
+
+  if (order.status === 1) {
+    stockStatus = 'Pending';
     bgClr = 'bg-yellow-400';
-  } else if (order.status === 'Success') {
+  }
+  if (order.status === 2) {
+    stockStatus = 'Success';
     bgClr = 'bg-green-400';
-  } else {
+  }
+  if (order.status === 3) {
+    stockStatus = 'Cancelled';
     bgClr = 'bg-red-500';
   }
 
@@ -81,7 +89,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
               </td>
               <td className="py-2 px-2 border-r-2 border-y-2 text-md ">
                 <div className={`rounded-full border ${bgClr}`}>
-                  {order.status}
+                  {stockStatus}
                 </div>
               </td>
             </tr>

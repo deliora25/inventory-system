@@ -19,14 +19,21 @@ function OrderItem({ item }: Props) {
   }
 
   let bgClr = '';
-  if (status === 'Pending') {
+
+  let orderStatus = '';
+
+  if (status === 1) {
+    orderStatus = 'Pending';
     bgClr = 'bg-yellow-400';
-  } else if (status === 'Success') {
+  }
+  if (status === 2) {
+    orderStatus = 'Success';
     bgClr = 'bg-green-400';
-  } else {
+  }
+  if (status === 3) {
+    orderStatus = 'Cancelled';
     bgClr = 'bg-red-500';
   }
-
   return (
     <tr className="text-center font-light" key={item.id}>
       <td className="py-2 px-2 border-y-2 text-md ">
@@ -51,7 +58,7 @@ function OrderItem({ item }: Props) {
           .reduce((a: number | null, b: number | null) => a + b, 0)}
       </td>
       <td className="py-2 px-2 border-y-2 text-md ">
-        <div className={`rounded-full border ${bgClr}`}>{status}</div>
+        <div className={`rounded-full border ${bgClr}`}>{orderStatus}</div>
       </td>
     </tr>
   );

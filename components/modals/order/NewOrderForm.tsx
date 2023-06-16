@@ -35,7 +35,7 @@ function NewOrderForm({ onClose }: Props) {
         },
       ],
       instruction: 'Insert Instruction',
-      status: 'Pending',
+      status: Math.floor(Math.random() * 3) + 1,
     },
   });
   const { fields, append, remove } = useFieldArray({
