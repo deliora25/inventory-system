@@ -16,7 +16,7 @@ function NewOrderForm({ onClose }: Props) {
   const { register, control, handleSubmit, watch } = useForm<StockItemType>({
     defaultValues: {
       date: new Date().toUTCString().slice(5, 16),
-      salesChannel: `Sales channel ${Math.floor(Math.random() * 3) + 1}`,
+      salesChannel: Math.floor(Math.random() * 3) + 1,
       items: [
         {
           category: '',
@@ -25,7 +25,7 @@ function NewOrderForm({ onClose }: Props) {
         },
       ],
       instruction: 'Insert Instruction',
-      status: 'Pending',
+      status: Math.floor(Math.random() * 3) + 1,
     },
   });
   const { fields, append, remove } = useFieldArray({

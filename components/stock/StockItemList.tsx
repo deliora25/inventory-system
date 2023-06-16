@@ -31,12 +31,23 @@ function StockItemList({ data, search, statusOption }: Props) {
           <tbody>
             {data
               .filter((item) => {
+                let stockStatus = '';
+
+                if (item.status === 1) {
+                  stockStatus = 'Pending';
+                }
+                if (item.status === 2) {
+                  stockStatus = 'Success';
+                }
+                if (item.status === 3) {
+                  stockStatus = 'Cancelled';
+                }
                 if (statusOption === '' && search === '') {
                   return item;
                 }
                 if (
                   item.id.toString().includes(search) &&
-                  item.status.includes(statusOption)
+                  stockStatus.toString().includes(statusOption)
                 ) {
                   return item;
                 }

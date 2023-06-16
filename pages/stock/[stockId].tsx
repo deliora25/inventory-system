@@ -24,6 +24,32 @@ function StockDetail({ stock, stockId }: Props) {
     }
   };
 
+  let salesChannelBranch = '';
+  if (salesChannel === 1) {
+    salesChannelBranch = 'Main Branch';
+  } else if (salesChannel === 2) {
+    salesChannelBranch = 'Secondary Branch';
+  } else if (salesChannel === 3) {
+    salesChannelBranch = 'Online Sales';
+  }
+
+  let bgClr = '';
+
+  let stockStatus = '';
+
+  if (status === 1) {
+    stockStatus = 'Pending';
+    bgClr = 'bg-yellow-400';
+  }
+  if (status === 2) {
+    stockStatus = 'Success';
+    bgClr = 'bg-green-400';
+  }
+  if (status === 3) {
+    stockStatus = 'Cancelled';
+    bgClr = 'bg-red-500';
+  }
+
   return (
     <Layout>
       <div className="w-fit  bg-transparent sm:items-center items-center  overflow-x-auto text-center">
@@ -53,7 +79,7 @@ function StockDetail({ stock, stockId }: Props) {
                 {date}
               </td>
               <td className="py-2 px-2  border-y-2 border-r-2 text-md">
-                {salesChannel}
+                {salesChannelBranch}
               </td>
               <td className="py-2 px-2  border-y-2 border-r-2 text-md">
                 {instruction}
@@ -64,7 +90,9 @@ function StockDetail({ stock, stockId }: Props) {
                   .reduce((a: number | null, b: number | null) => a + b, 0)}
               </td>
               <td className="py-2 px-2  border-y-2 border-r-2 text-md">
-                {status}
+                <div className={`rounded-full border ${bgClr}`}>
+                  {stockStatus}
+                </div>
               </td>
             </tr>
           </tbody>
