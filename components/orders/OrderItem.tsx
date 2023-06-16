@@ -18,6 +18,15 @@ function OrderItem({ item }: Props) {
     salesChannelBranch = 'Online Sales';
   }
 
+  let bgClr = '';
+  if (status === 'Pending') {
+    bgClr = 'bg-yellow-400';
+  } else if (status === 'Success') {
+    bgClr = 'bg-green-400';
+  } else {
+    bgClr = 'bg-red-500';
+  }
+
   return (
     <tr className="text-center font-light" key={item.id}>
       <td className="py-2 px-2 border-y-2 text-md ">
@@ -42,7 +51,7 @@ function OrderItem({ item }: Props) {
           .reduce((a: number | null, b: number | null) => a + b, 0)}
       </td>
       <td className="py-2 px-2 border-y-2 text-md ">
-        <div className="rounded-full border bg-green-400">{status}</div>
+        <div className={`rounded-full border ${bgClr}`}>{status}</div>
       </td>
     </tr>
   );

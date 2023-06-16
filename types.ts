@@ -97,10 +97,10 @@ export type ProductsType = {
 export type StockItemType = {
   id: number;
   date: string;
-  salesChannel: string;
+  salesChannel: string | number;
   instruction: string;
   items: ItemsType[];
-  status: string;
+  status: string | number;
 };
 
 export type ProductDataType = {

@@ -23,6 +23,24 @@ function SingleOrderDetail({ order, orderId }: Props) {
     }
   };
 
+  let salesChannelBranch = '';
+  if (order.salesChannel === 1) {
+    salesChannelBranch = 'Main Branch';
+  } else if (order.salesChannel === 2) {
+    salesChannelBranch = 'Secondary Branch';
+  } else if (order.salesChannel === 3) {
+    salesChannelBranch = 'Online Sales';
+  }
+
+  let bgClr = '';
+  if (order.status === 'Pending') {
+    bgClr = 'bg-yellow-400';
+  } else if (order.status === 'Success') {
+    bgClr = 'bg-green-400';
+  } else {
+    bgClr = 'bg-red-500';
+  }
+
   return (
     <Layout>
       <h2>Order details for {orderId}</h2>
@@ -51,7 +69,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
                 {order.customer.firstName} {order.customer.lastName}
               </td>
               <td className="py-2 px-2  border-r-2 border-y-2 text-md">
-                {order.salesChannel}
+                {salesChannelBranch}
               </td>
               <td className="py-2 px-2  border-r-2 border-y-2 text-md">
                 {order.destination}
@@ -62,7 +80,7 @@ function SingleOrderDetail({ order, orderId }: Props) {
                   .reduce((a, b) => a + b, 0)}
               </td>
               <td className="py-2 px-2 border-r-2 border-y-2 text-md ">
-                <div className="rounded-full border bg-[#BCE784]">
+                <div className={`rounded-full border ${bgClr}`}>
                   {order.status}
                 </div>
               </td>
