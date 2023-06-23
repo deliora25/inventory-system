@@ -13,8 +13,7 @@ function OrderItemList({ data, search, salesOption, statusOption }: Props) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleClick = (e) => {
-    const { name, checked} = e.target;
-    if (isChecked)
+    setIsChecked(true);
   };
 
   return (
