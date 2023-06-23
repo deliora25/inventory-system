@@ -1,5 +1,5 @@
-import { Checkbox } from '@mui/material';
 import { OrderItemType } from '@/types';
+import { useState } from 'react';
 import OrderItem from './OrderItem';
 
 type Props = {
@@ -10,13 +10,25 @@ type Props = {
 };
 
 function OrderItemList({ data, search, salesOption, statusOption }: Props) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleClick = (e) => {
+    const { name, checked} = e.target;
+    if (isChecked)
+  };
+
   return (
     <div className="w-full bg-transparent m-2 p-8 md:items-center sm:m-0 sm:p-0 overflow-x-auto">
       <table className="border rounded-xl w-full table-auto">
         <thead>
           <tr className="text-md md:text-lg sm:text-md">
             <th className="font-semibold px-6 py-1">
-              <Checkbox className="place-items-end " />
+              <input
+                type="checkbox"
+                className="place-items-end rounded-sm border-2 m-1 cursor-pointer"
+                checked={isChecked}
+                onClick={handleClick}
+              />
               Order Id
             </th>
             <th className="font-semibold px-6 py-1">Date</th>
@@ -72,7 +84,7 @@ function OrderItemList({ data, search, salesOption, statusOption }: Props) {
               return null;
             })
             .map((item) => (
-              <OrderItem item={item} key={item.id} />
+              <OrderItem item={item} key={item.id} isChecked={isChecked} />
             ))}
         </tbody>
       </table>

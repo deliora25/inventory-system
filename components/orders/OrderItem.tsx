@@ -1,12 +1,13 @@
 import { OrderItemType } from '@/types';
-import Checkbox from '@mui/material/Checkbox';
 import Link from 'next/link';
+import { useState } from 'react';
 
 type Props = {
   item: OrderItemType;
+  isChecked: boolean;
 };
 
-function OrderItem({ item }: Props) {
+function OrderItem({ item, isChecked }: Props) {
   const { id, date, items, salesChannel, destination, status } = item;
 
   let salesChannelBranch = '';
@@ -37,7 +38,12 @@ function OrderItem({ item }: Props) {
   return (
     <tr className="text-center font-light" key={item.id}>
       <td className="py-2 px-2 border-y-2 text-md ">
-        <Checkbox />
+        <input
+          type="checkbox"
+          className="place-items-end rounded-sm border-2 m-1 cursor-pointer"
+          checked={isChecked}
+          onClick={() => handleClick(item.id)}
+        />
 
         <Link
           href={`/orders/${item.id}`}

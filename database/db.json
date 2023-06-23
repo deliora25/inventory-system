@@ -343,6 +343,12 @@
       "categoryName": "rwqeda",
       "quantity": "12",
       "id": 17
+    },
+    {
+      "productName": "Gas Stove",
+      "categoryName": "Kitchen Items",
+      "quantity": "100",
+      "id": 18
     }
   ],
   "incomingInvoice": [
