@@ -1,40 +1,59 @@
-import { OrderItemType, StockType } from "@/types";
-import { Checkbox } from "@mui/material";
-import Link from "next/link";
+import { StockItemType } from '@/types';
+import { Checkbox } from '@mui/material';
+import Link from 'next/link';
 
 type Props = {
-  item: StockType;
+  item: StockItemType;
 };
 
 function StockItem({ item }: Props) {
-  const {
-    orderId,
-    date,
-    salesChannel,
-    category,
-    name,
-    instruction,
-    items,
-    status,
-    href,
-  } = item;
+  const { id, date, salesChannel, items, status, instruction } = item;
+
+  let salesChannelBranch = '';
+  if (salesChannel === 1) {
+    salesChannelBranch = 'Main Branch';
+  }
+  if (salesChannel === 2) {
+    salesChannelBranch = 'Secondary Branch';
+  }
+  if (salesChannel === 3) {
+    salesChannelBranch = 'Online Sales';
+  }
+
+  let bgClr = '';
+
+  let stockStatus = '';
+
+  if (status === 1) {
+    stockStatus = 'Pending';
+    bgClr = 'bg-yellow-400';
+  }
+  if (status === 2) {
+    stockStatus = 'Success';
+    bgClr = 'bg-green-400';
+  }
+  if (status === 3) {
+    stockStatus = 'Cancelled';
+    bgClr = 'bg-red-500';
+  }
+
   return (
     <tr className="text-center font-light">
-      <td className="py-2 px-2 border-y-2 text-md ">
+      <td className="py-2 px-2 border-y-2 text-md bg-yellow-">
         <Checkbox />
-        <Link href={href} className="hover:text-slate-400">
-          {orderId}
-        </Link>
+        <Link href={`stock/${id}`}>{id}</Link>
       </td>
       <td className="py-2 px-2 border-y-2 text-md ">{date}</td>
-      <td className="py-2 px-2 border-y-2 text-md ">{name}</td>
 
-      <td className="py-2 px-2 border-y-2 text-md ">{category}</td>
-      <td className="py-2 px-2 border-y-2 text-md ">{salesChannel}</td>
+      <td className="py-2 px-2 border-y-2 text-md ">{salesChannelBranch}</td>
       <td className="py-2 px-2 border-y-2 text-md ">{instruction}</td>
-      <td className="py-2 px-2 border-y-2 text-md ">{items}</td>
       <td className="py-2 px-2 border-y-2 text-md ">
-        <div className="rounded-full border bg-green-400">{status}</div>
+        {items
+          .map((x) => Number(x.quantity))
+          .reduce((a: number | null, b: number | null) => a + b, 0)}
+      </td>
+      <td className="py-2 px-2 border-y-2 text-md ">
+        <div className={`rounded-full border ${bgClr}`}>{stockStatus}</div>
       </td>
     </tr>
   );

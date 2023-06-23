@@ -1,14 +1,21 @@
-import { Fragment, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import NewProductForm from "./NewProductForm";
+import React, { Fragment, useRef } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 
 type Props = {
   onOpen: boolean;
   onClose: () => void;
+  children: React.ReactNode;
+  title: string;
+  className?: string;
 };
 
-export default function NewProductModal({ onOpen, onClose }: Props) {
+export default function Modal({
+  onOpen,
+  onClose,
+  children,
+  title,
+  className,
+}: Props) {
   const cancelButtonRef = useRef(null);
 
   return (
@@ -42,19 +49,17 @@ export default function NewProductModal({ onOpen, onClose }: Props) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 ">
-                  <div className="sm:flex sm:items-start bg-yellow-400">
-                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left bg-green-200">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-fit">
+                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 sm:w-fit">
+                  <div className="sm:flex sm:items-start ">
+                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left ">
                       <Dialog.Title
                         as="h3"
-                        className="text-base align-text-bottom font-semibold leading-6 text-gray-900 bg-red-200"
+                        className="text-base align-text-bottom font-semibold leading-6 text-gray-900 "
                       >
-                        New Product
+                        {title}
                       </Dialog.Title>
-                      <div className="mt-4">
-                        <NewProductForm onClose={onClose} />
-                      </div>
+                      <div className={`mt-4 ${className}`}>{children}</div>
                     </div>
                   </div>
                 </div>

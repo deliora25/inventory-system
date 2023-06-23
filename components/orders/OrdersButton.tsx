@@ -1,8 +1,13 @@
-import { Button } from "@mui/material";
-import { useState } from "react";
-import NewOrderModal from "../modals/NewOrderModal";
+import { useState } from 'react';
+import { OrderItemType } from '@/types';
+import NewOrderModal from '../modals/order/NewOrderModal';
+import Button from '../common/Button';
 
-function OrdersButton() {
+type Props = {
+  data: OrderItemType[];
+};
+
+function OrdersButton({ data }: Props) {
   const [openModal, setOpenModal] = useState(false);
 
   const handleClick = () => {
@@ -15,28 +20,16 @@ function OrdersButton() {
 
   return (
     <div className="grid grid-cols-3 gap-2 justify-center pr-4  md:flex-col">
-      <Button
-        variant="outlined"
-        className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500"
-      >
+      <Button type="button" variant="submitButton">
         Export to Excel
       </Button>
-      <Button
-        variant="outlined"
-        className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500 "
-      >
+      <Button type="button" variant="submitButton">
         Import Orders
       </Button>
-      <Button
-        onClick={handleClick}
-        variant="outlined"
-        data-te-toggle="modal"
-        aria-hidden="true"
-        className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500"
-      >
+      <Button type="button" onClick={handleClick} variant="submitButton">
         + New Orders
       </Button>
-      <NewOrderModal isOpen={openModal} onClose={handleClose} />
+      <NewOrderModal isOpen={openModal} onClose={handleClose} data={data} />
     </div>
   );
 }

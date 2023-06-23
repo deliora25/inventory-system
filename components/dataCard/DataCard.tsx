@@ -1,5 +1,5 @@
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import { DataAmount } from "@/types";
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import { DataAmount } from '@/types';
 
 type Props = {
   item: DataAmount;

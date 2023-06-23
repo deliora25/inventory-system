@@ -52,93 +52,214 @@
       "id": 4
     }
   ],
-  "stockalert": [
+  "orders": [
     {
-      "orderId": "order ID 1",
-      "date": "Date 1",
-      "alertAmount": "Alert amt. 1",
-      "status": "Status 1",
-      "id": 1,
-      "customer": "Customer 1",
-      "salesChannel": "Sales Channel 1",
-      "destination": "Destination 1",
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 5",
+      "customer": {
+        "firstName": "gracelle",
+        "lastName": "gonzales",
+        "contact": "123331",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 2,
+      "destination": "Sample Destination 6",
       "items": [
         {
-          "product": "Product 1",
-          "quantity": 10,
-          "itemsId": 1
-        },
-        {
+          "category": "Category 1",
           "product": "Product 2",
-          "quantity": 20,
-          "itemsId": 2
+          "quantity": "21"
         },
         {
-          "product": "Product 3",
-          "quantity": 30,
-          "itemsId": 3
+          "category": "Category 1",
+          "product": "Product 1",
+          "quantity": "4"
         }
       ],
-      "category": "Category 1",
-      "instruction": "Instruction 1"
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 1
     },
     {
-      "orderId": "order ID 2",
-      "date": "Date 2",
-      "alertAmount": "Alert amt. 2",
-      "status": "Status 2",
-      "id": 2,
-      "customer": "Customer 2",
-      "salesChannel": "Sales Channel 2",
-      "destination": "Destination 2",
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 2",
+      "customer": {
+        "firstName": "gabriel",
+        "lastName": "gonzales",
+        "contact": "090909090999",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 3,
+      "destination": "Sample Destination 10",
       "items": [
         {
-          "product": "Product 1",
-          "quantity": 10,
-          "itemsId": 1
-        },
-        {
-          "product": "Product 2",
-          "quantity": 20,
-          "itemsId": 2
-        },
-        {
+          "category": "Category 1",
           "product": "Product 3",
-          "quantity": 30,
-          "itemsId": 3
+          "quantity": "69"
         }
       ],
-      "category": "Category 2",
-      "instruction": "Instruction 2"
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 2
     },
     {
-      "orderId": "order ID 3",
-      "date": "Date 3",
-      "alertAmount": "Alert amt. 3",
-      "status": "Status 3",
-      "id": 3,
-      "customer": "Customer 3",
-      "salesChannel": "Sales Channel 3",
-      "destination": "Destination 3",
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 5",
+      "customer": {
+        "firstName": "gayle",
+        "lastName": "Gonzales",
+        "contact": "3213141212",
+        "email": "email2@gmail.com"
+      },
+      "salesChannel": 1,
+      "destination": "Sample Destination 8",
       "items": [
         {
-          "product": "Product 1",
-          "quantity": 10,
-          "itemsId": 1
-        },
-        {
-          "product": "Product 2",
-          "quantity": 20,
-          "itemsId": 2
-        },
-        {
-          "product": "Product 3",
-          "quantity": 30,
-          "itemsId": 3
+          "category": "Category 3",
+          "product": "Product 17",
+          "quantity": "56"
         }
       ],
-      "category": "Category 3",
-      "instruction": "Instruction 3"
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 3
+    },
+    {
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 1",
+      "customer": {
+        "firstName": "test",
+        "lastName": "test",
+        "contact": "090909090999",
+        "email": "test"
+      },
+      "salesChannel": 3,
+      "destination": "Sample Destination 7",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 1",
+          "quantity": "123"
+        },
+        {
+          "category": "Category 1",
+          "product": "Product 2",
+          "quantity": "1"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 1,
+      "id": 7
+    },
+    {
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 7",
+      "customer": {
+        "firstName": "gabriel",
+        "lastName": "Carvajal",
+        "contact": "1123123",
+        "email": "email2@gmail.com"
+      },
+      "salesChannel": 3,
+      "destination": "Sample Destination 8",
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "89"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 8
+    },
+    {
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 3",
+      "customer": {
+        "firstName": "gabriel",
+        "lastName": "test",
+        "contact": "1123123",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 3,
+      "destination": "Sample Destination 5",
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "23"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 9
+    },
+    {
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 9",
+      "customer": {
+        "firstName": "test",
+        "lastName": "test",
+        "contact": "1123123",
+        "email": "gabrielgnzls94@gmail.com"
+      },
+      "salesChannel": 3,
+      "destination": "Sample Destination 6",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 1",
+          "quantity": "12"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 10
+    },
+    {
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 3",
+      "customer": {
+        "firstName": "test ",
+        "lastName": "gonzales",
+        "contact": "1123123",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 1,
+      "destination": "Sample Destination 10",
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 1",
+          "quantity": "10"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 1,
+      "id": 11
+    },
+    {
+      "date": "16 Jun 2023",
+      "alertAmount": "Alert Amount 5",
+      "customer": {
+        "firstName": "tester",
+        "lastName": "gonzales",
+        "contact": "090909090999",
+        "email": "test@gmail.com"
+      },
+      "salesChannel": 2,
+      "destination": "Sample Destination 4",
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 30",
+          "quantity": "20"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 12
     }
   ],
   "statusList": [
@@ -172,77 +293,233 @@
       "id": 3
     }
   ],
-  "stock": [
+  "stockItems": [
     {
-      "name": "Product 1",
-      "href": "/stock/products/1",
-      "category": "Category 1",
-      "quantity": "Quantity 1",
-      "orderId": "Order ID 1",
-      "date": "Date 1",
-      "items": "Item 1",
-      "id": 1,
-      "salesChannel": "Sales Channel 1",
-      "instruction": "Instruction 1",
-      "status": "Status 1"
+      "name": "Category 1",
+      "products": [
+        "Product 1",
+        "Product 2",
+        "Product 3"
+      ]
     },
     {
-      "name": "Product 2",
-      "href": "/stock/products/2",
-      "category": "Category 2",
-      "quantity": "Quantity 2",
-      "orderId": "Order ID 2",
-      "date": "Date 2",
-      "items": "Item 2",
-      "id": 2,
-      "salesChannel": "Sales Channel 2",
-      "instruction": "Instruction 2",
-      "status": "Status 2"
+      "name": "Category 2",
+      "products": [
+        "Product 10",
+        "Product 20",
+        "Product 30"
+      ]
     },
     {
-      "name": "Product 3",
-      "href": "/stock/products/3",
-      "category": "Category 3",
-      "quantity": "Quantity 3",
-      "date": "Date 3",
-      "orderId": "Order ID 3",
-      "items": "Item 3",
-      "id": 3,
-      "salesChannel": "Sales Channel 3",
-      "instruction": "Instruction 3",
-      "status": "Status 3"
+      "name": "Category 3",
+      "products": [
+        "Product 15",
+        "Product 16",
+        "Product 17"
+      ]
     }
   ],
   "products": [
     {
-      "productName": "product 2",
-      "categoryName": "category 2",
-      "quantity": "2",
-      "id": 30
+      "productName": "test 19",
+      "categoryName": "test 19",
+      "quantity": "19",
+      "id": 14
     },
     {
-      "productName": "product 3",
-      "categoryName": "category 3",
-      "quantity": "33",
-      "id": 31
-    },
-    {
-      "productName": "product 4",
-      "categoryName": "category 4",
-      "quantity": "4",
-      "id": 32
-    },
-    {
-      "productName": "test 123",
-      "categoryName": "category 2",
-      "quantity": "2131",
-      "id": 33
-    },
-    {
-      "productName": "aluminum",
-      "categoryName": "alloy",
+      "productName": "test",
+      "categoryName": "test",
       "quantity": "123",
-      "id": 34
+      "id": 15
+    },
+    {
+      "productName": "product 123",
+      "categoryName": "category 123",
+      "quantity": "121",
+      "id": 16
+    },
+    {
+      "productName": "aasd",
+      "categoryName": "rwqeda",
+      "quantity": "12",
+      "id": 17
+    },
+    {
+      "productName": "Gas Stove",
+      "categoryName": "Kitchen Items",
+      "quantity": "100",
+      "id": 18
+    }
+  ],
+  "incomingInvoice": [
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 1,
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "23"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 1
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 2,
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "21"
+        },
+        {
+          "category": "Category 1",
+          "product": "Product 3",
+          "quantity": "8"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 2
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 3",
+          "product": "Product 16",
+          "quantity": "89"
+        },
+        {
+          "category": "Category 1",
+          "product": "Product 3",
+          "quantity": "23"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 3
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "19"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 1,
+      "id": 4
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 3",
+          "product": "Product 17",
+          "quantity": "69"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 5
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 2,
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 30",
+          "quantity": "21"
+        },
+        {
+          "category": "Category 3",
+          "product": "Product 15",
+          "quantity": "3"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 2,
+      "id": 6
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 3",
+          "product": "Product 17",
+          "quantity": "21"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 1,
+      "id": 7
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "212"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 8
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 2",
+          "product": "Product 20",
+          "quantity": "89"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 1,
+      "id": 9
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 2",
+          "quantity": "21"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 3,
+      "id": 10
+    },
+    {
+      "date": "16 Jun 2023",
+      "salesChannel": 3,
+      "items": [
+        {
+          "category": "Category 1",
+          "product": "Product 2",
+          "quantity": "21"
+        }
+      ],
+      "instruction": "Insert Instruction",
+      "status": 1,
+      "id": 11
     }
   ]
 }

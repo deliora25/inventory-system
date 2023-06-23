@@ -1,7 +1,8 @@
-import { ProductDataType } from "@/types";
-import axios from "axios";
-import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { ProductDataType } from '@/types';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import React, { useRef, useState } from 'react';
+import Button from '../../common/Button';
 
 type Props = {
   onClose: () => void;
@@ -20,9 +21,10 @@ function EditProductForm({ onClose, product }: Props) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEditProduct((prev) => {
-      return { ...prev, [name]: value };
-    });
+    setEditProduct((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleUpdate = async (id: number | string) => {
@@ -34,46 +36,38 @@ function EditProductForm({ onClose, product }: Props) {
     };
 
     try {
-      const response = await axios.put(
-        `http://localhost:4000/products/${id}`,
-        updateProduct
-      );
+      await axios.put(`http://localhost:4000/products/${id}`, updateProduct);
 
       setEditProduct({
         ...editProduct,
-        productName: "",
-        categoryName: "",
+        productName: '',
+        categoryName: '',
         quantity: updateProduct.quantity,
       });
-      router.push("/products");
+      router.push('/products');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <div className="space-y-12">
+      <div className="space-y-12 ">
         <div className="border-b border-gray-900/10 pb-12">
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 bg-red-400">
-            <div className="sm:col-span-4 bg-violet-500">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Product Name
-              </label>
-              <div className="mt-2">
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 ">
+            <div className="sm:col-span-4  ">
+              <div className="flex flex-col gap-1 pb-2">
+                <label>Product Name</label>
                 <input
                   value={editProduct.productName}
-                  onChange={handleChange}
                   name="productName"
+                  onChange={handleChange}
                   type="text"
                   placeholder="Product Name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              <div>
+
+              <div className="flex flex-col gap-1 pt-2">
                 <label>Category</label>
                 <input
                   value={editProduct.categoryName}
@@ -81,7 +75,6 @@ function EditProductForm({ onClose, product }: Props) {
                   name="categoryName"
                   type="text"
                   placeholder="Category Name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -90,21 +83,22 @@ function EditProductForm({ onClose, product }: Props) {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button
+        <Button
           onClick={onClose}
           ref={cancelButtonRef}
           type="button"
-          className="text-sm font-semibold leading-6 text-gray-900"
+          variant="cancelButton"
         >
           Cancel
-        </button>
-        <button
+        </Button>
+
+        <Button
           onClick={() => handleUpdate(product.id)}
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          variant="submitButton"
         >
           Save
-        </button>
+        </Button>
       </div>
     </form>
   );

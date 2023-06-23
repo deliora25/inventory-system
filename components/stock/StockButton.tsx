@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
-import { useState } from "react";
-import NewStockModal from "../modals/NewStockModal";
+import { useState } from 'react';
+import NewStockModal from '../modals/stock/NewStockModal';
+import Button from '../common/Button';
 
 function StockButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +16,9 @@ function StockButton() {
   return (
     <div className="grid grid-cols-1 pr-[10%]">
       <Button
+        type="button"
         onClick={handleClick}
-        variant="outlined"
+        variant="submitButton"
         className="text-md font-semibold justify-self-center w-full h-full bg-white text-primary hover:text-white hover:bg-blue-500"
       >
         + New Stock

@@ -1,10 +1,10 @@
-import { forwardRef } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { UserIcon } from "@heroicons/react/24/solid";
-import { signOut } from "next-auth/react";
-import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
-import DashboardIcon from "@mui/icons-material/Dashboard";
+import { forwardRef } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { UserIcon } from '@heroicons/react/24/solid';
+import { signOut } from 'next-auth/react';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 type Props = {
   showNav: boolean;
@@ -12,12 +12,12 @@ type Props = {
 
 const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const router = useRouter();
-  const isHomeRoute = router.pathname === "/";
+  const isHomeRoute = router.pathname === '/';
 
   const sidebarButtonClass = `sidebar-button ${
     isHomeRoute
-      ? "bg-primary text-slate-300 hover:bg-blue-400"
-      : "bg-blue-400 hover:bg-primary hover:text-slate-300"
+      ? 'bg-primary text-slate-300 hover:bg-blue-400'
+      : 'bg-blue-400 hover:bg-primary hover:text-slate-300'
   }`;
 
   return (
@@ -88,6 +88,6 @@ const Sidebar = forwardRef<HTMLDivElement, Props>((props, ref) => {
   );
 });
 
-Sidebar.displayName = "Sidebar";
+Sidebar.displayName = 'Sidebar';
 
 export default Sidebar;

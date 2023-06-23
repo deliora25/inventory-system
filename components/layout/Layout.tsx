@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Fragment, ReactNode } from "react";
-import Sidebar from "../sidebar/Sidebar";
-import Navbar from "../navbar/Navbar";
-import { Transition } from "@headlessui/react";
+import React, { useState, useEffect, Fragment, ReactNode } from 'react';
+import { Transition } from '@headlessui/react';
+import Sidebar from '../sidebar/Sidebar';
+import Navbar from '../navbar/Navbar';
 
 type Props = {
   children?: ReactNode;
@@ -13,21 +13,19 @@ function Layout({ children }: Props) {
 
   function handleResize() {
     if (innerWidth <= 640) {
-      // setShowNav(false);
       setIsMobile(true);
     } else {
-      // setShowNav(true);
       setIsMobile(false);
     }
   }
 
   useEffect(() => {
-    if (typeof window != undefined) {
-      addEventListener("resize", handleResize);
+    if (typeof window !== 'undefined') {
+      addEventListener('resize', handleResize);
     }
 
     return () => {
-      removeEventListener("resize", handleResize);
+      removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -48,10 +46,10 @@ function Layout({ children }: Props) {
       </Transition>
       <main
         className={`pt-16 transition-all duration-[400ms] ${
-          showNav && !isMobile ? "pl-56" : ""
+          showNav && !isMobile ? 'pl-56' : ''
         }`}
       >
-        <div className="px-4 md:px-16">{children}</div>
+        <div className="px-4 md:px-16  ">{children}</div>
       </main>
     </>
   );

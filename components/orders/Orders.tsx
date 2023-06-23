@@ -1,14 +1,13 @@
-//icons
-import DateRangeIcon from "@mui/icons-material/DateRange";
+// types
+import { OrderItemType, SalesDataType, StatusDataType } from '@/types';
 
-//types
-import { OrderItemType, SalesDataType, StatusDataType } from "@/types";
+// components
+import { useState } from 'react';
 
-//components
-import SalesDropdown from "./dropdowns/sales/SalesDropdown";
-import StatusDropdown from "./dropdowns/status/StatusDropdown";
-import OrderItemList from "./OrderItemList";
-import OrdersButton from "./OrdersButton";
+import { useForm } from 'react-hook-form';
+import Dropdowns from './dropdowns/orders/Dropdowns';
+import OrdersButton from './OrdersButton';
+import OrderItemList from './OrderItemList';
 
 type Props = {
   data: OrderItemType[];
@@ -17,6 +16,22 @@ type Props = {
 };
 
 function Orders({ data, salesData, statusData }: Props) {
+  const [search, setSearch] = useState('');
+
+  const { register, watch } = useForm({
+    defaultValues: {
+      salesOption: '',
+      statusOption: '',
+    },
+  });
+
+  const salesOption = watch('salesOption');
+  const statusOption = watch('statusOption');
+
+  const salesOptions = salesData.map((item) => item.name);
+
+  const statusOptions = statusData.map((item) => item.name);
+
   return (
     <div className="w-full h-full bg-white p-">
       <div className="grid grid-cols-2 pt-8 pb-4 px-2 border-b-2">
@@ -26,28 +41,42 @@ function Orders({ data, salesData, statusData }: Props) {
           </h2>
         </div>
         <div className="col-span 1">
-          <OrdersButton />
+          <OrdersButton data={data} />
         </div>
       </div>
-      {/* to do dropdowns*/}
+      {/* to do dropdowns */}
       <div className="grid grid-cols-2 w-full my-10">
         <div className="cols-span-1 pl-10">
           <input
             type="text"
+            name="search"
+            onChange={(e) => setSearch(e.target.value)}
             placeholder="Search Order ID"
-            className="border border-opacity-70 border-solid rounded  min-w-56 max-w-full ml-[10%] font-light h-8 pl-2"
+            value={search}
+            className="!w-auto"
           />
         </div>
         <div className="cols-span-1 flex w-full gap-5 justify-end md:pr-[20%] sm:flex-grid">
-          <div className="h-fit w-fit border rounded-md">
-            <DateRangeIcon className="items-center justify-center h-7 w-6 m-1" />
-          </div>
-          <SalesDropdown salesData={salesData} />
-
-          <StatusDropdown statusData={statusData} />
+          <Dropdowns
+            salesData={salesData}
+            statusData={statusData}
+            search={search}
+            register={register}
+            salesOptions={salesOptions}
+            statusOptions={statusOptions}
+            salesOption={salesOption}
+            statusOption={statusOption}
+          />
         </div>
       </div>
-      <OrderItemList data={data} />
+      <div className="h-auto">
+        <OrderItemList
+          data={data}
+          search={search}
+          salesOption={salesOption}
+          statusOption={statusOption}
+        />
+      </div>
     </div>
   );
 }

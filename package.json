@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "lint": "eslint src --ext=js",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier -c",
+    "prettier:fix": "npm run prettier -- --write"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -23,21 +27,25 @@
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
     "font-awesome": "^4.7.0",
+    "formik": "^2.4.1",
     "next": "13.4.1",
     "next-auth": "^4.22.1",
     "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.43.9",
+    "react-hook-form": "^7.44.3",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
     "recharts": "^2.6.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "@hookform/devtools": "^4.3.1"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@tailwindcss/forms": "^0.5.3",
     "@types/nodemailer": "^6.4.7",
     "autoprefixer": "^10.4.14",
+    "eslint-config-airbnb-base": "^15.0.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
   }

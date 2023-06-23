@@ -1,9 +1,9 @@
-import { ItemsType, StockAlert } from "@/types";
-import React from "react";
-import StockAlertItem from "./StockAlertItem";
+import { StockAlertType } from '@/types';
+import React from 'react';
+import StockAlertItem from './StockAlertItem';
 
 type Props = {
-  data: StockAlert[];
+  data: StockAlertType[];
 };
 
 function StockAlertItems({ data }: Props) {
@@ -21,9 +21,9 @@ function StockAlertItems({ data }: Props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => {
-              return <StockAlertItem key={item.id} item={item} />;
-            })}
+            {data.map((item) => (
+              <StockAlertItem key={item.id} item={item} />
+            ))}
           </tbody>
         </table>
       </div>

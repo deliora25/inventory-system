@@ -14,18 +14,25 @@ export type UserOnLogin = {
   password: string;
 };
 
-export type StockAlert = {
+export type ItemsType = {
+  product: string;
+  category: string;
+  quantity: number | null;
+  id?: number;
+};
+
+export type StockAlertType = {
   orderId: string;
   date: string;
   quantity: number;
-  items: ItemsType[];
+  order: ItemsType[];
   alertAmount: string;
   status: string;
   id: number;
 };
 
 export type StockAlertList = {
-  item: StockAlert[];
+  item: StockAlertType[];
 };
 
 export type DataAmount = {
@@ -44,23 +51,23 @@ export type PieChartInput = {
   index: number;
 };
 
-export type ItemsType = {
-  product: string;
-  quantity: number;
-  itemsId: number;
+export type CustomerType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  contact: number | null;
 };
 
 export type OrderItemType = {
-  orderId: string;
-  customer: string;
-  date: string;
-  salesChannel: string;
-  destination: string;
-  items: ItemsType[];
-  status: string;
   id: number;
-  category: string;
-  instruction: string;
+  date: string;
+  customer: CustomerType;
+  items: ItemsType[];
+  salesChannel?: string | number;
+  destination?: string;
+  status: string | number;
+  alertAmount?: string;
+  instruction?: string;
 };
 
 export type SalesDataType = {
@@ -87,24 +94,28 @@ export type ProductsType = {
   id: number;
 };
 
-export type StockType = {
-  orderId: string;
-  customer: string;
-  date: string;
-  salesChannel: string;
-  destination: string;
-  items: string;
-  name: string;
-  status: string;
+export type StockItemType = {
   id: number;
-  category: string;
+  date: string;
+  salesChannel: string | number;
   instruction: string;
-  href: string;
+  items: ItemsType[];
+  status: string | number;
 };
 
 export type ProductDataType = {
   productName: string;
   categoryName: string;
-  quantity: number;
+  quantity: number | null;
+  id: number | null;
+};
+
+export type CategoryType = {
+  name: string;
+  products: string | string[];
+};
+
+export type SalesListType = {
+  name: string;
   id: number;
 };

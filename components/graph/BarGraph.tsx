@@ -1,17 +1,15 @@
-import { DataAmount } from "@/types";
-import axios from "axios";
-import React, { PureComponent, useState, useEffect } from "react";
+import { DataAmount } from '@/types';
+import React from 'react';
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from "recharts";
+} from 'recharts';
 
 type Props = {
   data: DataAmount[];
